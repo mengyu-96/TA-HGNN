@@ -1,0 +1,226 @@
+2025-10-06 13:26:58,377 - __main__ - INFO - 日志已配置，日志文件: ./output\logs\t_hgnn_20251006_132658.log
+2025-10-06 13:26:58,378 - __main__ - INFO - 日志已配置，日志文件: ./output\logs\t_hgnn_20251006_132658.log
+2025-10-06 13:26:58,378 - src.utils.gpu_utils - INFO - 已启用cuDNN基准测试
+2025-10-06 13:26:58,378 - src.utils.gpu_utils - INFO - 已清理GPU缓存
+2025-10-06 13:26:58,378 - src.utils.gpu_utils - INFO - 已设置CUDA内存分配策略
+2025-10-06 13:26:58,378 - __main__ - INFO - 初始内存状态: 使用率 36.9%, 可用内存 19.7GB
+2025-10-06 13:26:58,424 - __main__ - INFO - 开始运行模式: full
+2025-10-06 13:26:58,424 - __main__ - INFO - ==================================================
+2025-10-06 13:26:58,424 - __main__ - INFO - 步骤1: 数据加载和预处理
+2025-10-06 13:26:58,424 - __main__ - INFO - ==================================================
+2025-10-06 13:26:58,424 - src.data.pyg_loader - INFO - 加载数据: ./Linux-APT-Dataset/Linux-APT-Dataset-2024/combine.csv
+2025-10-06 13:26:58,424 - src.data.pyg_loader - INFO - 使用直接加载策略
+2025-10-06 13:27:01,622 - __main__ - INFO - 原始数据信息: (91133, 123)
+2025-10-06 13:27:01,622 - src.data.apt_data_processor - INFO - 开始处理原始APT数据
+2025-10-06 13:27:01,650 - src.data.wazuh_labeling_strategy - INFO - 开始Wazuh智能标注，处理 91133 条记录
+2025-10-06 13:27:01,650 - src.data.wazuh_labeling_strategy - INFO - 处理进度: 0/91133
+2025-10-06 13:27:02,462 - src.data.wazuh_labeling_strategy - INFO - 处理进度: 10000/91133
+2025-10-06 13:27:03,240 - src.data.wazuh_labeling_strategy - INFO - 处理进度: 20000/91133
+2025-10-06 13:27:04,028 - src.data.wazuh_labeling_strategy - INFO - 处理进度: 30000/91133
+2025-10-06 13:27:04,829 - src.data.wazuh_labeling_strategy - INFO - 处理进度: 40000/91133
+2025-10-06 13:27:05,960 - src.data.wazuh_labeling_strategy - INFO - 处理进度: 50000/91133
+2025-10-06 13:27:06,743 - src.data.wazuh_labeling_strategy - INFO - 处理进度: 60000/91133
+2025-10-06 13:27:07,563 - src.data.wazuh_labeling_strategy - INFO - 处理进度: 70000/91133
+2025-10-06 13:27:08,347 - src.data.wazuh_labeling_strategy - INFO - 处理进度: 80000/91133
+2025-10-06 13:27:09,035 - src.data.wazuh_labeling_strategy - INFO - 处理进度: 90000/91133
+2025-10-06 13:27:09,125 - src.data.wazuh_labeling_strategy - INFO - 标注完成，统计结果:
+2025-10-06 13:27:09,125 - src.data.wazuh_labeling_strategy - INFO - 恶意分数分布:
+2025-10-06 13:27:09,129 - src.data.wazuh_labeling_strategy - INFO -   0.0-0.2: 69019
+2025-10-06 13:27:09,132 - src.data.wazuh_labeling_strategy - INFO -   0.2-0.4: 21634
+2025-10-06 13:27:09,135 - src.data.wazuh_labeling_strategy - INFO -   0.4-0.6: 66
+2025-10-06 13:27:09,137 - src.data.wazuh_labeling_strategy - INFO -   0.6-0.8: 178
+2025-10-06 13:27:09,139 - src.data.wazuh_labeling_strategy - INFO -   0.8-1.0: 236
+2025-10-06 13:27:09,147 - src.data.wazuh_labeling_strategy - INFO - 攻击分类分布:
+2025-10-06 13:27:09,148 - src.data.wazuh_labeling_strategy - INFO -   Normal_Activity: 68750
+2025-10-06 13:27:09,148 - src.data.wazuh_labeling_strategy - INFO -   Low_Risk_Attack: 21060
+2025-10-06 13:27:09,148 - src.data.wazuh_labeling_strategy - INFO -   Suspicious_Activity: 904
+2025-10-06 13:27:09,148 - src.data.wazuh_labeling_strategy - INFO -   High_Risk_Attack: 345
+2025-10-06 13:27:09,148 - src.data.wazuh_labeling_strategy - INFO -   Medium_Risk_Attack: 74
+2025-10-06 13:27:09,149 - src.data.wazuh_labeling_strategy - INFO - 正样本比例: 0.005 (480/91133)
+2025-10-06 13:27:09,150 - src.data.apt_data_processor - INFO - Wazuh智能标注完成
+2025-10-06 13:27:09,686 - src.data.apt_data_processor - INFO - 数据处理完成，最终数据形状: (91133, 125)
+2025-10-06 13:27:09,686 - __main__ - INFO - 开始数据增强...
+2025-10-06 13:27:09,757 - src.data.data_augmentation - INFO - 开始数据增强，目标正样本比例: 0.2
+2025-10-06 13:27:09,757 - src.data.data_augmentation - INFO - 当前正样本比例: 0.005
+2025-10-06 13:27:16,308 - src.data.data_augmentation - INFO - 基于规则等级增强: 原始91133条 -> 增强后196778条
+2025-10-06 13:27:33,139 - src.data.data_augmentation - INFO - 基于MITRE模式增强: 原始196778条 -> 增强后551184条
+2025-10-06 13:27:56,158 - src.data.data_augmentation - INFO - 基于关键词增强: 原始551184条 -> 增强后1029358条
+2025-10-06 13:27:56,960 - src.data.data_augmentation - INFO - 基于文件路径增强: 原始1029358条 -> 增强后1035318条
+2025-10-06 13:28:18,832 - src.data.data_augmentation - INFO - 增强后正样本比例: 0.009
+2025-10-06 13:28:18,843 - __main__ - INFO - 数据增强完成，数据量: 1035318
+2025-10-06 13:28:30,974 - __main__ - INFO - APT数据统计: {'total_records': 1035318, 'columns': ['_index', '_id', '_version', '_score', '_source.agent.name', '_source.agent.id', '_source.manager.name', '_source.data.file', '_source.data.title', '_source.rule.firedtimes', '_source.rule.mail', '_source.rule.level', '_source.rule.pci_dss', '_source.rule.description', '_source.rule.groups', '_source.rule.id', '_source.rule.gdpr', '_source.decoder.name', '_source.full_log', '_source.input.type', '_source.@timestamp', '_source.location', '_source.id', '_source.timestamp', '_source.data.sca.scan_id', '_source.data.sca.check.result', '_source.data.sca.check.remediation', '_source.data.sca.check.references', '_source.data.sca.check.compliance.pci_dss_v4.0', '_source.data.sca.check.compliance.cis_csc_v8', '_source.data.sca.check.compliance.soc_2', '_source.data.sca.check.compliance.pci_dss_v3.2.1', '_source.data.sca.check.compliance.hipaa', '_source.data.sca.check.compliance.nist_sp_800-53', '_source.data.sca.check.compliance.mitre_tactics', '_source.data.sca.check.compliance.mitre_techniques', '_source.data.sca.check.compliance.cis', '_source.data.sca.check.compliance.cmmc_v2.0', '_source.data.sca.check.compliance.cis_csc_v7', '_source.data.sca.check.compliance.mitre_mitigations', '_source.data.sca.check.description', '_source.data.sca.check.id', '_source.data.sca.check.title', '_source.data.sca.check.rationale', '_source.data.sca.check.command', '_source.data.sca.type', '_source.data.sca.policy', '_source.rule.cis_csc_v8', '_source.rule.tsc', '_source.rule.hipaa', '_source.rule.nist_sp_800-53', '_source.rule.mitre_tactics', '_source.rule.mitre_techniques', '_source.rule.cis', '_source.rule.nist_800_53', '_source.rule.mitre_mitigations', '_source.rule.soc_2', '_source.rule.cis_csc_v7', '_source.data.sca.check.file', '_source.data.sca.check.reason', '_source.data.sca.check.compliance.pci_dss_4.0', '_source.data.sca.check.compliance.pci_dss_3.2.1', '_source.data.sca.check.directory', '_source.data.dpkg_status', '_source.data.package', '_source.data.arch', '_source.data.version', '_source.rule.gpg13', '_source.predecoder.hostname', '_source.predecoder.program_name', '_source.predecoder.timestamp', '_source.agent.ip', '_source.data.uid', '_source.data.dstuser', '_source.rule.mitre.technique', '_source.rule.mitre.id', '_source.rule.mitre.tactic', '_source.decoder.parent', '_source.data.srcuser', '_source.data.tty', '_source.data.pwd', '_source.data.command', '_source.decoder.ftscomment', '_source.data.srcip', '_source.data.srcport', '_source.data.sca.score', '_source.data.sca.total_checks', '_source.data.sca.file', '_source.data.sca.policy_id', '_source.data.sca.invalid', '_source.data.sca.description', '_source.data.sca.passed', '_source.data.sca.failed', '_source.data.extra_data', '_source.data.sca.check.previous_result', '_source.syscheck.size_before', '_source.syscheck.uname_after', '_source.syscheck.mtime_after', '_source.syscheck.size_after', '_source.syscheck.gid_after', '_source.syscheck.md5_before', '_source.syscheck.sha256_before', '_source.syscheck.mtime_before', '_source.syscheck.mode', '_source.syscheck.path', '_source.syscheck.sha1_after', '_source.syscheck.changed_attributes', '_source.syscheck.gname_after', '_source.syscheck.uid_after', '_source.syscheck.perm_after', '_source.syscheck.event', '_source.syscheck.md5_after', '_source.syscheck.sha1_before', '_source.syscheck.sha256_after', '_source.syscheck.inode_after', '_source.syscheck.inode_before', '_source.data.status', '_source.data.protocol', '_source.data.id', '_source.data.url', '_source.data.gid', '_source.data.shell', '_source.data.home', 'malicious_score', 'attack_classification'], 'memory_usage': 7965977352, 'missing_values': {'_index': 0, '_id': 0, '_version': 0, '_score': 0, '_source.agent.name': 0, '_source.agent.id': 0, '_source.manager.name': 0, '_source.data.file': 0, '_source.data.title': 0, '_source.rule.firedtimes': 0, '_source.rule.mail': 0, '_source.rule.level': 0, '_source.rule.pci_dss': 0, '_source.rule.description': 0, '_source.rule.groups': 0, '_source.rule.id': 0, '_source.rule.gdpr': 0, '_source.decoder.name': 0, '_source.full_log': 0, '_source.input.type': 0, '_source.@timestamp': 0, '_source.location': 0, '_source.id': 0, '_source.timestamp': 62, '_source.data.sca.scan_id': 0, '_source.data.sca.check.result': 0, '_source.data.sca.check.remediation': 0, '_source.data.sca.check.references': 0, '_source.data.sca.check.compliance.pci_dss_v4.0': 0, '_source.data.sca.check.compliance.cis_csc_v8': 0, '_source.data.sca.check.compliance.soc_2': 0, '_source.data.sca.check.compliance.pci_dss_v3.2.1': 0, '_source.data.sca.check.compliance.hipaa': 0, '_source.data.sca.check.compliance.nist_sp_800-53': 0, '_source.data.sca.check.compliance.mitre_tactics': 42201, '_source.data.sca.check.compliance.mitre_techniques': 42201, '_source.data.sca.check.compliance.cis': 42201, '_source.data.sca.check.compliance.cmmc_v2.0': 42201, '_source.data.sca.check.compliance.cis_csc_v7': 42201, '_source.data.sca.check.compliance.mitre_mitigations': 42201, '_source.data.sca.check.description': 42201, '_source.data.sca.check.id': 42201, '_source.data.sca.check.title': 58249, '_source.data.sca.check.rationale': 58249, '_source.data.sca.check.command': 58249, '_source.data.sca.type': 58249, '_source.data.sca.policy': 58249, '_source.rule.cis_csc_v8': 58249, '_source.rule.tsc': 58249, '_source.rule.hipaa': 58249, '_source.rule.nist_sp_800-53': 58249, '_source.rule.mitre_tactics': 58249, '_source.rule.mitre_techniques': 58249, '_source.rule.cis': 242060, '_source.rule.nist_800_53': 242060, '_source.rule.mitre_mitigations': 242060, '_source.rule.soc_2': 242060, '_source.rule.cis_csc_v7': 242060, '_source.data.sca.check.file': 242060, '_source.data.sca.check.reason': 242060, '_source.data.sca.check.compliance.pci_dss_4.0': 242060, '_source.data.sca.check.compliance.pci_dss_3.2.1': 242060, '_source.data.sca.check.directory': 242060, '_source.data.dpkg_status': 242060, '_source.data.package': 242060, '_source.data.arch': 242060, '_source.data.version': 242060, '_source.rule.gpg13': 242069, '_source.predecoder.hostname': 242069, '_source.predecoder.program_name': 242069, '_source.predecoder.timestamp': 242069, '_source.agent.ip': 242069, '_source.data.uid': 242069, '_source.data.dstuser': 242518, '_source.rule.mitre.technique': 242518, '_source.rule.mitre.id': 242518, '_source.rule.mitre.tactic': 242518, '_source.decoder.parent': 242518, '_source.data.srcuser': 242518, '_source.data.tty': 242518, '_source.data.pwd': 242518, '_source.data.command': 301444, '_source.decoder.ftscomment': 481220, '_source.data.srcip': 481220, '_source.data.srcport': 481220, '_source.data.sca.score': 481220, '_source.data.sca.total_checks': 481220, '_source.data.sca.file': 481220, '_source.data.sca.policy_id': 481220, '_source.data.sca.invalid': 481220, '_source.data.sca.description': 481220, '_source.data.sca.passed': 481220, '_source.data.sca.failed': 481220, '_source.data.extra_data': 481220, '_source.data.sca.check.previous_result': 481256, '_source.syscheck.size_before': 481256, '_source.syscheck.uname_after': 481256, '_source.syscheck.mtime_after': 685947, '_source.syscheck.size_after': 739386, '_source.syscheck.gid_after': 739386, '_source.syscheck.md5_before': 739386, '_source.syscheck.sha256_before': 739386, '_source.syscheck.mtime_before': 739386, '_source.syscheck.mode': 739386, '_source.syscheck.path': 930668, '_source.syscheck.sha1_after': 930668, '_source.syscheck.changed_attributes': 930668, '_source.syscheck.gname_after': 979479, '_source.syscheck.uid_after': 979479, '_source.syscheck.perm_after': 1020015, '_source.syscheck.event': 1020015, '_source.syscheck.md5_after': 1020015, '_source.syscheck.sha1_before': 1020015, '_source.syscheck.sha256_after': 1020015, '_source.syscheck.inode_after': 1020015, '_source.syscheck.inode_before': 1020015, '_source.data.status': 1020015, '_source.data.protocol': 1020015, '_source.data.id': 1020015, '_source.data.url': 1020015, '_source.data.gid': 1020015, '_source.data.shell': 1020015, '_source.data.home': 1020015, 'malicious_score': 0, 'attack_classification': 0}, 'dtypes': {'_index': dtype('O'), '_id': dtype('O'), '_version': dtype('O'), '_score': dtype('O'), '_source.agent.name': dtype('O'), '_source.agent.id': dtype('O'), '_source.manager.name': dtype('O'), '_source.data.file': dtype('O'), '_source.data.title': dtype('O'), '_source.rule.firedtimes': dtype('O'), '_source.rule.mail': dtype('O'), '_source.rule.level': dtype('O'), '_source.rule.pci_dss': dtype('O'), '_source.rule.description': dtype('O'), '_source.rule.groups': dtype('O'), '_source.rule.id': dtype('O'), '_source.rule.gdpr': dtype('O'), '_source.decoder.name': dtype('O'), '_source.full_log': dtype('O'), '_source.input.type': dtype('O'), '_source.@timestamp': dtype('O'), '_source.location': dtype('O'), '_source.id': dtype('O'), '_source.timestamp': dtype('O'), '_source.data.sca.scan_id': dtype('O'), '_source.data.sca.check.result': dtype('O'), '_source.data.sca.check.remediation': dtype('O'), '_source.data.sca.check.references': dtype('O'), '_source.data.sca.check.compliance.pci_dss_v4.0': dtype('O'), '_source.data.sca.check.compliance.cis_csc_v8': dtype('O'), '_source.data.sca.check.compliance.soc_2': dtype('O'), '_source.data.sca.check.compliance.pci_dss_v3.2.1': dtype('O'), '_source.data.sca.check.compliance.hipaa': dtype('O'), '_source.data.sca.check.compliance.nist_sp_800-53': dtype('O'), '_source.data.sca.check.compliance.mitre_tactics': dtype('O'), '_source.data.sca.check.compliance.mitre_techniques': dtype('O'), '_source.data.sca.check.compliance.cis': dtype('O'), '_source.data.sca.check.compliance.cmmc_v2.0': dtype('O'), '_source.data.sca.check.compliance.cis_csc_v7': dtype('O'), '_source.data.sca.check.compliance.mitre_mitigations': dtype('O'), '_source.data.sca.check.description': dtype('O'), '_source.data.sca.check.id': dtype('O'), '_source.data.sca.check.title': dtype('O'), '_source.data.sca.check.rationale': dtype('O'), '_source.data.sca.check.command': dtype('O'), '_source.data.sca.type': dtype('O'), '_source.data.sca.policy': dtype('O'), '_source.rule.cis_csc_v8': dtype('O'), '_source.rule.tsc': dtype('O'), '_source.rule.hipaa': dtype('O'), '_source.rule.nist_sp_800-53': dtype('O'), '_source.rule.mitre_tactics': dtype('O'), '_source.rule.mitre_techniques': dtype('O'), '_source.rule.cis': dtype('O'), '_source.rule.nist_800_53': dtype('O'), '_source.rule.mitre_mitigations': dtype('O'), '_source.rule.soc_2': dtype('O'), '_source.rule.cis_csc_v7': dtype('O'), '_source.data.sca.check.file': dtype('O'), '_source.data.sca.check.reason': dtype('O'), '_source.data.sca.check.compliance.pci_dss_4.0': dtype('O'), '_source.data.sca.check.compliance.pci_dss_3.2.1': dtype('O'), '_source.data.sca.check.directory': dtype('O'), '_source.data.dpkg_status': dtype('O'), '_source.data.package': dtype('O'), '_source.data.arch': dtype('O'), '_source.data.version': dtype('O'), '_source.rule.gpg13': dtype('O'), '_source.predecoder.hostname': dtype('O'), '_source.predecoder.program_name': dtype('O'), '_source.predecoder.timestamp': dtype('O'), '_source.agent.ip': dtype('O'), '_source.data.uid': dtype('O'), '_source.data.dstuser': dtype('O'), '_source.rule.mitre.technique': dtype('O'), '_source.rule.mitre.id': dtype('O'), '_source.rule.mitre.tactic': dtype('O'), '_source.decoder.parent': dtype('O'), '_source.data.srcuser': dtype('O'), '_source.data.tty': dtype('O'), '_source.data.pwd': dtype('O'), '_source.data.command': dtype('O'), '_source.decoder.ftscomment': dtype('O'), '_source.data.srcip': dtype('O'), '_source.data.srcport': dtype('O'), '_source.data.sca.score': dtype('O'), '_source.data.sca.total_checks': dtype('O'), '_source.data.sca.file': dtype('O'), '_source.data.sca.policy_id': dtype('O'), '_source.data.sca.invalid': dtype('O'), '_source.data.sca.description': dtype('O'), '_source.data.sca.passed': dtype('O'), '_source.data.sca.failed': dtype('O'), '_source.data.extra_data': dtype('O'), '_source.data.sca.check.previous_result': dtype('O'), '_source.syscheck.size_before': dtype('O'), '_source.syscheck.uname_after': dtype('O'), '_source.syscheck.mtime_after': dtype('O'), '_source.syscheck.size_after': dtype('O'), '_source.syscheck.gid_after': dtype('O'), '_source.syscheck.md5_before': dtype('O'), '_source.syscheck.sha256_before': dtype('O'), '_source.syscheck.mtime_before': dtype('O'), '_source.syscheck.mode': dtype('O'), '_source.syscheck.path': dtype('O'), '_source.syscheck.sha1_after': dtype('O'), '_source.syscheck.changed_attributes': dtype('O'), '_source.syscheck.gname_after': dtype('O'), '_source.syscheck.uid_after': dtype('O'), '_source.syscheck.perm_after': dtype('O'), '_source.syscheck.event': dtype('O'), '_source.syscheck.md5_after': dtype('O'), '_source.syscheck.sha1_before': dtype('O'), '_source.syscheck.sha256_after': dtype('O'), '_source.syscheck.inode_after': dtype('O'), '_source.syscheck.inode_before': dtype('O'), '_source.data.status': dtype('O'), '_source.data.protocol': dtype('O'), '_source.data.id': dtype('O'), '_source.data.url': dtype('O'), '_source.data.gid': dtype('O'), '_source.data.shell': dtype('O'), '_source.data.home': dtype('O'), 'malicious_score': dtype('float64'), 'attack_classification': dtype('O')}, 'numeric_stats': {'malicious_score': {'count': 1035318.0, 'mean': 0.05647911656128842, 'std': 0.13796814541920177, 'min': 0.0, '25%': 0.0, '50%': 0.0, '75%': 0.0, 'max': 0.996}}}
+2025-10-06 13:28:30,975 - __main__ - INFO - ==================================================
+2025-10-06 13:28:30,975 - __main__ - INFO - 步骤2: 构建异构图
+2025-10-06 13:28:30,975 - __main__ - INFO - ==================================================
+2025-10-06 13:28:30,975 - src.data.pyg_loader - INFO - 构建PyG异构图
+2025-10-06 13:28:30,975 - src.data.pyg_loader - INFO - 数据量过大(1035318行)，采样20000行进行处理
+2025-10-06 13:28:31,083 - src.data.pyg_loader - INFO - 处理批次 1/40 (行 0-499)
+2025-10-06 13:28:31,325 - src.data.pyg_loader - INFO - 处理批次 2/40 (行 500-999)
+2025-10-06 13:28:31,569 - src.data.pyg_loader - INFO - 处理批次 3/40 (行 1000-1499)
+2025-10-06 13:28:31,822 - src.data.pyg_loader - INFO - 处理批次 4/40 (行 1500-1999)
+2025-10-06 13:28:32,075 - src.data.pyg_loader - INFO - 处理批次 5/40 (行 2000-2499)
+2025-10-06 13:28:32,314 - src.data.pyg_loader - INFO - 处理批次 6/40 (行 2500-2999)
+2025-10-06 13:28:32,554 - src.data.pyg_loader - INFO - 处理批次 7/40 (行 3000-3499)
+2025-10-06 13:28:32,793 - src.data.pyg_loader - INFO - 处理批次 8/40 (行 3500-3999)
+2025-10-06 13:28:33,034 - src.data.pyg_loader - INFO - 处理批次 9/40 (行 4000-4499)
+2025-10-06 13:28:33,281 - src.data.pyg_loader - INFO - 处理批次 10/40 (行 4500-4999)
+2025-10-06 13:28:33,528 - src.data.pyg_loader - INFO - 处理批次 11/40 (行 5000-5499)
+2025-10-06 13:28:33,770 - src.data.pyg_loader - INFO - 处理批次 12/40 (行 5500-5999)
+2025-10-06 13:28:34,011 - src.data.pyg_loader - INFO - 处理批次 13/40 (行 6000-6499)
+2025-10-06 13:28:34,297 - src.data.pyg_loader - INFO - 处理批次 14/40 (行 6500-6999)
+2025-10-06 13:28:34,538 - src.data.pyg_loader - INFO - 处理批次 15/40 (行 7000-7499)
+2025-10-06 13:28:34,787 - src.data.pyg_loader - INFO - 处理批次 16/40 (行 7500-7999)
+2025-10-06 13:28:35,032 - src.data.pyg_loader - INFO - 处理批次 17/40 (行 8000-8499)
+2025-10-06 13:28:35,273 - src.data.pyg_loader - INFO - 处理批次 18/40 (行 8500-8999)
+2025-10-06 13:28:35,519 - src.data.pyg_loader - INFO - 处理批次 19/40 (行 9000-9499)
+2025-10-06 13:28:35,762 - src.data.pyg_loader - INFO - 处理批次 20/40 (行 9500-9999)
+2025-10-06 13:28:36,013 - src.data.pyg_loader - INFO - 处理批次 21/40 (行 10000-10499)
+2025-10-06 13:28:36,255 - src.data.pyg_loader - INFO - 处理批次 22/40 (行 10500-10999)
+2025-10-06 13:28:36,496 - src.data.pyg_loader - INFO - 处理批次 23/40 (行 11000-11499)
+2025-10-06 13:28:36,734 - src.data.pyg_loader - INFO - 处理批次 24/40 (行 11500-11999)
+2025-10-06 13:28:36,979 - src.data.pyg_loader - INFO - 处理批次 25/40 (行 12000-12499)
+2025-10-06 13:28:37,220 - src.data.pyg_loader - INFO - 处理批次 26/40 (行 12500-12999)
+2025-10-06 13:28:37,461 - src.data.pyg_loader - INFO - 处理批次 27/40 (行 13000-13499)
+2025-10-06 13:28:37,697 - src.data.pyg_loader - INFO - 处理批次 28/40 (行 13500-13999)
+2025-10-06 13:28:37,940 - src.data.pyg_loader - INFO - 处理批次 29/40 (行 14000-14499)
+2025-10-06 13:28:38,185 - src.data.pyg_loader - INFO - 处理批次 30/40 (行 14500-14999)
+2025-10-06 13:28:38,424 - src.data.pyg_loader - INFO - 处理批次 31/40 (行 15000-15499)
+2025-10-06 13:28:38,663 - src.data.pyg_loader - INFO - 处理批次 32/40 (行 15500-15999)
+2025-10-06 13:28:38,908 - src.data.pyg_loader - INFO - 处理批次 33/40 (行 16000-16499)
+2025-10-06 13:28:39,141 - src.data.pyg_loader - INFO - 处理批次 34/40 (行 16500-16999)
+2025-10-06 13:28:39,385 - src.data.pyg_loader - INFO - 处理批次 35/40 (行 17000-17499)
+2025-10-06 13:28:39,621 - src.data.pyg_loader - INFO - 处理批次 36/40 (行 17500-17999)
+2025-10-06 13:28:39,863 - src.data.pyg_loader - INFO - 处理批次 37/40 (行 18000-18499)
+2025-10-06 13:28:40,105 - src.data.pyg_loader - INFO - 处理批次 38/40 (行 18500-18999)
+2025-10-06 13:28:40,351 - src.data.pyg_loader - INFO - 处理批次 39/40 (行 19000-19499)
+2025-10-06 13:28:40,591 - src.data.pyg_loader - INFO - 处理批次 40/40 (行 19500-19999)
+2025-10-06 13:28:45,173 - src.data.pyg_loader - INFO - 为节点类型 alert 添加了 20000 个节点的特征，特征维度: 16
+2025-10-06 13:28:45,173 - src.data.pyg_loader - INFO - 为节点类型 rule 添加了 96 个节点的特征，特征维度: 16
+2025-10-06 13:28:45,173 - src.data.pyg_loader - INFO - 为节点类型 file 添加了 379 个节点的特征，特征维度: 24
+2025-10-06 13:28:45,173 - src.data.pyg_loader - INFO - 为节点类型 command 添加了 1192 个节点的特征，特征维度: 16
+2025-10-06 13:28:45,174 - src.data.pyg_loader - INFO - 为节点类型 user 添加了 381 个节点的特征，特征维度: 12
+2025-10-06 13:28:45,174 - src.data.pyg_loader - INFO - 为节点类型 process 添加了 59 个节点的特征，特征维度: 20
+2025-10-06 13:28:45,174 - src.data.pyg_loader - INFO - 为节点类型 host 添加了 355 个节点的特征，特征维度: 16
+2025-10-06 13:28:45,175 - src.data.pyg_loader - INFO - 为节点类型 agent 添加了 11 个节点的特征，特征维度: 16
+2025-10-06 13:28:45,175 - src.data.pyg_loader - INFO - 为节点类型 mitre_tactic 添加了 10 个节点的特征，特征维度: 16
+2025-10-06 13:28:45,175 - src.data.pyg_loader - INFO - 为节点类型 mitre_technique 添加了 60 个节点的特征，特征维度: 16
+2025-10-06 13:28:45,175 - src.data.pyg_loader - INFO - 为节点类型 timestamp 添加了 80 个节点的特征，特征维度: 16
+2025-10-06 13:28:45,175 - src.data.pyg_loader - INFO - 为节点类型 ip 添加了 67 个节点的特征，特征维度: 8
+2025-10-06 13:28:45,176 - src.data.pyg_loader - INFO - 为节点类型 domain 添加了 28 个节点的特征，特征维度: 12
+2025-10-06 13:28:45,176 - src.data.pyg_loader - INFO - 为节点类型 port 添加了 15 个节点的特征，特征维度: 8
+2025-10-06 13:28:45,176 - src.data.pyg_loader - WARNING - 数据中没有processed_timestamp列
+2025-10-06 13:28:45,176 - src.data.pyg_loader - INFO - PyG图构建完成:
+2025-10-06 13:28:45,176 - src.data.pyg_loader - INFO -   节点类型: ['alert', 'rule', 'file', 'command', 'user', 'process', 'host', 'agent', 'mitre_tactic', 'mitre_technique', 'timestamp', 'ip', 'domain', 'port']
+2025-10-06 13:28:45,176 - src.data.pyg_loader - INFO -   边类型: [('alert', 'triggered_by', 'rule'), ('alert', 'involves', 'file'), ('alert', 'executed', 'command'), ('alert', 'by_user', 'user'), ('alert', 'involves_process', 'process'), ('alert', 'at_time', 'timestamp'), ('alert', 'detected_on', 'host'), ('alert', 'reported_by', 'agent'), ('alert', 'connects_to', 'ip'), ('alert', 'connects_to', 'domain'), ('alert', 'uses_port', 'port')]
+2025-10-06 13:28:45,183 - __main__ - INFO - 图统计信息:
+2025-10-06 13:28:45,183 - __main__ - INFO -   节点类型: ['alert', 'rule', 'file', 'command', 'user', 'process', 'host', 'agent', 'mitre_tactic', 'mitre_technique', 'timestamp', 'ip', 'domain', 'port']
+2025-10-06 13:28:45,183 - __main__ - INFO -   边类型: [('alert', 'triggered_by', 'rule'), ('alert', 'involves', 'file'), ('alert', 'executed', 'command'), ('alert', 'by_user', 'user'), ('alert', 'involves_process', 'process'), ('alert', 'at_time', 'timestamp'), ('alert', 'detected_on', 'host'), ('alert', 'reported_by', 'agent'), ('alert', 'connects_to', 'ip'), ('alert', 'connects_to', 'domain'), ('alert', 'uses_port', 'port')]
+2025-10-06 13:28:45,183 - __main__ - INFO -   总节点数: 22733
+2025-10-06 13:28:45,183 - __main__ - INFO -   总边数: 93516
+2025-10-06 13:28:45,183 - src.data.pyg_loader - INFO - 创建时序快照
+2025-10-06 13:28:45,183 - src.data.pyg_loader - WARNING - 没有时间戳信息，返回原始数据作为单个快照
+2025-10-06 13:28:45,183 - __main__ - INFO - 创建了 1 个时序快照
+2025-10-06 13:28:45,183 - __main__ - INFO - ==================================================
+2025-10-06 13:28:45,183 - __main__ - INFO - 步骤3: 构建T-HGNN模型
+2025-10-06 13:28:45,184 - __main__ - INFO - ==================================================
+2025-10-06 13:28:45,397 - src.core.models.hgnn_encoder - INFO - 异质图编码器初始化完成，类型: gat
+2025-10-06 13:28:45,397 - src.core.models.hgnn_encoder - INFO - 编码器层数: 3
+2025-10-06 13:28:45,397 - src.core.models.hgnn_encoder - INFO - 隐藏维度: 128
+2025-10-06 13:28:45,397 - src.core.models.hgnn_encoder - INFO - 注意力头数: 8
+2025-10-06 13:28:45,399 - src.core.models.temporal_encoder - INFO - 随机位置编码初始化完成，维度: 16, 最大长度: 5000
+2025-10-06 13:28:45,399 - src.core.models.temporal_encoder - INFO - 时序注意力初始化完成，维度: 16, 头数: 8
+2025-10-06 13:28:45,400 - src.core.models.temporal_encoder - INFO - 时序卷积层初始化完成，输入通道: 16, 输出通道: 16
+2025-10-06 13:28:45,401 - src.core.models.temporal_encoder - INFO - 时序卷积层初始化完成，输入通道: 16, 输出通道: 16
+2025-10-06 13:28:45,401 - src.core.models.temporal_encoder - INFO - 时序编码模块初始化完成，时序维度: 16
+2025-10-06 13:28:45,411 - src.core.models.node_classifier - INFO - 节点分类器初始化完成，节点类型: ['alert', 'rule', 'file', 'command', 'user', 'process', 'host', 'agent', 'mitre_tactic', 'mitre_technique', 'timestamp', 'ip', 'domain', 'port']
+2025-10-06 13:28:45,411 - src.core.models.node_classifier - INFO - 分类数量: 2
+2025-10-06 13:28:45,411 - src.core.models.node_classifier - INFO - 输入维度: {'alert': 128, 'rule': 128, 'file': 128, 'command': 128, 'user': 128, 'process': 128, 'host': 128, 'agent': 128, 'mitre_tactic': 128, 'mitre_technique': 128, 'timestamp': 128, 'ip': 128, 'domain': 128, 'port': 128}
+2025-10-06 13:28:45,502 - src.core.models.t_hgnn - INFO - T-HGNN模型初始化完成
+2025-10-06 13:28:45,502 - src.core.models.t_hgnn - INFO - 节点类型: ['alert', 'rule', 'file', 'command', 'user', 'process', 'host', 'agent', 'mitre_tactic', 'mitre_technique', 'timestamp', 'ip', 'domain', 'port']
+2025-10-06 13:28:45,502 - src.core.models.t_hgnn - INFO - 边类型: [('alert', 'triggered_by', 'rule'), ('alert', 'involves', 'file'), ('alert', 'executed', 'command'), ('alert', 'by_user', 'user'), ('alert', 'involves_process', 'process'), ('alert', 'at_time', 'timestamp'), ('alert', 'detected_on', 'host'), ('alert', 'reported_by', 'agent'), ('rule', 'maps_to', 'mitre_tactic'), ('rule', 'uses', 'mitre_technique'), ('alert', 'exhibits', 'mitre_tactic'), ('alert', 'demonstrates', 'mitre_technique'), ('file', 'executed_by', 'command'), ('file', 'accessed_by', 'process'), ('file', 'owned_by', 'user'), ('file', 'located_on', 'host'), ('process', 'executed_by', 'user'), ('process', 'runs_on', 'host'), ('process', 'connects_to', 'ip'), ('process', 'uses_port', 'port'), ('alert', 'connects_to', 'ip'), ('alert', 'connects_to', 'domain'), ('alert', 'uses_port', 'port'), ('alert', 'affects_service', 'service'), ('host', 'has_ip', 'ip'), ('host', 'runs_service', 'service'), ('host', 'has_open_port', 'port'), ('ip', 'resolves_to', 'domain'), ('service', 'listens_on', 'port'), ('alert', 'follows', 'alert'), ('process', 'spawns', 'process')]
+2025-10-06 13:28:45,502 - src.core.models.t_hgnn - INFO - 隐藏维度: 128
+2025-10-06 13:28:45,502 - src.core.models.t_hgnn - INFO - 时序维度: 16
+2025-10-06 13:28:45,591 - __main__ - INFO - 模型信息: {'model_type': 'T-HGNN', 'node_types': ['alert', 'rule', 'file', 'command', 'user', 'process', 'host', 'agent', 'mitre_tactic', 'mitre_technique', 'timestamp', 'ip', 'domain', 'port'], 'edge_types': [('alert', 'triggered_by', 'rule'), ('alert', 'involves', 'file'), ('alert', 'executed', 'command'), ('alert', 'by_user', 'user'), ('alert', 'involves_process', 'process'), ('alert', 'at_time', 'timestamp'), ('alert', 'detected_on', 'host'), ('alert', 'reported_by', 'agent'), ('rule', 'maps_to', 'mitre_tactic'), ('rule', 'uses', 'mitre_technique'), ('alert', 'exhibits', 'mitre_tactic'), ('alert', 'demonstrates', 'mitre_technique'), ('file', 'executed_by', 'command'), ('file', 'accessed_by', 'process'), ('file', 'owned_by', 'user'), ('file', 'located_on', 'host'), ('process', 'executed_by', 'user'), ('process', 'runs_on', 'host'), ('process', 'connects_to', 'ip'), ('process', 'uses_port', 'port'), ('alert', 'connects_to', 'ip'), ('alert', 'connects_to', 'domain'), ('alert', 'uses_port', 'port'), ('alert', 'affects_service', 'service'), ('host', 'has_ip', 'ip'), ('host', 'runs_service', 'service'), ('host', 'has_open_port', 'port'), ('ip', 'resolves_to', 'domain'), ('service', 'listens_on', 'port'), ('alert', 'follows', 'alert'), ('process', 'spawns', 'process')], 'hidden_dim': 128, 'temporal_dim': 64, 'total_parameters': 34072566, 'trainable_parameters': 34072566, 'hgnn_encoder_params': 33066752, 'temporal_encoder_params': 85912, 'node_classifier_params': 608734}
+2025-10-06 13:28:45,591 - __main__ - INFO - ==================================================
+2025-10-06 13:28:45,592 - __main__ - INFO - 步骤4: 模型训练
+2025-10-06 13:28:45,592 - __main__ - INFO - ==================================================
+2025-10-06 13:28:45,593 - src.utils.label_generator - INFO - 开始生成真实标签...
+2025-10-06 13:28:46,458 - src.utils.label_generator - INFO - 标签分布统计:
+2025-10-06 13:28:46,458 - src.utils.label_generator - INFO -   alert: 正样本=2399, 负样本=17601, 正样本比例=0.120
+2025-10-06 13:28:46,458 - src.utils.label_generator - INFO -   rule: 正样本=111, 负样本=889, 正样本比例=0.111
+2025-10-06 13:28:46,458 - src.utils.label_generator - INFO -   file: 正样本=69, 负样本=310, 正样本比例=0.182
+2025-10-06 13:28:46,463 - src.utils.label_generator - INFO -   command: 正样本=155, 负样本=1037, 正样本比例=0.130
+2025-10-06 13:28:46,463 - src.utils.label_generator - INFO -   user: 正样本=24, 负样本=357, 正样本比例=0.063
+2025-10-06 13:28:46,463 - src.utils.label_generator - INFO -   process: 正样本=17, 负样本=42, 正样本比例=0.288
+2025-10-06 13:28:46,463 - src.utils.label_generator - INFO -   host: 正样本=162, 负样本=838, 正样本比例=0.162
+2025-10-06 13:28:46,463 - src.utils.label_generator - INFO -   agent: 正样本=137, 负样本=863, 正样本比例=0.137
+2025-10-06 13:28:46,463 - src.utils.label_generator - INFO -   mitre_tactic: 正样本=145, 负样本=855, 正样本比例=0.145
+2025-10-06 13:28:46,463 - src.utils.label_generator - INFO -   mitre_technique: 正样本=147, 负样本=853, 正样本比例=0.147
+2025-10-06 13:28:46,463 - src.utils.label_generator - INFO -   timestamp: 正样本=169, 负样本=831, 正样本比例=0.169
+2025-10-06 13:28:46,463 - src.utils.label_generator - INFO -   ip: 正样本=11, 负样本=56, 正样本比例=0.164
+2025-10-06 13:28:46,463 - src.utils.label_generator - INFO -   domain: 正样本=3, 负样本=25, 正样本比例=0.107
+2025-10-06 13:28:46,463 - src.utils.label_generator - INFO -   port: 正样本=148, 负样本=852, 正样本比例=0.148
+2025-10-06 13:28:46,463 - src.utils.label_generator - INFO -   总计: 正样本=3697, 负样本=25409, 正样本比例=0.127
+2025-10-06 13:28:46,463 - src.utils.label_generator - INFO - 开始生成真实标签...
+2025-10-06 13:28:47,332 - src.utils.label_generator - INFO - 标签分布统计:
+2025-10-06 13:28:47,332 - src.utils.label_generator - INFO -   alert: 正样本=2399, 负样本=17601, 正样本比例=0.120
+2025-10-06 13:28:47,332 - src.utils.label_generator - INFO -   rule: 正样本=111, 负样本=889, 正样本比例=0.111
+2025-10-06 13:28:47,332 - src.utils.label_generator - INFO -   file: 正样本=69, 负样本=310, 正样本比例=0.182
+2025-10-06 13:28:47,332 - src.utils.label_generator - INFO -   command: 正样本=155, 负样本=1037, 正样本比例=0.130
+2025-10-06 13:28:47,332 - src.utils.label_generator - INFO -   user: 正样本=24, 负样本=357, 正样本比例=0.063
+2025-10-06 13:28:47,332 - src.utils.label_generator - INFO -   process: 正样本=17, 负样本=42, 正样本比例=0.288
+2025-10-06 13:28:47,332 - src.utils.label_generator - INFO -   host: 正样本=162, 负样本=838, 正样本比例=0.162
+2025-10-06 13:28:47,332 - src.utils.label_generator - INFO -   agent: 正样本=137, 负样本=863, 正样本比例=0.137
+2025-10-06 13:28:47,332 - src.utils.label_generator - INFO -   mitre_tactic: 正样本=145, 负样本=855, 正样本比例=0.145
+2025-10-06 13:28:47,332 - src.utils.label_generator - INFO -   mitre_technique: 正样本=147, 负样本=853, 正样本比例=0.147
+2025-10-06 13:28:47,333 - src.utils.label_generator - INFO -   timestamp: 正样本=169, 负样本=831, 正样本比例=0.169
+2025-10-06 13:28:47,333 - src.utils.label_generator - INFO -   ip: 正样本=11, 负样本=56, 正样本比例=0.164
+2025-10-06 13:28:47,333 - src.utils.label_generator - INFO -   domain: 正样本=3, 负样本=25, 正样本比例=0.107
+2025-10-06 13:28:47,333 - src.utils.label_generator - INFO -   port: 正样本=148, 负样本=852, 正样本比例=0.148
+2025-10-06 13:28:47,333 - src.utils.label_generator - INFO -   总计: 正样本=3697, 负样本=25409, 正样本比例=0.127
+2025-10-06 13:28:47,333 - src.utils.label_generator - INFO - 开始Wazuh安全等级重采样...
+2025-10-06 13:28:47,333 - src.utils.label_generator - INFO - alert 重采样前: 正样本比例=0.120
+2025-10-06 13:28:47,367 - src.utils.label_generator - WARNING - alert Wazuh重采样失败: The target 'y' needs to have more than 1 class. Got 1 class instead，使用原始标签
+2025-10-06 13:28:47,367 - src.utils.label_generator - INFO - rule 重采样前: 正样本比例=0.111
+2025-10-06 13:28:47,372 - src.utils.label_generator - WARNING - rule Wazuh重采样失败: boolean index did not match indexed array along dimension 0; dimension is 96 but corresponding boolean dimension is 1000，使用原始标签
+2025-10-06 13:28:47,372 - src.utils.label_generator - INFO - file 重采样前: 正样本比例=0.182
+2025-10-06 13:28:47,372 - src.utils.label_generator - INFO - command 重采样前: 正样本比例=0.130
+2025-10-06 13:28:47,375 - src.utils.label_generator - WARNING - command Wazuh重采样失败: The target 'y' needs to have more than 1 class. Got 1 class instead，使用原始标签
+2025-10-06 13:28:47,375 - src.utils.label_generator - INFO - user 重采样前: 正样本比例=0.063
+2025-10-06 13:28:47,375 - src.utils.label_generator - WARNING - user Wazuh重采样失败: The target 'y' needs to have more than 1 class. Got 1 class instead，使用原始标签
+2025-10-06 13:28:47,387 - src.utils.label_generator - INFO - process 重采样前: 正样本比例=0.288
+2025-10-06 13:28:47,387 - src.utils.label_generator - INFO - host 重采样前: 正样本比例=0.162
+2025-10-06 13:28:47,393 - src.utils.label_generator - WARNING - host Wazuh重采样失败: boolean index did not match indexed array along dimension 0; dimension is 355 but corresponding boolean dimension is 1000，使用原始标签
+2025-10-06 13:28:47,393 - src.utils.label_generator - INFO - agent 重采样前: 正样本比例=0.137
+2025-10-06 13:28:47,397 - src.utils.label_generator - WARNING - agent Wazuh重采样失败: boolean index did not match indexed array along dimension 0; dimension is 11 but corresponding boolean dimension is 1000，使用原始标签
+2025-10-06 13:28:47,398 - src.utils.label_generator - INFO - mitre_tactic 重采样前: 正样本比例=0.145
+2025-10-06 13:28:47,400 - src.utils.label_generator - WARNING - mitre_tactic Wazuh重采样失败: boolean index did not match indexed array along dimension 0; dimension is 10 but corresponding boolean dimension is 1000，使用原始标签
+2025-10-06 13:28:47,400 - src.utils.label_generator - INFO - mitre_technique 重采样前: 正样本比例=0.147
+2025-10-06 13:28:47,405 - src.utils.label_generator - WARNING - mitre_technique Wazuh重采样失败: boolean index did not match indexed array along dimension 0; dimension is 60 but corresponding boolean dimension is 1000，使用原始标签
+2025-10-06 13:28:47,406 - src.utils.label_generator - INFO - timestamp 重采样前: 正样本比例=0.169
+2025-10-06 13:28:47,411 - src.utils.label_generator - WARNING - timestamp Wazuh重采样失败: boolean index did not match indexed array along dimension 0; dimension is 80 but corresponding boolean dimension is 1000，使用原始标签
+2025-10-06 13:28:47,411 - src.utils.label_generator - INFO - ip 重采样前: 正样本比例=0.164
+2025-10-06 13:28:47,416 - src.utils.label_generator - WARNING - ip Wazuh重采样失败: The target 'y' needs to have more than 1 class. Got 1 class instead，使用原始标签
+2025-10-06 13:28:47,416 - src.utils.label_generator - INFO - domain 重采样前: 正样本比例=0.107
+2025-10-06 13:28:47,420 - src.utils.label_generator - WARNING - domain Wazuh重采样失败: The target 'y' needs to have more than 1 class. Got 1 class instead，使用原始标签
+2025-10-06 13:28:47,420 - src.utils.label_generator - INFO - port 重采样前: 正样本比例=0.148
+2025-10-06 13:28:47,425 - src.utils.label_generator - WARNING - port Wazuh重采样失败: boolean index did not match indexed array along dimension 0; dimension is 15 but corresponding boolean dimension is 1000，使用原始标签
+2025-10-06 13:28:47,425 - src.utils.label_generator - INFO - 计算类别权重...
+2025-10-06 13:28:47,427 - src.utils.label_generator - INFO - alert 类别权重: [0.56814954 4.1684035 ]
+2025-10-06 13:28:47,427 - src.utils.label_generator - INFO - rule 类别权重: [0.5624297 4.5045045]
+2025-10-06 13:28:47,428 - src.utils.label_generator - INFO - file 类别权重: [0.61129032 2.74637681]
+2025-10-06 13:28:47,428 - src.utils.label_generator - INFO - command 类别权重: [0.57473481 3.84516129]
+2025-10-06 13:28:47,428 - src.utils.label_generator - INFO - user 类别权重: [0.53361345 7.9375    ]
+2025-10-06 13:28:47,428 - src.utils.label_generator - INFO - process 类别权重: [0.70238095 1.73529412]
+2025-10-06 13:28:47,429 - src.utils.label_generator - INFO - host 类别权重: [0.59665871 3.08641975]
+2025-10-06 13:28:47,429 - src.utils.label_generator - INFO - agent 类别权重: [0.57937428 3.64963504]
+2025-10-06 13:28:47,429 - src.utils.label_generator - INFO - mitre_tactic 类别权重: [0.58479532 3.44827586]
+2025-10-06 13:28:47,430 - src.utils.label_generator - INFO - mitre_technique 类别权重: [0.58616647 3.40136054]
+2025-10-06 13:28:47,430 - src.utils.label_generator - INFO - timestamp 类别权重: [0.60168472 2.95857988]
+2025-10-06 13:28:47,430 - src.utils.label_generator - INFO - ip 类别权重: [0.59821429 3.04545455]
+2025-10-06 13:28:47,431 - src.utils.label_generator - INFO - domain 类别权重: [0.56       4.66666667]
+2025-10-06 13:28:47,431 - src.utils.label_generator - INFO - port 类别权重: [0.58685446 3.37837838]
+2025-10-06 13:28:47,432 - src.core.training.trainer - INFO - 损失函数初始化完成，支持 14 种节点类型
+2025-10-06 13:28:47,432 - src.core.training.trainer - INFO - 开始模型训练
+2025-10-06 13:28:47,433 - src.core.training.trainer - INFO - 优化器设置完成，学习率: 0.001, 调度器: CosineAnnealingLR
+2025-10-06 13:28:48,012 - __main__ - ERROR - 系统运行出错: Expected all tensors to be on the same device, but found at least two devices, cuda:0 and cpu! (when checking argument for argument weight in method wrapper_CUDA_nll_loss_forward)

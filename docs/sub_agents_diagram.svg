@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720">
+  <defs>
+    <style>
+      .title { font: 700 24px 'Segoe UI', Arial, sans-serif; fill: #111827; }
+      .subtitle { font: 600 14px 'Segoe UI', Arial, sans-serif; fill: #374151; }
+      .center-title { font: 700 16px 'Segoe UI', Arial, sans-serif; fill: #111827; }
+      .box-title { font: 700 14px 'Segoe UI', Arial, sans-serif; fill: #111827; }
+      .box-text { font: 12px 'Segoe UI', Arial, sans-serif; fill: #111827; }
+      .label { font: 11px 'Segoe UI', Arial, sans-serif; fill: #374151; }
+      .legend { font: 12px 'Segoe UI', Arial, sans-serif; fill: #374151; }
+      .center { fill: #f3f4f6; stroke: #9ca3af; stroke-width: 1.4; rx: 10; }
+      .lane { fill: #f9fafb; stroke: #e5e7eb; stroke-width: 1.2; rx: 12; }
+      .box { fill: #ffffff; stroke: #9ca3af; stroke-width: 1.2; rx: 10; }
+      .wealth { fill: #ecfdf5; stroke: #10b981; }
+      .credit { fill: #eff6ff; stroke: #3b82f6; }
+      .fin_tax { fill: #fffbeb; stroke: #f59e0b; }
+      .edu_cs { fill: #f5f3ff; stroke: #8b5cf6; }
+      .base { fill: #eef2ff; stroke: #c7d2fe; }
+      .link { stroke: #6b7280; stroke-width: 1.6; fill: none; }
+      .arrow { marker-end: url(#arrowhead); }
+      .dash { stroke-dasharray: 6 4; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="8" refY="3.5" orient="auto">
+      <path d="M0,0 L8,3.5 L0,7 Z" fill="#6b7280" />
+    </marker>
+  </defs>
+
+  <!-- 标题 -->
+  <text x="600" y="36" text-anchor="middle" class="title">工行小智｜子智能体职责分布与交互关系</text>
+  <text x="600" y="62" text-anchor="middle" class="subtitle">分层架构 + 领域分组 + 明确数据流与协同关系</text>
+
+  <!-- 分组泳道（四象限） -->
+  <rect x="60" y="100" width="460" height="220" class="lane wealth" />
+  <text x="70" y="118" class="legend">财富管理域</text>
+
+  <rect x="680" y="100" width="460" height="220" class="lane credit" />
+  <text x="690" y="118" class="legend">信贷服务域</text>
+
+  <rect x="60" y="380" width="460" height="220" class="lane fin_tax" />
+  <text x="70" y="398" class="legend">财务与税务域</text>
+
+  <rect x="680" y="380" width="460" height="220" class="lane edu_cs" />
+  <text x="690" y="398" class="legend">教育与客服域</text>
+
+  <!-- 主智能体编排层（中心） -->
+  <rect x="490" y="300" width="220" height="120" class="center" />
+  <text x="600" y="322" text-anchor="middle" class="center-title">主智能体编排层</text>
+  <text x="505" y="346" class="box-text">• 任务调度与会话路由</text>
+  <text x="505" y="364" class="box-text">• 上下文共享与记忆体</text>
+  <text x="505" y="382" class="box-text">• 协同策略与冲突解决</text>
+
+  <!-- 财富管理域：投资助手 + ESG顾问 -->
+  <rect x="80" y="140" width="200" height="160" class="box" />
+  <text x="90" y="162" class="box-title">投资助手</text>
+  <text x="90" y="182" class="box-text">职责：资产配置、组合优化、风险评估</text>
+  <text x="90" y="200" class="box-text">能力：市场预测、回测推演、情景分析</text>
+  <text x="90" y="218" class="box-text">协作：与ESG顾问共同优化策略</text>
+
+  <rect x="300" y="140" width="200" height="160" class="box" />
+  <text x="310" y="162" class="box-title">ESG顾问</text>
+  <text x="310" y="182" class="box-text">职责：绿色金融与可持续投资</text>
+  <text x="310" y="200" class="box-text">能力：ESG筛选、环境风险评估</text>
+  <text x="310" y="218" class="box-text">协作：为投资助手提供约束与评分</text>
+
+  <!-- 信贷服务域：贷款顾问 -->
+  <rect x="700" y="140" width="420" height="160" class="box" />
+  <text x="710" y="162" class="box-title">贷款顾问</text>
+  <text x="710" y="182" class="box-text">职责：贷款咨询、额度评估、审批辅助</text>
+  <text x="710" y="200" class="box-text">能力：信用评分、风控校验、产品匹配</text>
+  <text x="710" y="218" class="box-text">协作：与编排层共享风险信号</text>
+
+  <!-- 财务与税务域：财务管家 + 税务助手 -->
+  <rect x="80" y="420" width="200" height="160" class="box" />
+  <text x="90" y="442" class="box-title">财务管家</text>
+  <text x="90" y="462" class="box-text">职责：现金流管理、预算规划、报表生成</text>
+  <text x="90" y="480" class="box-text">能力：财务分析、健康度评估、可视化</text>
+  <text x="90" y="498" class="box-text">协作：向税务助手提供预算数据</text>
+
+  <rect x="300" y="420" width="200" height="160" class="box" />
+  <text x="310" y="442" class="box-title">税务助手</text>
+  <text x="310" y="462" class="box-text">职责：税务筹划、申报提醒、政策解读</text>
+  <text x="310" y="480" class="box-text">能力：法规知识、智能计算、风险识别</text>
+  <text x="310" y="498" class="box-text">协作：基于预算产出优化建议</text>
+
+  <!-- 教育与客服域：投教导师 + 客服助理 -->
+  <rect x="700" y="420" width="200" height="160" class="box" />
+  <text x="710" y="442" class="box-title">投教导师</text>
+  <text x="710" y="462" class="box-text">职责：金融知识普及与理财教育</text>
+  <text x="710" y="480" class="box-text">能力：互动课程、模拟投资训练</text>
+  <text x="710" y="498" class="box-text">协作：与客服助理共享学习进度</text>
+
+  <rect x="920" y="420" width="200" height="160" class="box" />
+  <text x="930" y="442" class="box-title">客服助理</text>
+  <text x="930" y="462" class="box-text">职责：日常咨询、业务指引、常见问题</text>
+  <text x="930" y="480" class="box-text">能力：智能问答、语义检索、全天候响应</text>
+  <text x="930" y="498" class="box-text">协作：知识同步与自学习优化</text>
+
+  <!-- 主编排层到各域的路由（避免交叉，使用贝塞尔曲线） -->
+  <path d="M600,300 C560,250 440,230 260,220" class="link arrow" />
+  <path d="M600,300 C640,250 760,230 960,220" class="link arrow" />
+  <path d="M600,420 C560,470 440,490 260,500" class="link arrow" />
+  <path d="M600,420 C640,470 760,490 960,500" class="link arrow" />
+
+  <!-- 域内协同（虚线） -->
+  <path d="M280,220 C310,210 330,210 360,220" class="link dash arrow" />
+  <text x="320" y="205" text-anchor="middle" class="label">投资助手 ↔ ESG顾问（组合约束）</text>
+
+  <path d="M180,520 C220,520 260,520 300,520" class="link dash arrow" />
+  <text x="240" y="510" text-anchor="middle" class="label">财务管家 → 税务助手（预算数据）</text>
+
+  <path d="M800,520 C840,520 880,520 920,520" class="link dash arrow" />
+  <text x="860" y="510" text-anchor="middle" class="label">投教导师 ↔ 客服助理（学习进度）</text>
+
+  <!-- 共享能力层（底部） -->
+  <rect x="60" y="620" width="1080" height="60" class="base" />
+  <text x="70" y="640" class="legend">共享能力层</text>
+  <rect x="180" y="635" width="160" height="30" class="box" />
+  <text x="190" y="655" class="box-text">知识库 / 语义检索</text>
+  <rect x="360" y="635" width="160" height="30" class="box" />
+  <text x="370" y="655" class="box-text">数据湖 / 实时数据流</text>
+  <rect x="540" y="635" width="160" height="30" class="box" />
+  <text x="550" y="655" class="box-text">合规与风控引擎</text>
+  <rect x="720" y="635" width="160" height="30" class="box" />
+  <text x="730" y="655" class="box-text">监控与审计</text>
+
+  <!-- 域到共享能力层的数据流（简化） -->
+  <path d="M180,580 C220,600 220,600 260,620" class="link arrow" />
+  <path d="M940,580 C900,600 900,600 860,620" class="link arrow" />
+
+  <!-- 说明 -->
+  <text x="600" y="700" text-anchor="middle" class="label">采用分层与分组布局，所有连接避免交叉，关系标签直观清晰。</text>
+</svg>

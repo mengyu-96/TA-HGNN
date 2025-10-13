@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>工行小智｜子智能体职责分布与交互关系图预览</title>
+    <style>
+      :root { color-scheme: light dark; }
+      body { font-family: -apple-system, Segoe UI, Arial, sans-serif; margin: 0; background: #f9fafb; color: #111827; }
+      header { padding: 16px 24px; border-bottom: 1px solid #e5e7eb; background: #ffffff; position: sticky; top: 0; }
+      h1 { font-size: 20px; margin: 0; }
+      main { padding: 24px; display: flex; justify-content: center; }
+      .canvas { max-width: 1000px; width: 100%; background: #fff; border: 1px solid #e5e7eb; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+      .meta { font-size: 12px; color: #6b7280; margin-top: 8px; }
+      .toolbar { display: flex; gap: 8px; align-items: center; margin-top: 8px; }
+      button { padding: 6px 10px; border: 1px solid #d1d5db; background: #fff; border-radius: 6px; cursor: pointer; }
+      button:hover { background: #f3f4f6; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>工行小智｜子智能体职责分布与交互关系图预览</h1>
+      <div class="toolbar">
+        <button id="dlSvg">下载SVG</button>
+        <span class="meta">尺寸：1000×600 像素｜格式：SVG</span>
+      </div>
+    </header>
+    <main>
+      <div class="canvas">
+        <img src="./sub_agents_diagram.svg" alt="子智能体职责分布与交互关系图" style="width:100%;height:auto;" />
+      </div>
+    </main>
+    <script>
+      const btn = document.getElementById('dlSvg');
+      btn.addEventListener('click', () => {
+        const a = document.createElement('a');
+        a.href = './sub_agents_diagram.svg';
+        a.download = '工行小智_子智能体职责分布.svg';
+        a.click();
+      });
+    </script>
+  </body>
+</html>

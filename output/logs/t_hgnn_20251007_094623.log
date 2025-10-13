@@ -1,0 +1,24 @@
+2025-10-07 09:46:23,786 - __main__ - INFO - 日志已配置，日志文件: ./output\logs\t_hgnn_20251007_094623.log
+2025-10-07 09:46:23,786 - src.config.improved_config - INFO - 使用GPU: NVIDIA GeForce RTX 4060 Laptop GPU
+2025-10-07 09:46:23,787 - __main__ - INFO - 日志已配置，日志文件: ./output\logs\t_hgnn_20251007_094623.log
+2025-10-07 09:46:23,787 - src.utils.gpu_utils - INFO - 已启用cuDNN基准测试
+2025-10-07 09:46:23,787 - src.utils.gpu_utils - INFO - 已清理GPU缓存
+2025-10-07 09:46:23,787 - src.utils.gpu_utils - INFO - 已设置CUDA内存分配策略
+2025-10-07 09:46:23,787 - src.config.improved_config - INFO - ==================================================
+2025-10-07 09:46:23,787 - src.config.improved_config - INFO - 配置信息
+2025-10-07 09:46:23,788 - src.config.improved_config - INFO - ==================================================
+2025-10-07 09:46:23,788 - src.config.improved_config - INFO - 设备: cuda
+2025-10-07 09:46:23,788 - src.config.improved_config - INFO - 数据路径: ./Linux-APT-Dataset/Linux-APT-Dataset-2024/combine.csv
+2025-10-07 09:46:23,788 - src.config.improved_config - INFO - 输出目录: ./output
+2025-10-07 09:46:23,788 - src.config.improved_config - INFO - 隐藏维度: 128
+2025-10-07 09:46:23,788 - src.config.improved_config - INFO - 时序维度: 64
+2025-10-07 09:46:23,788 - src.config.improved_config - INFO - GNN层数: 3
+2025-10-07 09:46:23,788 - src.config.improved_config - INFO - 注意力头数: 8
+2025-10-07 09:46:23,788 - src.config.improved_config - INFO - 学习率: 0.001
+2025-10-07 09:46:23,788 - src.config.improved_config - INFO - 训练轮数: 100
+2025-10-07 09:46:23,788 - src.config.improved_config - INFO - 批次大小: 64
+2025-10-07 09:46:23,788 - src.config.improved_config - INFO - 早停耐心值: 20
+2025-10-07 09:46:23,788 - src.config.improved_config - INFO - ==================================================
+2025-10-07 09:46:23,788 - __main__ - INFO - 初始内存状态: 使用率 37.3%, 可用内存 19.6GB
+2025-10-07 09:46:23,833 - src.config.improved_config - INFO - 配置验证通过
+2025-10-07 09:46:23,833 - __main__ - ERROR - 配置验证失败

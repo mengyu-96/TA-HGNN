@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1a1ca986-1751-4a61-aedf-c534199c9f96" name="更改" comment="">
+      <change beforePath="$PROJECT_DIR$/HTGNN/.ipynb_checkpoints/run_mag-checkpoint.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTGNN/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTGNN/data/covid_graphs.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTGNN/data/ogbn_graphs.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTGNN/model/model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTGNN/mp2vec/g0.vector" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTGNN/mp2vec/g1.vector" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTGNN/mp2vec/g2.vector" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTGNN/mp2vec/g3.vector" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTGNN/mp2vec/g4.vector" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTGNN/mp2vec/g5.vector" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTGNN/mp2vec/g6.vector" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTGNN/mp2vec/g7.vector" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTGNN/mp2vec/g8.vector" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTGNN/mp2vec/g9.vector" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTGNN/output/COVID19/checkpoint_HTGNN_0.pt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTGNN/output/COVID19/checkpoint_HTGNN_1.pt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTGNN/output/COVID19/checkpoint_HTGNN_2.pt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTGNN/output/COVID19/checkpoint_HTGNN_3.pt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTGNN/output/COVID19/checkpoint_HTGNN_4.pt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTGNN/output/OGBN-MAG/checkpoint_HTGNN_0.pt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTGNN/output/OGBN-MAG/checkpoint_HTGNN_1.pt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTGNN/output/OGBN-MAG/checkpoint_HTGNN_2.pt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTGNN/output/OGBN-MAG/checkpoint_HTGNN_3.pt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTGNN/output/OGBN-MAG/checkpoint_HTGNN_4.pt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTGNN/run_covid.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTGNN/run_mag.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTGNN/utils/data.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTGNN/utils/pytorchtools.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTGNN/utils/utils.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adapt_htgnn_model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build_entity_relations.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/integrate_linux_apt_data.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run_apt_analysis.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vc_redist.x64.exe" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;mengyu-96&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/mengyu-96/TA-HTGNN.git&quot;,
+    &quot;accountId&quot;: &quot;b80a5bfe-f3f7-417d-bc4c-5361751c7884&quot;
+  }
+}</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="31ujJdBfXz5krnyPLS8ba0ShDDK" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Python.__init__ (1).executor": "Run",
+    "Python.__init__.executor": "Run",
+    "Python.install.executor": "Run",
+    "Python.integrate_linux_apt_data.executor": "Run",
+    "Python.linux_apt_analysis.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.main_pyg.executor": "Run",
+    "Python.run.executor": "Run",
+    "Python.run_apt_analysis.executor": "Run",
+    "Python.test.executor": "Run",
+    "Python.test_basic.executor": "Run",
+    "Python.test_fixes.executor": "Run",
+    "Python.test_refactored.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "删除APTnotes版本/issue-1",
+    "last_opened_file_path": "D:/git/TA-HGNN",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "advanced.settings",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager" selected="Python.main_pyg">
+    <configuration name="install" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="TA-HGNN" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/scripts" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/scripts/install.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main_pyg" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="TA-HGNN" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main_pyg.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="run" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="TA-HGNN" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/scripts" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/scripts/run.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="TA-HGNN" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/scripts" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/scripts/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test_fixes" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="TA-HGNN" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_fixes.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.main_pyg" />
+        <item itemvalue="Python.run" />
+        <item itemvalue="Python.test_fixes" />
+        <item itemvalue="Python.test" />
+        <item itemvalue="Python.install" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-b598e85cdad2-JavaScript-PY-252.25557.178" />
+        <option value="bundled-python-sdk-ce6832f46686-7b97d883f26b-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-252.25557.178" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="1a1ca986-1751-4a61-aedf-c534199c9f96" name="更改" comment="" />
+      <created>1756380784111</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1756380784111</updated>
+      <workItem from="1756380785707" duration="2377000" />
+      <workItem from="1756385168683" duration="23598000" />
+      <workItem from="1758187929935" duration="616000" />
+      <workItem from="1758334344819" duration="27000" />
+      <workItem from="1758342249013" duration="8827000" />
+      <workItem from="1758353273135" duration="218000" />
+      <workItem from="1758353856382" duration="209000" />
+      <workItem from="1758354066737" duration="71000" />
+      <workItem from="1758354154066" duration="6033000" />
+      <workItem from="1758365090570" duration="1624000" />
+      <workItem from="1758413880515" duration="3702000" />
+      <workItem from="1758606333658" duration="179000" />
+      <workItem from="1758606576654" duration="130000" />
+      <workItem from="1758607349296" duration="2049000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/TA_HGNN$__init____1_.coverage" NAME="__init__ (1) 覆盖结果" MODIFIED="1758360212488" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/models" />
+    <SUITE FILE_PATH="coverage/TA_HGNN$test_fixes.coverage" NAME="test_fixes 覆盖结果" MODIFIED="1758415745541" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/TA_HGNN$linux_apt_analysis.coverage" NAME="linux_apt_analysis 覆盖结果" MODIFIED="1758356410455" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/TA_HGNN$main_pyg.coverage" NAME="main_pyg 覆盖结果" MODIFIED="1758608561707" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/TA_HGNN$main.coverage" NAME="main 覆盖结果" MODIFIED="1758360784673" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/TA_HGNN$run_apt_analysis.coverage" NAME="run_apt_analysis 覆盖结果" MODIFIED="1758346916399" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/TA_HGNN$test_refactored.coverage" NAME="test_refactored 覆盖结果" MODIFIED="1758359562326" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/TA_HGNN$__init__.coverage" NAME="__init__ 覆盖结果" MODIFIED="1758360201626" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/TA_HGNN$run.coverage" NAME="run 覆盖结果" MODIFIED="1758415974565" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scripts" />
+    <SUITE FILE_PATH="coverage/TA_HGNN$integrate_linux_apt_data.coverage" NAME="integrate_linux_apt_data 覆盖结果" MODIFIED="1756415621288" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/TA_HGNN$test_basic.coverage" NAME="test_basic 覆盖结果" MODIFIED="1758359797727" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/TA_HGNN$install.coverage" NAME="install 覆盖结果" MODIFIED="1758360835037" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scripts" />
+    <SUITE FILE_PATH="coverage/TA_HGNN$test.coverage" NAME="test 覆盖结果" MODIFIED="1758365181079" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scripts" />
+  </component>
+</project>

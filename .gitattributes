@@ -28,3 +28,6 @@
 *.jpeg filter=lfs diff=lfs merge=lfs -text
 *.bmp filter=lfs diff=lfs merge=lfs -text
 *.tiff filter=lfs diff=lfs merge=lfs -text
+#pytorch文件
+*.pth filter=lfs diff=lfs merge=lfs -text
+

@@ -1,0 +1,1013 @@
+2025-10-07 11:05:05,502 - __main__ - INFO - 日志已配置，日志文件: ./output\logs\t_hgnn_20251007_110505.log
+2025-10-07 11:05:05,503 - src.config.improved_config - INFO - 使用GPU: NVIDIA GeForce RTX 4060 Laptop GPU
+2025-10-07 11:05:05,503 - __main__ - INFO - 日志已配置，日志文件: ./output\logs\t_hgnn_20251007_110505.log
+2025-10-07 11:05:05,503 - src.utils.gpu_utils - INFO - 已启用cuDNN基准测试
+2025-10-07 11:05:05,503 - src.utils.gpu_utils - INFO - 已清理GPU缓存
+2025-10-07 11:05:05,503 - src.utils.gpu_utils - INFO - 已设置CUDA内存分配策略
+2025-10-07 11:05:05,503 - src.config.improved_config - INFO - ==================================================
+2025-10-07 11:05:05,504 - src.config.improved_config - INFO - 配置信息
+2025-10-07 11:05:05,504 - src.config.improved_config - INFO - ==================================================
+2025-10-07 11:05:05,504 - src.config.improved_config - INFO - 设备: cuda
+2025-10-07 11:05:05,504 - src.config.improved_config - INFO - 数据路径: ./Linux-APT-Dataset/Linux-APT-Dataset-2024/combine.csv
+2025-10-07 11:05:05,504 - src.config.improved_config - INFO - 输出目录: ./output
+2025-10-07 11:05:05,504 - src.config.improved_config - INFO - 隐藏维度: 128
+2025-10-07 11:05:05,504 - src.config.improved_config - INFO - 时序维度: 64
+2025-10-07 11:05:05,504 - src.config.improved_config - INFO - GNN层数: 3
+2025-10-07 11:05:05,504 - src.config.improved_config - INFO - 注意力头数: 8
+2025-10-07 11:05:05,504 - src.config.improved_config - INFO - 学习率: 0.001
+2025-10-07 11:05:05,504 - src.config.improved_config - INFO - 训练轮数: 100
+2025-10-07 11:05:05,504 - src.config.improved_config - INFO - 批次大小: 64
+2025-10-07 11:05:05,504 - src.config.improved_config - INFO - 早停耐心值: 20
+2025-10-07 11:05:05,504 - src.config.improved_config - INFO - ==================================================
+2025-10-07 11:05:05,504 - __main__ - INFO - 初始内存状态: 使用率 63.2%, 可用内存 11.5GB
+2025-10-07 11:05:05,565 - src.config.improved_config - INFO - 配置验证通过
+2025-10-07 11:05:05,565 - __main__ - INFO - 开始运行模式: full
+2025-10-07 11:05:05,565 - __main__ - INFO - ==================================================
+2025-10-07 11:05:05,565 - __main__ - INFO - 步骤1: 数据加载和预处理
+2025-10-07 11:05:05,565 - __main__ - INFO - ==================================================
+2025-10-07 11:05:05,566 - src.data.pyg_loader - INFO - 加载数据: ./Linux-APT-Dataset/Linux-APT-Dataset-2024/combine.csv
+2025-10-07 11:05:05,566 - src.data.pyg_loader - INFO - 使用直接加载策略
+2025-10-07 11:05:09,958 - __main__ - INFO - 原始数据信息: (91133, 123)
+2025-10-07 11:05:09,959 - src.data.improved_apt_data_processor - INFO - 开始改进的数据预处理
+2025-10-07 11:05:09,959 - src.data.improved_apt_data_processor - INFO - 修复数据质量问题
+2025-10-07 11:05:09,959 - src.data.improved_apt_data_processor - INFO - 处理缺失值
+2025-10-07 11:05:10,489 - src.data.improved_apt_data_processor - INFO - 执行高级数据清洗
+2025-10-07 11:05:14,431 - src.data.improved_apt_data_processor - INFO - 移除了 64922 个无效行
+2025-10-07 11:05:14,431 - src.data.improved_apt_data_processor - INFO - 转换数据类型
+2025-10-07 11:05:20,340 - src.data.improved_apt_data_processor - INFO - 处理异常值
+2025-10-07 11:05:20,343 - src.data.improved_apt_data_processor - INFO - 数据质量修复完成: (91133, 123) -> (26211, 123)
+2025-10-07 11:05:20,343 - src.data.improved_apt_data_processor - INFO - 处理时间序列特征
+2025-10-07 11:05:20,347 - src.data.improved_apt_data_processor - INFO - 使用列 _source.predecoder.timestamp 作为主时间戳，有效数量: 58
+2025-10-07 11:05:20,408 - src.data.improved_apt_data_processor - INFO - 执行综合特征工程
+2025-10-07 11:05:20,725 - src.data.improved_apt_data_processor - INFO - 生成改进的标签
+2025-10-07 11:05:20,736 - src.data.improved_apt_data_processor - INFO - 标签分布: {'Low_Risk_Attack': 26207, 'Medium_Risk_Attack': 4}
+2025-10-07 11:05:20,736 - src.data.improved_apt_data_processor - INFO - 平衡数据集
+2025-10-07 11:05:20,737 - src.data.improved_apt_data_processor - INFO - 当前正样本比例: 1.000
+2025-10-07 11:05:20,737 - src.data.improved_apt_data_processor - INFO - 正样本比例过高，执行欠采样
+2025-10-07 11:05:20,773 - src.data.improved_apt_data_processor - INFO - 最终正样本比例: 1.000
+2025-10-07 11:05:20,773 - src.data.improved_apt_data_processor - INFO - 最终标签分布: {'Low_Risk_Attack': 26207, 'Medium_Risk_Attack': 4}
+2025-10-07 11:05:20,777 - src.data.improved_apt_data_processor - INFO - 数据预处理完成，最终形状: (26211, 189)
+2025-10-07 11:05:20,777 - __main__ - INFO - 开始数据增强...
+2025-10-07 11:05:20,779 - src.data.data_augmentation - INFO - 开始数据增强，目标正样本比例: 0.2
+2025-10-07 11:05:20,780 - src.data.data_augmentation - INFO - 当前正样本比例: 1.000
+2025-10-07 11:05:20,780 - src.data.data_augmentation - INFO - 正样本比例已达到目标，无需增强
+2025-10-07 11:05:20,780 - __main__ - INFO - 数据增强完成，数据量: 26211
+2025-10-07 11:05:21,191 - __main__ - INFO - APT数据统计: {'total_records': 26211, 'columns': ['_index', '_id', '_version', '_score', '_source.agent.name', '_source.agent.id', '_source.manager.name', '_source.data.file', '_source.data.title', '_source.rule.firedtimes', '_source.rule.mail', '_source.rule.level', '_source.rule.pci_dss', '_source.rule.description', '_source.rule.groups', '_source.rule.id', '_source.rule.gdpr', '_source.decoder.name', '_source.full_log', '_source.input.type', '_source.@timestamp', '_source.location', '_source.id', '_source.timestamp', '_source.data.sca.scan_id', '_source.data.sca.check.result', '_source.data.sca.check.remediation', '_source.data.sca.check.references', '_source.data.sca.check.compliance.pci_dss_v4.0', '_source.data.sca.check.compliance.cis_csc_v8', '_source.data.sca.check.compliance.soc_2', '_source.data.sca.check.compliance.pci_dss_v3.2.1', '_source.data.sca.check.compliance.hipaa', '_source.data.sca.check.compliance.nist_sp_800-53', '_source.data.sca.check.compliance.mitre_tactics', '_source.data.sca.check.compliance.mitre_techniques', '_source.data.sca.check.compliance.cis', '_source.data.sca.check.compliance.cmmc_v2.0', '_source.data.sca.check.compliance.cis_csc_v7', '_source.data.sca.check.compliance.mitre_mitigations', '_source.data.sca.check.description', '_source.data.sca.check.id', '_source.data.sca.check.title', '_source.data.sca.check.rationale', '_source.data.sca.check.command', '_source.data.sca.type', '_source.data.sca.policy', '_source.rule.cis_csc_v8', '_source.rule.tsc', '_source.rule.hipaa', '_source.rule.nist_sp_800-53', '_source.rule.mitre_tactics', '_source.rule.mitre_techniques', '_source.rule.cis', '_source.rule.nist_800_53', '_source.rule.mitre_mitigations', '_source.rule.soc_2', '_source.rule.cis_csc_v7', '_source.data.sca.check.file', '_source.data.sca.check.reason', '_source.data.sca.check.compliance.pci_dss_4.0', '_source.data.sca.check.compliance.pci_dss_3.2.1', '_source.data.sca.check.directory', '_source.data.dpkg_status', '_source.data.package', '_source.data.arch', '_source.data.version', '_source.rule.gpg13', '_source.predecoder.hostname', '_source.predecoder.program_name', '_source.predecoder.timestamp', '_source.agent.ip', '_source.data.uid', '_source.data.dstuser', '_source.rule.mitre.technique', '_source.rule.mitre.id', '_source.rule.mitre.tactic', '_source.decoder.parent', '_source.data.srcuser', '_source.data.tty', '_source.data.pwd', '_source.data.command', '_source.decoder.ftscomment', '_source.data.srcip', '_source.data.srcport', '_source.data.sca.score', '_source.data.sca.total_checks', '_source.data.sca.file', '_source.data.sca.policy_id', '_source.data.sca.invalid', '_source.data.sca.description', '_source.data.sca.passed', '_source.data.sca.failed', '_source.data.extra_data', '_source.data.sca.check.previous_result', '_source.syscheck.size_before', '_source.syscheck.uname_after', '_source.syscheck.mtime_after', '_source.syscheck.size_after', '_source.syscheck.gid_after', '_source.syscheck.md5_before', '_source.syscheck.sha256_before', '_source.syscheck.mtime_before', '_source.syscheck.mode', '_source.syscheck.path', '_source.syscheck.sha1_after', '_source.syscheck.changed_attributes', '_source.syscheck.gname_after', '_source.syscheck.uid_after', '_source.syscheck.perm_after', '_source.syscheck.event', '_source.syscheck.md5_after', '_source.syscheck.sha1_before', '_source.syscheck.sha256_after', '_source.syscheck.inode_after', '_source.syscheck.inode_before', '_source.data.status', '_source.data.protocol', '_source.data.id', '_source.data.url', '_source.data.gid', '_source.data.shell', '_source.data.home', 'unified_timestamp', 'timestamp_hour', 'timestamp_day', 'timestamp_weekday', 'timestamp_month', 'timestamp_year', 'is_weekend', 'is_night', 'is_business_hours', 'time_since_last', 'time_since_last_log', 'temporal_index', 'temporal_span_hours', 'has_mitre_tactics', 'mitre_tactics_count', 'mitre_tactics_density', 'has_mitre_techniques', 'mitre_techniques_count', 'mitre_techniques_density', 'mitre_complexity', 'is_mitre_related', 'has_src_ip', 'src_ip_is_private', 'has_url', 'url_length', 'is_https', 'file_path_length', 'file_path_depth', 'file_extension', 'is_system_file', 'is_temp_file', 'is_home_file', 'is_executable', 'is_script', 'is_config_file', 'is_log_file', 'command_length', 'command_word_count', 'is_network_command', 'is_privilege_command', 'is_encoding_command', 'is_compression_command', 'is_system_command', 'is_suspicious_command', 'has_pipes', 'has_redirection', 'has_background', 'command_complexity', 'is_root_user', 'is_system_user', 'user_name_length', 'has_dst_user', 'is_dst_root_user', 'uid_numeric', 'is_privileged_uid', 'is_system_uid', 'rule_level_normalized', 'is_high_severity', 'is_critical_severity', 'is_low_severity', 'has_rule_groups', 'rule_groups_count', 'rule_description_length', 'rule_has_keywords', 'malicious_score', 'attack_classification'], 'memory_usage': 219.58495330810547, 'missing_values': {'_index': 0, '_id': 0, '_version': 0, '_score': 0, '_source.agent.name': 0, '_source.agent.id': 0, '_source.manager.name': 0, '_source.data.file': 0, '_source.data.title': 0, '_source.rule.firedtimes': 0, '_source.rule.mail': 0, '_source.rule.level': 0, '_source.rule.pci_dss': 0, '_source.rule.description': 0, '_source.rule.groups': 0, '_source.rule.id': 0, '_source.rule.gdpr': 0, '_source.decoder.name': 0, '_source.full_log': 0, '_source.input.type': 0, '_source.@timestamp': 26211, '_source.location': 0, '_source.id': 0, '_source.timestamp': 26211, '_source.data.sca.scan_id': 0, '_source.data.sca.check.result': 0, '_source.data.sca.check.remediation': 0, '_source.data.sca.check.references': 0, '_source.data.sca.check.compliance.pci_dss_v4.0': 0, '_source.data.sca.check.compliance.cis_csc_v8': 0, '_source.data.sca.check.compliance.soc_2': 0, '_source.data.sca.check.compliance.pci_dss_v3.2.1': 0, '_source.data.sca.check.compliance.hipaa': 0, '_source.data.sca.check.compliance.nist_sp_800-53': 0, '_source.data.sca.check.compliance.mitre_tactics': 0, '_source.data.sca.check.compliance.mitre_techniques': 0, '_source.data.sca.check.compliance.cis': 0, '_source.data.sca.check.compliance.cmmc_v2.0': 0, '_source.data.sca.check.compliance.cis_csc_v7': 0, '_source.data.sca.check.compliance.mitre_mitigations': 0, '_source.data.sca.check.description': 0, '_source.data.sca.check.id': 0, '_source.data.sca.check.title': 0, '_source.data.sca.check.rationale': 0, '_source.data.sca.check.command': 0, '_source.data.sca.type': 0, '_source.data.sca.policy': 0, '_source.rule.cis_csc_v8': 0, '_source.rule.tsc': 0, '_source.rule.hipaa': 0, '_source.rule.nist_sp_800-53': 0, '_source.rule.mitre_tactics': 0, '_source.rule.mitre_techniques': 0, '_source.rule.cis': 0, '_source.rule.nist_800_53': 0, '_source.rule.mitre_mitigations': 0, '_source.rule.soc_2': 0, '_source.rule.cis_csc_v7': 0, '_source.data.sca.check.file': 0, '_source.data.sca.check.reason': 0, '_source.data.sca.check.compliance.pci_dss_4.0': 0, '_source.data.sca.check.compliance.pci_dss_3.2.1': 0, '_source.data.sca.check.directory': 0, '_source.data.dpkg_status': 0, '_source.data.package': 0, '_source.data.arch': 0, '_source.data.version': 0, '_source.rule.gpg13': 0, '_source.predecoder.hostname': 0, '_source.predecoder.program_name': 0, '_source.predecoder.timestamp': 26153, '_source.agent.ip': 0, '_source.data.uid': 0, '_source.data.dstuser': 0, '_source.rule.mitre.technique': 0, '_source.rule.mitre.id': 0, '_source.rule.mitre.tactic': 0, '_source.decoder.parent': 0, '_source.data.srcuser': 0, '_source.data.tty': 0, '_source.data.pwd': 0, '_source.data.command': 0, '_source.decoder.ftscomment': 0, '_source.data.srcip': 0, '_source.data.srcport': 0, '_source.data.sca.score': 0, '_source.data.sca.total_checks': 0, '_source.data.sca.file': 0, '_source.data.sca.policy_id': 0, '_source.data.sca.invalid': 0, '_source.data.sca.description': 0, '_source.data.sca.passed': 0, '_source.data.sca.failed': 0, '_source.data.extra_data': 0, '_source.data.sca.check.previous_result': 0, '_source.syscheck.size_before': 0, '_source.syscheck.uname_after': 0, '_source.syscheck.mtime_after': 0, '_source.syscheck.size_after': 0, '_source.syscheck.gid_after': 0, '_source.syscheck.md5_before': 0, '_source.syscheck.sha256_before': 0, '_source.syscheck.mtime_before': 0, '_source.syscheck.mode': 0, '_source.syscheck.path': 0, '_source.syscheck.sha1_after': 0, '_source.syscheck.changed_attributes': 0, '_source.syscheck.gname_after': 0, '_source.syscheck.uid_after': 0, '_source.syscheck.perm_after': 0, '_source.syscheck.event': 0, '_source.syscheck.md5_after': 0, '_source.syscheck.sha1_before': 0, '_source.syscheck.sha256_after': 0, '_source.syscheck.inode_after': 0, '_source.syscheck.inode_before': 0, '_source.data.status': 0, '_source.data.protocol': 0, '_source.data.id': 0, '_source.data.url': 0, '_source.data.gid': 0, '_source.data.shell': 0, '_source.data.home': 0, 'unified_timestamp': 26153, 'timestamp_hour': 26153, 'timestamp_day': 26153, 'timestamp_weekday': 26153, 'timestamp_month': 26153, 'timestamp_year': 26153, 'is_weekend': 0, 'is_night': 0, 'is_business_hours': 0, 'time_since_last': 0, 'time_since_last_log': 5, 'temporal_index': 0, 'temporal_span_hours': 0, 'has_mitre_tactics': 0, 'mitre_tactics_count': 0, 'mitre_tactics_density': 0, 'has_mitre_techniques': 0, 'mitre_techniques_count': 0, 'mitre_techniques_density': 0, 'mitre_complexity': 0, 'is_mitre_related': 0, 'has_src_ip': 0, 'src_ip_is_private': 0, 'has_url': 0, 'url_length': 0, 'is_https': 0, 'file_path_length': 0, 'file_path_depth': 0, 'file_extension': 0, 'is_system_file': 0, 'is_temp_file': 0, 'is_home_file': 0, 'is_executable': 0, 'is_script': 0, 'is_config_file': 0, 'is_log_file': 0, 'command_length': 0, 'command_word_count': 0, 'is_network_command': 0, 'is_privilege_command': 0, 'is_encoding_command': 0, 'is_compression_command': 0, 'is_system_command': 0, 'is_suspicious_command': 0, 'has_pipes': 0, 'has_redirection': 0, 'has_background': 0, 'command_complexity': 0, 'is_root_user': 0, 'is_system_user': 0, 'user_name_length': 0, 'has_dst_user': 0, 'is_dst_root_user': 0, 'uid_numeric': 0, 'is_privileged_uid': 0, 'is_system_uid': 0, 'rule_level_normalized': 0, 'is_high_severity': 0, 'is_critical_severity': 0, 'is_low_severity': 0, 'has_rule_groups': 0, 'rule_groups_count': 0, 'rule_description_length': 0, 'rule_has_keywords': 0, 'malicious_score': 0, 'attack_classification': 0}, 'dtypes': {'_index': dtype('O'), '_id': dtype('O'), '_version': dtype('O'), '_score': dtype('O'), '_source.agent.name': dtype('O'), '_source.agent.id': dtype('O'), '_source.manager.name': dtype('O'), '_source.data.file': dtype('O'), '_source.data.title': dtype('O'), '_source.rule.firedtimes': dtype('O'), '_source.rule.mail': dtype('O'), '_source.rule.level': dtype('float64'), '_source.rule.pci_dss': dtype('O'), '_source.rule.description': dtype('O'), '_source.rule.groups': dtype('O'), '_source.rule.id': dtype('O'), '_source.rule.gdpr': dtype('O'), '_source.decoder.name': dtype('O'), '_source.full_log': dtype('O'), '_source.input.type': dtype('O'), '_source.@timestamp': dtype('<M8[ns]'), '_source.location': dtype('O'), '_source.id': dtype('O'), '_source.timestamp': dtype('<M8[ns]'), '_source.data.sca.scan_id': dtype('O'), '_source.data.sca.check.result': dtype('O'), '_source.data.sca.check.remediation': dtype('O'), '_source.data.sca.check.references': dtype('O'), '_source.data.sca.check.compliance.pci_dss_v4.0': dtype('O'), '_source.data.sca.check.compliance.cis_csc_v8': dtype('O'), '_source.data.sca.check.compliance.soc_2': dtype('O'), '_source.data.sca.check.compliance.pci_dss_v3.2.1': dtype('O'), '_source.data.sca.check.compliance.hipaa': dtype('O'), '_source.data.sca.check.compliance.nist_sp_800-53': dtype('O'), '_source.data.sca.check.compliance.mitre_tactics': dtype('O'), '_source.data.sca.check.compliance.mitre_techniques': dtype('O'), '_source.data.sca.check.compliance.cis': dtype('O'), '_source.data.sca.check.compliance.cmmc_v2.0': dtype('O'), '_source.data.sca.check.compliance.cis_csc_v7': dtype('O'), '_source.data.sca.check.compliance.mitre_mitigations': dtype('O'), '_source.data.sca.check.description': dtype('O'), '_source.data.sca.check.id': dtype('O'), '_source.data.sca.check.title': dtype('O'), '_source.data.sca.check.rationale': dtype('O'), '_source.data.sca.check.command': dtype('O'), '_source.data.sca.type': dtype('O'), '_source.data.sca.policy': dtype('O'), '_source.rule.cis_csc_v8': dtype('O'), '_source.rule.tsc': dtype('O'), '_source.rule.hipaa': dtype('O'), '_source.rule.nist_sp_800-53': dtype('O'), '_source.rule.mitre_tactics': dtype('O'), '_source.rule.mitre_techniques': dtype('O'), '_source.rule.cis': dtype('O'), '_source.rule.nist_800_53': dtype('O'), '_source.rule.mitre_mitigations': dtype('O'), '_source.rule.soc_2': dtype('O'), '_source.rule.cis_csc_v7': dtype('O'), '_source.data.sca.check.file': dtype('O'), '_source.data.sca.check.reason': dtype('O'), '_source.data.sca.check.compliance.pci_dss_4.0': dtype('O'), '_source.data.sca.check.compliance.pci_dss_3.2.1': dtype('O'), '_source.data.sca.check.directory': dtype('O'), '_source.data.dpkg_status': dtype('O'), '_source.data.package': dtype('O'), '_source.data.arch': dtype('O'), '_source.data.version': dtype('O'), '_source.rule.gpg13': dtype('O'), '_source.predecoder.hostname': dtype('O'), '_source.predecoder.program_name': dtype('O'), '_source.predecoder.timestamp': dtype('<M8[ns]'), '_source.agent.ip': dtype('O'), '_source.data.uid': dtype('O'), '_source.data.dstuser': dtype('O'), '_source.rule.mitre.technique': dtype('O'), '_source.rule.mitre.id': dtype('O'), '_source.rule.mitre.tactic': dtype('O'), '_source.decoder.parent': dtype('O'), '_source.data.srcuser': dtype('O'), '_source.data.tty': dtype('O'), '_source.data.pwd': dtype('O'), '_source.data.command': dtype('O'), '_source.decoder.ftscomment': dtype('O'), '_source.data.srcip': dtype('O'), '_source.data.srcport': dtype('O'), '_source.data.sca.score': dtype('O'), '_source.data.sca.total_checks': dtype('O'), '_source.data.sca.file': dtype('O'), '_source.data.sca.policy_id': dtype('O'), '_source.data.sca.invalid': dtype('O'), '_source.data.sca.description': dtype('O'), '_source.data.sca.passed': dtype('O'), '_source.data.sca.failed': dtype('O'), '_source.data.extra_data': dtype('O'), '_source.data.sca.check.previous_result': dtype('O'), '_source.syscheck.size_before': dtype('O'), '_source.syscheck.uname_after': dtype('O'), '_source.syscheck.mtime_after': dtype('O'), '_source.syscheck.size_after': dtype('O'), '_source.syscheck.gid_after': dtype('O'), '_source.syscheck.md5_before': dtype('O'), '_source.syscheck.sha256_before': dtype('O'), '_source.syscheck.mtime_before': dtype('O'), '_source.syscheck.mode': dtype('O'), '_source.syscheck.path': dtype('O'), '_source.syscheck.sha1_after': dtype('O'), '_source.syscheck.changed_attributes': dtype('O'), '_source.syscheck.gname_after': dtype('O'), '_source.syscheck.uid_after': dtype('O'), '_source.syscheck.perm_after': dtype('O'), '_source.syscheck.event': dtype('O'), '_source.syscheck.md5_after': dtype('O'), '_source.syscheck.sha1_before': dtype('O'), '_source.syscheck.sha256_after': dtype('O'), '_source.syscheck.inode_after': dtype('O'), '_source.syscheck.inode_before': dtype('O'), '_source.data.status': dtype('O'), '_source.data.protocol': dtype('O'), '_source.data.id': dtype('O'), '_source.data.url': dtype('O'), '_source.data.gid': dtype('O'), '_source.data.shell': dtype('O'), '_source.data.home': dtype('O'), 'unified_timestamp': dtype('<M8[ns]'), 'timestamp_hour': dtype('float64'), 'timestamp_day': dtype('float64'), 'timestamp_weekday': dtype('float64'), 'timestamp_month': dtype('float64'), 'timestamp_year': dtype('float64'), 'is_weekend': dtype('int32'), 'is_night': dtype('int32'), 'is_business_hours': dtype('int32'), 'time_since_last': dtype('float64'), 'time_since_last_log': dtype('float64'), 'temporal_index': dtype('int64'), 'temporal_span_hours': dtype('float64'), 'has_mitre_tactics': dtype('int32'), 'mitre_tactics_count': dtype('int64'), 'mitre_tactics_density': dtype('float64'), 'has_mitre_techniques': dtype('int32'), 'mitre_techniques_count': dtype('int64'), 'mitre_techniques_density': dtype('float64'), 'mitre_complexity': dtype('float64'), 'is_mitre_related': dtype('int32'), 'has_src_ip': dtype('int32'), 'src_ip_is_private': dtype('int32'), 'has_url': dtype('int32'), 'url_length': dtype('int64'), 'is_https': dtype('int32'), 'file_path_length': dtype('int64'), 'file_path_depth': dtype('int64'), 'file_extension': dtype('O'), 'is_system_file': dtype('int32'), 'is_temp_file': dtype('int32'), 'is_home_file': dtype('int32'), 'is_executable': dtype('int32'), 'is_script': dtype('int32'), 'is_config_file': dtype('int32'), 'is_log_file': dtype('int32'), 'command_length': dtype('int64'), 'command_word_count': dtype('int64'), 'is_network_command': dtype('int32'), 'is_privilege_command': dtype('int32'), 'is_encoding_command': dtype('int32'), 'is_compression_command': dtype('int32'), 'is_system_command': dtype('int32'), 'is_suspicious_command': dtype('int32'), 'has_pipes': dtype('int32'), 'has_redirection': dtype('int32'), 'has_background': dtype('int32'), 'command_complexity': dtype('float64'), 'is_root_user': dtype('int32'), 'is_system_user': dtype('int32'), 'user_name_length': dtype('int64'), 'has_dst_user': dtype('int32'), 'is_dst_root_user': dtype('int32'), 'uid_numeric': dtype('float64'), 'is_privileged_uid': dtype('int32'), 'is_system_uid': dtype('int32'), 'rule_level_normalized': dtype('float64'), 'is_high_severity': dtype('int32'), 'is_critical_severity': dtype('int32'), 'is_low_severity': dtype('int32'), 'has_rule_groups': dtype('int32'), 'rule_groups_count': dtype('int64'), 'rule_description_length': dtype('int64'), 'rule_has_keywords': dtype('int32'), 'malicious_score': dtype('float64'), 'attack_classification': dtype('O')}, 'numeric_stats': {'_source.rule.level': {'count': 26211.0, 'mean': 1.877952004883446, 'std': 1.6844336182846624, 'min': 0.0, '25%': 0.0, '50%': 2.0, '75%': 3.0, 'max': 7.5}, 'timestamp_hour': {'count': 58.0, 'mean': 15.810344827586206, 'std': 9.848781020933815, 'min': 0.0, '25%': 0.0, '50%': 22.0, '75%': 22.0, 'max': 22.0}, 'timestamp_day': {'count': 58.0, 'mean': 10.0, 'std': 0.0, 'min': 10.0, '25%': 10.0, '50%': 10.0, '75%': 10.0, 'max': 10.0}, 'timestamp_weekday': {'count': 58.0, 'mean': 0.0, 'std': 0.0, 'min': 0.0, '25%': 0.0, '50%': 0.0, '75%': 0.0, 'max': 0.0}, 'timestamp_month': {'count': 58.0, 'mean': 1.0, 'std': 0.0, 'min': 1.0, '25%': 1.0, '50%': 1.0, '75%': 1.0, 'max': 1.0}, 'timestamp_year': {'count': 58.0, 'mean': 2005.0, 'std': 0.0, 'min': 2005.0, '25%': 2005.0, '50%': 2005.0, '75%': 2005.0, 'max': 2005.0}, 'is_weekend': {'count': 26211.0, 'mean': 0.0, 'std': 0.0, 'min': 0.0, '25%': 0.0, '50%': 0.0, '75%': 0.0, 'max': 0.0}, 'is_night': {'count': 26211.0, 'mean': 0.0019457479684102095, 'std': 0.044068538955386115, 'min': 0.0, '25%': 0.0, '50%': 0.0, '75%': 0.0, 'max': 1.0}, 'is_business_hours': {'count': 26211.0, 'mean': 0.0, 'std': 0.0, 'min': 0.0, '25%': 0.0, '50%': 0.0, '75%': 0.0, 'max': 0.0}, 'time_since_last': {'count': 26211.0, 'mean': -0.027469383083438253, 'std': 12.90232762222091, 'min': -1620.0, '25%': 0.0, '50%': 0.0, '75%': 0.0, 'max': 540.0}, 'time_since_last_log': {'count': 26206.0, 'mean': 0.002114801574692733, 'std': 0.10482553421588144, 'min': 0.0, '25%': 0.0, '50%': 0.0, '75%': 0.0, 'max': 6.293419278846481}, 'temporal_index': {'count': 26211.0, 'mean': 13105.0, 'std': 7566.608289055275, 'min': 0.0, '25%': 6552.5, '50%': 13105.0, '75%': 19657.5, 'max': 26210.0}, 'temporal_span_hours': {'count': 26211.0, 'mean': 22.61666666666667, 'std': 3.5527814521654846e-15, 'min': 22.616666666666667, '25%': 22.616666666666667, '50%': 22.616666666666667, '75%': 22.616666666666667, 'max': 22.616666666666667}, 'has_mitre_tactics': {'count': 26211.0, 'mean': 1.0, 'std': 0.0, 'min': 1.0, '25%': 1.0, '50%': 1.0, '75%': 1.0, 'max': 1.0}, 'mitre_tactics_count': {'count': 26211.0, 'mean': 0.013810995383617564, 'std': 0.12461316253678094, 'min': 0.0, '25%': 0.0, '50%': 0.0, '75%': 0.0, 'max': 2.0}, 'mitre_tactics_density': {'count': 26211.0, 'mean': 0.006905497691808782, 'std': 0.06230658126839047, 'min': 0.0, '25%': 0.0, '50%': 0.0, '75%': 0.0, 'max': 1.0}, 'has_mitre_techniques': {'count': 26211.0, 'mean': 1.0, 'std': 0.0, 'min': 1.0, '25%': 1.0, '50%': 1.0, '75%': 1.0, 'max': 1.0}, 'mitre_techniques_count': {'count': 26211.0, 'mean': 0.035443134561825185, 'std': 0.34799657319551414, 'min': 0.0, '25%': 0.0, '50%': 0.0, '75%': 0.0, 'max': 10.0}, 'mitre_techniques_density': {'count': 26211.0, 'mean': 0.003544313456182519, 'std': 0.03479965731955142, 'min': 0.0, '25%': 0.0, '50%': 0.0, '75%': 0.0, 'max': 1.0}, 'mitre_complexity': {'count': 26211.0, 'mean': 0.024627064972721376, 'std': 0.22698135446571374, 'min': 0.0, '25%': 0.0, '50%': 0.0, '75%': 0.0, 'max': 5.0}, 'is_mitre_related': {'count': 26211.0, 'mean': 1.0, 'std': 0.0, 'min': 1.0, '25%': 1.0, '50%': 1.0, '75%': 1.0, 'max': 1.0}, 'has_src_ip': {'count': 26211.0, 'mean': 1.0, 'std': 0.0, 'min': 1.0, '25%': 1.0, '50%': 1.0, '75%': 1.0, 'max': 1.0}, 'src_ip_is_private': {'count': 26211.0, 'mean': 0.00011445576284765938, 'std': 0.010697991825572566, 'min': 0.0, '25%': 0.0, '50%': 0.0, '75%': 0.0, 'max': 1.0}, 'has_url': {'count': 26211.0, 'mean': 1.0, 'std': 0.0, 'min': 1.0, '25%': 1.0, '50%': 1.0, '75%': 1.0, 'max': 1.0}, 'url_length': {'count': 26211.0, 'mean': 0.034756399984739235, 'std': 0.599991635437495, 'min': 0.0, '25%': 0.0, '50%': 0.0, '75%': 0.0, 'max': 93.0}, 'is_https': {'count': 26211.0, 'mean': 0.0, 'std': 0.0, 'min': 0.0, '25%': 0.0, '50%': 0.0, '75%': 0.0, 'max': 0.0}, 'file_path_length': {'count': 26211.0, 'mean': 5.855060852313914, 'std': 0.8771197396554636, 'min': 1.0, '25%': 6.0, '50%': 6.0, '75%': 6.0, 'max': 14.0}, 'file_path_depth': {'count': 26211.0, 'mean': 0.0026706344664453856, 'std': 0.08328734583273872, 'min': 0.0, '25%': 0.0, '50%': 0.0, '75%': 0.0, 'max': 3.0}, 'is_system_file': {'count': 26211.0, 'mean': 0.0010682537865781543, 'std': 0.03266731293472528, 'min': 0.0, '25%': 0.0, '50%': 0.0, '75%': 0.0, 'max': 1.0}, 'is_temp_file': {'count': 26211.0, 'mean': 0.0, 'std': 0.0, 'min': 0.0, '25%': 0.0, '50%': 0.0, '75%': 0.0, 'max': 0.0}, 'is_home_file': {'count': 26211.0, 'mean': 0.0, 'std': 0.0, 'min': 0.0, '25%': 0.0, '50%': 0.0, '75%': 0.0, 'max': 0.0}, 'is_executable': {'count': 26211.0, 'mean': 0.0, 'std': 0.0, 'min': 0.0, '25%': 0.0, '50%': 0.0, '75%': 0.0, 'max': 0.0}, 'is_script': {'count': 26211.0, 'mean': 0.0, 'std': 0.0, 'min': 0.0, '25%': 0.0, '50%': 0.0, '75%': 0.0, 'max': 0.0}, 'is_config_file': {'count': 26211.0, 'mean': 0.0, 'std': 0.0, 'min': 0.0, '25%': 0.0, '50%': 0.0, '75%': 0.0, 'max': 0.0}, 'is_log_file': {'count': 26211.0, 'mean': 0.0, 'std': 0.0, 'min': 0.0, '25%': 0.0, '50%': 0.0, '75%': 0.0, 'max': 0.0}, 'command_length': {'count': 26211.0, 'mean': 0.6691083896074167, 'std': 1.0478658215496688, 'min': 0.0, '25%': 0.0, '50%': 1.0, '75%': 1.0, 'max': 87.0}, 'command_word_count': {'count': 26211.0, 'mean': 0.0017168364427148908, 'std': 0.07884194785585028, 'min': 0.0, '25%': 0.0, '50%': 0.0, '75%': 0.0, 'max': 9.0}, 'is_network_command': {'count': 26211.0, 'mean': 0.00041967113044141775, 'std': 0.020481967965375027, 'min': 0.0, '25%': 0.0, '50%': 0.0, '75%': 0.0, 'max': 1.0}, 'is_privilege_command': {'count': 26211.0, 'mean': 3.815192094921979e-05, 'std': 0.006176724127660212, 'min': 0.0, '25%': 0.0, '50%': 0.0, '75%': 0.0, 'max': 1.0}, 'is_encoding_command': {'count': 26211.0, 'mean': 0.0, 'std': 0.0, 'min': 0.0, '25%': 0.0, '50%': 0.0, '75%': 0.0, 'max': 0.0}, 'is_compression_command': {'count': 26211.0, 'mean': 7.630384189843959e-05, 'std': 0.008735040391963031, 'min': 0.0, '25%': 0.0, '50%': 0.0, '75%': 0.0, 'max': 1.0}, 'is_system_command': {'count': 26211.0, 'mean': 3.815192094921979e-05, 'std': 0.006176724127660212, 'min': 0.0, '25%': 0.0, '50%': 0.0, '75%': 0.0, 'max': 1.0}, 'is_suspicious_command': {'count': 26211.0, 'mean': 0.0, 'std': 0.0, 'min': 0.0, '25%': 0.0, '50%': 0.0, '75%': 0.0, 'max': 0.0}, 'has_pipes': {'count': 26211.0, 'mean': 0.0, 'std': 0.0, 'min': 0.0, '25%': 0.0, '50%': 0.0, '75%': 0.0, 'max': 0.0}, 'has_redirection': {'count': 26211.0, 'mean': 0.0, 'std': 0.0, 'min': 0.0, '25%': 0.0, '50%': 0.0, '75%': 0.0, 'max': 0.0}, 'has_background': {'count': 26211.0, 'mean': 0.0, 'std': 0.0, 'min': 0.0, '25%': 0.0, '50%': 0.0, '75%': 0.0, 'max': 0.0}, 'command_complexity': {'count': 26211.0, 'mean': 0.000537942085383999, 'std': 0.025334402203513483, 'min': 0.0, '25%': 0.0, '50%': 0.0, '75%': 0.0, 'max': 2.9}, 'is_root_user': {'count': 26211.0, 'mean': 0.00022891152569531876, 'std': 0.015128379191344628, 'min': 0.0, '25%': 0.0, '50%': 0.0, '75%': 0.0, 'max': 1.0}, 'is_system_user': {'count': 26211.0, 'mean': 7.630384189843959e-05, 'std': 0.00873504039196303, 'min': 0.0, '25%': 0.0, '50%': 0.0, '75%': 0.0, 'max': 1.0}, 'user_name_length': {'count': 26211.0, 'mean': 1.074472549692877, 'std': 1.562907385524428, 'min': 0.0, '25%': 1.0, '50%': 1.0, '75%': 1.0, 'max': 94.0}, 'has_dst_user': {'count': 26211.0, 'mean': 1.0, 'std': 0.0, 'min': 1.0, '25%': 1.0, '50%': 1.0, '75%': 1.0, 'max': 1.0}, 'is_dst_root_user': {'count': 26211.0, 'mean': 0.001297165312273473, 'std': 0.035993500822571155, 'min': 0.0, '25%': 0.0, '50%': 0.0, '75%': 0.0, 'max': 1.0}, 'uid_numeric': {'count': 26211.0, 'mean': 0.4628209530349853, 'std': 21.407500030927473, 'min': 0.0, '25%': 0.0, '50%': 0.0, '75%': 0.0, 'max': 1000.0}, 'is_privileged_uid': {'count': 26211.0, 'mean': 0.9995040250276601, 'std': 0.022265396805383166, 'min': 0.0, '25%': 1.0, '50%': 1.0, '75%': 1.0, 'max': 1.0}, 'is_system_uid': {'count': 26211.0, 'mean': 3.815192094921979e-05, 'std': 0.006176724127660212, 'min': 0.0, '25%': 0.0, '50%': 0.0, '75%': 0.0, 'max': 1.0}, 'rule_level_normalized': {'count': 26211.0, 'mean': 0.12519680032556307, 'std': 0.11229557455231085, 'min': 0.0, '25%': 0.0, '50%': 0.13333333333333333, '75%': 0.2, 'max': 0.5}, 'is_high_severity': {'count': 26211.0, 'mean': 0.04017397275952844, 'std': 0.196370812157477, 'min': 0.0, '25%': 0.0, '50%': 0.0, '75%': 0.0, 'max': 1.0}, 'is_critical_severity': {'count': 26211.0, 'mean': 0.0, 'std': 0.0, 'min': 0.0, '25%': 0.0, '50%': 0.0, '75%': 0.0, 'max': 0.0}, 'is_low_severity': {'count': 26211.0, 'mean': 0.9393765976116898, 'std': 0.2386427837532571, 'min': 0.0, '25%': 1.0, '50%': 1.0, '75%': 1.0, 'max': 1.0}, 'has_rule_groups': {'count': 26211.0, 'mean': 1.0, 'std': 0.0, 'min': 1.0, '25%': 1.0, '50%': 1.0, '75%': 1.0, 'max': 1.0}, 'rule_groups_count': {'count': 26211.0, 'mean': 1.0510472702300562, 'std': 0.3282280332826403, 'min': 1.0, '25%': 1.0, '50%': 1.0, '75%': 1.0, 'max': 7.0}, 'rule_description_length': {'count': 26211.0, 'mean': 5.925412994544275, 'std': 12.11016641406225, 'min': 1.0, '25%': 1.0, '50%': 1.0, '75%': 10.0, 'max': 163.0}, 'rule_has_keywords': {'count': 26211.0, 'mean': 3.815192094921979e-05, 'std': 0.006176724127660211, 'min': 0.0, '25%': 0.0, '50%': 0.0, '75%': 0.0, 'max': 1.0}, 'malicious_score': {'count': 26211.0, 'mean': 0.43766014268818443, 'std': 0.03386329123643837, 'min': 0.4, '25%': 0.4, '50%': 0.44, '75%': 0.46, 'max': 0.6100000000000001}}, 'label_distribution': {'Low_Risk_Attack': 26207, 'Medium_Risk_Attack': 4}, 'positive_ratio': 1.0}
+2025-10-07 11:05:21,192 - __main__ - INFO - ==================================================
+2025-10-07 11:05:21,192 - __main__ - INFO - 步骤2: 构建异构图
+2025-10-07 11:05:21,192 - __main__ - INFO - ==================================================
+2025-10-07 11:05:21,192 - src.data.pyg_loader - INFO - 构建PyG异构图
+2025-10-07 11:05:21,192 - src.data.pyg_loader - INFO - 数据量过大(26211行)，采样20000行进行处理
+2025-10-07 11:05:21,268 - src.data.pyg_loader - INFO - 处理批次 1/40 (行 0-499)
+2025-10-07 11:05:21,462 - src.data.pyg_loader - INFO - 处理批次 2/40 (行 500-999)
+2025-10-07 11:05:21,655 - src.data.pyg_loader - INFO - 处理批次 3/40 (行 1000-1499)
+2025-10-07 11:05:21,846 - src.data.pyg_loader - INFO - 处理批次 4/40 (行 1500-1999)
+2025-10-07 11:05:22,043 - src.data.pyg_loader - INFO - 处理批次 5/40 (行 2000-2499)
+2025-10-07 11:05:22,225 - src.data.pyg_loader - INFO - 处理批次 6/40 (行 2500-2999)
+2025-10-07 11:05:22,419 - src.data.pyg_loader - INFO - 处理批次 7/40 (行 3000-3499)
+2025-10-07 11:05:22,609 - src.data.pyg_loader - INFO - 处理批次 8/40 (行 3500-3999)
+2025-10-07 11:05:22,795 - src.data.pyg_loader - INFO - 处理批次 9/40 (行 4000-4499)
+2025-10-07 11:05:22,991 - src.data.pyg_loader - INFO - 处理批次 10/40 (行 4500-4999)
+2025-10-07 11:05:23,180 - src.data.pyg_loader - INFO - 处理批次 11/40 (行 5000-5499)
+2025-10-07 11:05:23,379 - src.data.pyg_loader - INFO - 处理批次 12/40 (行 5500-5999)
+2025-10-07 11:05:23,566 - src.data.pyg_loader - INFO - 处理批次 13/40 (行 6000-6499)
+2025-10-07 11:05:23,755 - src.data.pyg_loader - INFO - 处理批次 14/40 (行 6500-6999)
+2025-10-07 11:05:23,938 - src.data.pyg_loader - INFO - 处理批次 15/40 (行 7000-7499)
+2025-10-07 11:05:24,122 - src.data.pyg_loader - INFO - 处理批次 16/40 (行 7500-7999)
+2025-10-07 11:05:24,307 - src.data.pyg_loader - INFO - 处理批次 17/40 (行 8000-8499)
+2025-10-07 11:05:24,501 - src.data.pyg_loader - INFO - 处理批次 18/40 (行 8500-8999)
+2025-10-07 11:05:24,690 - src.data.pyg_loader - INFO - 处理批次 19/40 (行 9000-9499)
+2025-10-07 11:05:24,881 - src.data.pyg_loader - INFO - 处理批次 20/40 (行 9500-9999)
+2025-10-07 11:05:25,077 - src.data.pyg_loader - INFO - 处理批次 21/40 (行 10000-10499)
+2025-10-07 11:05:25,265 - src.data.pyg_loader - INFO - 处理批次 22/40 (行 10500-10999)
+2025-10-07 11:05:25,477 - src.data.pyg_loader - INFO - 处理批次 23/40 (行 11000-11499)
+2025-10-07 11:05:25,712 - src.data.pyg_loader - INFO - 处理批次 24/40 (行 11500-11999)
+2025-10-07 11:05:25,907 - src.data.pyg_loader - INFO - 处理批次 25/40 (行 12000-12499)
+2025-10-07 11:05:26,097 - src.data.pyg_loader - INFO - 处理批次 26/40 (行 12500-12999)
+2025-10-07 11:05:26,436 - src.data.pyg_loader - INFO - 处理批次 27/40 (行 13000-13499)
+2025-10-07 11:05:26,713 - src.data.pyg_loader - INFO - 处理批次 28/40 (行 13500-13999)
+2025-10-07 11:05:27,041 - src.data.pyg_loader - INFO - 处理批次 29/40 (行 14000-14499)
+2025-10-07 11:05:27,321 - src.data.pyg_loader - INFO - 处理批次 30/40 (行 14500-14999)
+2025-10-07 11:05:27,605 - src.data.pyg_loader - INFO - 处理批次 31/40 (行 15000-15499)
+2025-10-07 11:05:27,933 - src.data.pyg_loader - INFO - 处理批次 32/40 (行 15500-15999)
+2025-10-07 11:05:28,154 - src.data.pyg_loader - INFO - 处理批次 33/40 (行 16000-16499)
+2025-10-07 11:05:28,499 - src.data.pyg_loader - INFO - 处理批次 34/40 (行 16500-16999)
+2025-10-07 11:05:28,869 - src.data.pyg_loader - INFO - 处理批次 35/40 (行 17000-17499)
+2025-10-07 11:05:29,211 - src.data.pyg_loader - INFO - 处理批次 36/40 (行 17500-17999)
+2025-10-07 11:05:29,609 - src.data.pyg_loader - INFO - 处理批次 37/40 (行 18000-18499)
+2025-10-07 11:05:29,885 - src.data.pyg_loader - INFO - 处理批次 38/40 (行 18500-18999)
+2025-10-07 11:05:30,312 - src.data.pyg_loader - INFO - 处理批次 39/40 (行 19000-19499)
+2025-10-07 11:05:30,612 - src.data.pyg_loader - INFO - 处理批次 40/40 (行 19500-19999)
+2025-10-07 11:05:33,231 - src.data.pyg_loader - INFO - 为节点类型 alert 添加了 20000 个节点的特征，特征维度: 16
+2025-10-07 11:05:33,232 - src.data.pyg_loader - INFO - 为节点类型 rule 添加了 172 个节点的特征，特征维度: 16
+2025-10-07 11:05:33,232 - src.data.pyg_loader - INFO - 为节点类型 file 添加了 44 个节点的特征，特征维度: 24
+2025-10-07 11:05:33,266 - src.data.pyg_loader - INFO - 为节点类型 command 添加了 6699 个节点的特征，特征维度: 16
+2025-10-07 11:05:33,267 - src.data.pyg_loader - INFO - 为节点类型 user 添加了 87 个节点的特征，特征维度: 12
+2025-10-07 11:05:33,267 - src.data.pyg_loader - INFO - 为节点类型 process 添加了 38 个节点的特征，特征维度: 20
+2025-10-07 11:05:33,267 - src.data.pyg_loader - INFO - 为节点类型 host 添加了 7 个节点的特征，特征维度: 16
+2025-10-07 11:05:33,267 - src.data.pyg_loader - INFO - 为节点类型 agent 添加了 7 个节点的特征，特征维度: 16
+2025-10-07 11:05:33,267 - src.data.pyg_loader - INFO - 为节点类型 mitre_tactic 添加了 10 个节点的特征，特征维度: 16
+2025-10-07 11:05:33,267 - src.data.pyg_loader - INFO - 为节点类型 mitre_technique 添加了 67 个节点的特征，特征维度: 16
+2025-10-07 11:05:33,268 - src.data.pyg_loader - INFO - 为节点类型 timestamp 添加了 22 个节点的特征，特征维度: 16
+2025-10-07 11:05:33,268 - src.data.pyg_loader - INFO - 为节点类型 ip 添加了 12 个节点的特征，特征维度: 8
+2025-10-07 11:05:33,268 - src.data.pyg_loader - INFO - 为节点类型 domain 添加了 33 个节点的特征，特征维度: 12
+2025-10-07 11:05:33,268 - src.data.pyg_loader - INFO - 为节点类型 port 添加了 4 个节点的特征，特征维度: 8
+2025-10-07 11:05:33,268 - src.data.pyg_loader - WARNING - 数据中没有processed_timestamp列
+2025-10-07 11:05:33,268 - src.data.pyg_loader - INFO - PyG图构建完成:
+2025-10-07 11:05:33,268 - src.data.pyg_loader - INFO -   节点类型: ['alert', 'rule', 'file', 'command', 'user', 'process', 'host', 'agent', 'mitre_tactic', 'mitre_technique', 'timestamp', 'ip', 'domain', 'port']
+2025-10-07 11:05:33,268 - src.data.pyg_loader - INFO -   边类型: [('alert', 'triggered_by', 'rule'), ('alert', 'involves', 'file'), ('alert', 'executed', 'command'), ('alert', 'by_user', 'user'), ('alert', 'involves_process', 'process'), ('alert', 'at_time', 'timestamp'), ('alert', 'detected_on', 'host'), ('alert', 'reported_by', 'agent'), ('alert', 'connects_to', 'ip'), ('alert', 'connects_to', 'domain'), ('alert', 'uses_port', 'port')]
+2025-10-07 11:05:33,277 - __main__ - INFO - 图统计信息:
+2025-10-07 11:05:33,278 - __main__ - INFO -   节点类型: ['alert', 'rule', 'file', 'command', 'user', 'process', 'host', 'agent', 'mitre_tactic', 'mitre_technique', 'timestamp', 'ip', 'domain', 'port']
+2025-10-07 11:05:33,278 - __main__ - INFO -   边类型: [('alert', 'triggered_by', 'rule'), ('alert', 'involves', 'file'), ('alert', 'executed', 'command'), ('alert', 'by_user', 'user'), ('alert', 'involves_process', 'process'), ('alert', 'at_time', 'timestamp'), ('alert', 'detected_on', 'host'), ('alert', 'reported_by', 'agent'), ('alert', 'connects_to', 'ip'), ('alert', 'connects_to', 'domain'), ('alert', 'uses_port', 'port')]
+2025-10-07 11:05:33,278 - __main__ - INFO -   总节点数: 27202
+2025-10-07 11:05:33,278 - __main__ - INFO -   总边数: 99787
+2025-10-07 11:05:33,278 - src.data.pyg_loader - INFO - 创建时序快照
+2025-10-07 11:05:33,278 - src.data.pyg_loader - WARNING - 没有时间戳信息，返回原始数据作为单个快照
+2025-10-07 11:05:33,278 - __main__ - INFO - 创建了 1 个时序快照
+2025-10-07 11:05:33,278 - __main__ - INFO - ==================================================
+2025-10-07 11:05:33,279 - __main__ - INFO - 步骤3: 构建T-HGNN模型
+2025-10-07 11:05:33,279 - __main__ - INFO - ==================================================
+2025-10-07 11:05:33,582 - src.core.models.hgnn_encoder - INFO - 异质图编码器初始化完成，类型: gat
+2025-10-07 11:05:33,582 - src.core.models.hgnn_encoder - INFO - 编码器层数: 3
+2025-10-07 11:05:33,582 - src.core.models.hgnn_encoder - INFO - 隐藏维度: 128
+2025-10-07 11:05:33,582 - src.core.models.hgnn_encoder - INFO - 注意力头数: 8
+2025-10-07 11:05:33,587 - src.core.models.temporal_encoder - INFO - 随机位置编码初始化完成，维度: 64, 最大长度: 5000
+2025-10-07 11:05:33,588 - src.core.models.temporal_encoder - INFO - 时序注意力初始化完成，维度: 64, 头数: 8
+2025-10-07 11:05:33,589 - src.core.models.temporal_encoder - INFO - 时序卷积层初始化完成，输入通道: 64, 输出通道: 64
+2025-10-07 11:05:33,589 - src.core.models.temporal_encoder - INFO - 时序卷积层初始化完成，输入通道: 64, 输出通道: 64
+2025-10-07 11:05:33,591 - src.core.models.temporal_encoder - INFO - 时序编码模块初始化完成，时序维度: 64
+2025-10-07 11:05:33,611 - src.core.models.node_classifier - INFO - 节点分类器初始化完成，节点类型: ['alert', 'rule', 'file', 'command', 'user', 'process', 'host', 'agent', 'mitre_tactic', 'mitre_technique', 'timestamp', 'ip', 'domain', 'port']
+2025-10-07 11:05:33,611 - src.core.models.node_classifier - INFO - 分类数量: 2
+2025-10-07 11:05:33,612 - src.core.models.node_classifier - INFO - 输入维度: {'alert': 128, 'rule': 128, 'file': 128, 'command': 128, 'user': 128, 'process': 128, 'host': 128, 'agent': 128, 'mitre_tactic': 128, 'mitre_technique': 128, 'timestamp': 128, 'ip': 128, 'domain': 128, 'port': 128}
+2025-10-07 11:05:33,768 - src.core.models.t_hgnn - INFO - T-HGNN模型初始化完成
+2025-10-07 11:05:33,768 - src.core.models.t_hgnn - INFO - 节点类型: ['alert', 'rule', 'file', 'command', 'user', 'process', 'host', 'agent', 'mitre_tactic', 'mitre_technique', 'timestamp', 'ip', 'domain', 'port']
+2025-10-07 11:05:33,768 - src.core.models.t_hgnn - INFO - 边类型: [('alert', 'triggered_by', 'rule'), ('alert', 'involves', 'file'), ('alert', 'executed', 'command'), ('alert', 'by_user', 'user'), ('alert', 'involves_process', 'process'), ('alert', 'at_time', 'timestamp'), ('alert', 'detected_on', 'host'), ('alert', 'reported_by', 'agent'), ('rule', 'maps_to', 'mitre_tactic'), ('rule', 'uses', 'mitre_technique'), ('alert', 'exhibits', 'mitre_tactic'), ('alert', 'demonstrates', 'mitre_technique'), ('file', 'executed_by', 'command'), ('file', 'accessed_by', 'process'), ('file', 'owned_by', 'user'), ('file', 'located_on', 'host'), ('process', 'executed_by', 'user'), ('process', 'runs_on', 'host'), ('process', 'connects_to', 'ip'), ('process', 'uses_port', 'port'), ('alert', 'connects_to', 'ip'), ('alert', 'connects_to', 'domain'), ('alert', 'uses_port', 'port'), ('alert', 'affects_service', 'service'), ('host', 'has_ip', 'ip'), ('host', 'runs_service', 'service'), ('host', 'has_open_port', 'port'), ('ip', 'resolves_to', 'domain'), ('service', 'listens_on', 'port'), ('alert', 'follows', 'alert'), ('process', 'spawns', 'process')]
+2025-10-07 11:05:33,768 - src.core.models.t_hgnn - INFO - 隐藏维度: 128
+2025-10-07 11:05:33,768 - src.core.models.t_hgnn - INFO - 时序维度: 64
+2025-10-07 11:05:33,895 - __main__ - INFO - 模型信息: {'model_type': 'T-HGNN', 'node_types': ['alert', 'rule', 'file', 'command', 'user', 'process', 'host', 'agent', 'mitre_tactic', 'mitre_technique', 'timestamp', 'ip', 'domain', 'port'], 'edge_types': [('alert', 'triggered_by', 'rule'), ('alert', 'involves', 'file'), ('alert', 'executed', 'command'), ('alert', 'by_user', 'user'), ('alert', 'involves_process', 'process'), ('alert', 'at_time', 'timestamp'), ('alert', 'detected_on', 'host'), ('alert', 'reported_by', 'agent'), ('rule', 'maps_to', 'mitre_tactic'), ('rule', 'uses', 'mitre_technique'), ('alert', 'exhibits', 'mitre_tactic'), ('alert', 'demonstrates', 'mitre_technique'), ('file', 'executed_by', 'command'), ('file', 'accessed_by', 'process'), ('file', 'owned_by', 'user'), ('file', 'located_on', 'host'), ('process', 'executed_by', 'user'), ('process', 'runs_on', 'host'), ('process', 'connects_to', 'ip'), ('process', 'uses_port', 'port'), ('alert', 'connects_to', 'ip'), ('alert', 'connects_to', 'domain'), ('alert', 'uses_port', 'port'), ('alert', 'affects_service', 'service'), ('host', 'has_ip', 'ip'), ('host', 'runs_service', 'service'), ('host', 'has_open_port', 'port'), ('ip', 'resolves_to', 'domain'), ('service', 'listens_on', 'port'), ('alert', 'follows', 'alert'), ('process', 'spawns', 'process')], 'hidden_dim': 128, 'temporal_dim': 64, 'total_parameters': 34490022, 'trainable_parameters': 34490022, 'hgnn_encoder_params': 33066752, 'temporal_encoder_params': 411208, 'node_classifier_params': 608734}
+2025-10-07 11:05:33,895 - __main__ - INFO - ==================================================
+2025-10-07 11:05:33,895 - __main__ - INFO - 步骤4: 模型训练
+2025-10-07 11:05:33,896 - __main__ - INFO - ==================================================
+2025-10-07 11:05:33,903 - src.utils.label_generator - INFO - 开始生成真实标签...
+2025-10-07 11:05:36,431 - src.utils.label_generator - INFO - 标签分布统计:
+2025-10-07 11:05:36,431 - src.utils.label_generator - INFO -   alert: 正样本=20000, 负样本=0, 正样本比例=1.000
+2025-10-07 11:05:36,431 - src.utils.label_generator - INFO -   rule: 正样本=30, 负样本=142, 正样本比例=0.174
+2025-10-07 11:05:36,440 - src.utils.label_generator - INFO -   file: 正样本=12, 负样本=32, 正样本比例=0.273
+2025-10-07 11:05:36,440 - src.utils.label_generator - INFO -   command: 正样本=995, 负样本=5704, 正样本比例=0.149
+2025-10-07 11:05:36,440 - src.utils.label_generator - INFO -   user: 正样本=4, 负样本=83, 正样本比例=0.046
+2025-10-07 11:05:36,440 - src.utils.label_generator - INFO -   process: 正样本=12, 负样本=26, 正样本比例=0.316
+2025-10-07 11:05:36,440 - src.utils.label_generator - INFO -   host: 正样本=0, 负样本=7, 正样本比例=0.000
+2025-10-07 11:05:36,440 - src.utils.label_generator - INFO -   agent: 正样本=1, 负样本=6, 正样本比例=0.143
+2025-10-07 11:05:36,440 - src.utils.label_generator - INFO -   mitre_tactic: 正样本=1, 负样本=9, 正样本比例=0.100
+2025-10-07 11:05:36,440 - src.utils.label_generator - INFO -   mitre_technique: 正样本=13, 负样本=54, 正样本比例=0.194
+2025-10-07 11:05:36,440 - src.utils.label_generator - INFO -   timestamp: 正样本=3, 负样本=19, 正样本比例=0.136
+2025-10-07 11:05:36,441 - src.utils.label_generator - INFO -   ip: 正样本=3, 负样本=9, 正样本比例=0.250
+2025-10-07 11:05:36,441 - src.utils.label_generator - INFO -   domain: 正样本=2, 负样本=31, 正样本比例=0.061
+2025-10-07 11:05:36,441 - src.utils.label_generator - INFO -   port: 正样本=1, 负样本=3, 正样本比例=0.250
+2025-10-07 11:05:36,441 - src.utils.label_generator - INFO -   总计: 正样本=21077, 负样本=6125, 正样本比例=0.775
+2025-10-07 11:05:36,441 - src.utils.label_generator - INFO - 开始生成真实标签...
+2025-10-07 11:05:39,612 - src.utils.label_generator - INFO - 标签分布统计:
+2025-10-07 11:05:39,612 - src.utils.label_generator - INFO -   alert: 正样本=20000, 负样本=0, 正样本比例=1.000
+2025-10-07 11:05:39,612 - src.utils.label_generator - INFO -   rule: 正样本=30, 负样本=142, 正样本比例=0.174
+2025-10-07 11:05:39,612 - src.utils.label_generator - INFO -   file: 正样本=12, 负样本=32, 正样本比例=0.273
+2025-10-07 11:05:39,613 - src.utils.label_generator - INFO -   command: 正样本=995, 负样本=5704, 正样本比例=0.149
+2025-10-07 11:05:39,613 - src.utils.label_generator - INFO -   user: 正样本=4, 负样本=83, 正样本比例=0.046
+2025-10-07 11:05:39,613 - src.utils.label_generator - INFO -   process: 正样本=12, 负样本=26, 正样本比例=0.316
+2025-10-07 11:05:39,613 - src.utils.label_generator - INFO -   host: 正样本=0, 负样本=7, 正样本比例=0.000
+2025-10-07 11:05:39,613 - src.utils.label_generator - INFO -   agent: 正样本=1, 负样本=6, 正样本比例=0.143
+2025-10-07 11:05:39,613 - src.utils.label_generator - INFO -   mitre_tactic: 正样本=1, 负样本=9, 正样本比例=0.100
+2025-10-07 11:05:39,613 - src.utils.label_generator - INFO -   mitre_technique: 正样本=13, 负样本=54, 正样本比例=0.194
+2025-10-07 11:05:39,613 - src.utils.label_generator - INFO -   timestamp: 正样本=3, 负样本=19, 正样本比例=0.136
+2025-10-07 11:05:39,613 - src.utils.label_generator - INFO -   ip: 正样本=3, 负样本=9, 正样本比例=0.250
+2025-10-07 11:05:39,613 - src.utils.label_generator - INFO -   domain: 正样本=2, 负样本=31, 正样本比例=0.061
+2025-10-07 11:05:39,613 - src.utils.label_generator - INFO -   port: 正样本=1, 负样本=3, 正样本比例=0.250
+2025-10-07 11:05:39,613 - src.utils.label_generator - INFO -   总计: 正样本=21077, 负样本=6125, 正样本比例=0.775
+2025-10-07 11:05:39,613 - src.utils.label_generator - INFO - 开始Wazuh安全等级重采样...
+2025-10-07 11:05:39,614 - src.utils.label_generator - INFO - alert 重采样前: 正样本比例=0.000
+2025-10-07 11:05:39,614 - src.utils.label_generator - INFO - rule 重采样前: 正样本比例=0.174
+2025-10-07 11:05:39,614 - src.utils.label_generator - WARNING - 数据长度不匹配: df=26211, features=172，调整df长度
+2025-10-07 11:05:39,626 - src.utils.label_generator - WARNING - Wazuh自适应采样失败: The target 'y' needs to have more than 1 class. Got 1 class instead，使用SMOTE
+2025-10-07 11:05:44,826 - src.utils.label_generator - INFO - rule Wazuh重采样后: 正样本比例=0.500
+2025-10-07 11:05:44,826 - src.utils.label_generator - INFO - file 重采样前: 正样本比例=0.273
+2025-10-07 11:05:44,826 - src.utils.label_generator - INFO - command 重采样前: 正样本比例=0.149
+2025-10-07 11:05:44,826 - src.utils.label_generator - WARNING - 数据长度不匹配: df=172, features=6699，调整df长度
+2025-10-07 11:06:03,330 - src.utils.label_generator - WARNING - Wazuh自适应采样失败: The target 'y' needs to have more than 1 class. Got 1 class instead，使用SMOTE
+2025-10-07 11:06:03,349 - src.utils.label_generator - INFO - command Wazuh重采样后: 正样本比例=0.500
+2025-10-07 11:06:03,349 - src.utils.label_generator - INFO - user 重采样前: 正样本比例=0.046
+2025-10-07 11:06:03,350 - src.utils.label_generator - WARNING - 数据长度不匹配: df=6699, features=87，调整df长度
+2025-10-07 11:06:03,356 - src.utils.label_generator - WARNING - Wazuh自适应采样失败: The target 'y' needs to have more than 1 class. Got 1 class instead，使用SMOTE
+2025-10-07 11:06:03,363 - src.utils.label_generator - INFO - user Wazuh重采样后: 正样本比例=0.500
+2025-10-07 11:06:03,363 - src.utils.label_generator - INFO - process 重采样前: 正样本比例=0.316
+2025-10-07 11:06:03,363 - src.utils.label_generator - INFO - host 重采样前: 正样本比例=0.000
+2025-10-07 11:06:03,363 - src.utils.label_generator - INFO - agent 重采样前: 正样本比例=0.143
+2025-10-07 11:06:03,363 - src.utils.label_generator - WARNING - 数据长度不匹配: df=87, features=7，调整df长度
+2025-10-07 11:06:03,369 - src.utils.label_generator - INFO - agent Wazuh重采样后: 正样本比例=0.143
+2025-10-07 11:06:03,369 - src.utils.label_generator - INFO - mitre_tactic 重采样前: 正样本比例=0.100
+2025-10-07 11:06:03,369 - src.utils.label_generator - WARNING - 数据长度不匹配: df=7, features=10，调整df长度
+2025-10-07 11:06:03,380 - src.utils.label_generator - INFO - mitre_tactic Wazuh重采样后: 正样本比例=0.100
+2025-10-07 11:06:03,381 - src.utils.label_generator - INFO - mitre_technique 重采样前: 正样本比例=0.194
+2025-10-07 11:06:03,381 - src.utils.label_generator - INFO - timestamp 重采样前: 正样本比例=0.136
+2025-10-07 11:06:03,381 - src.utils.label_generator - WARNING - 数据长度不匹配: df=10, features=22，调整df长度
+2025-10-07 11:06:03,400 - src.utils.label_generator - WARNING - Wazuh自适应采样失败: The target 'y' needs to have more than 1 class. Got 1 class instead，使用SMOTE
+2025-10-07 11:06:03,407 - src.utils.label_generator - INFO - timestamp Wazuh重采样后: 正样本比例=0.500
+2025-10-07 11:06:03,407 - src.utils.label_generator - INFO - ip 重采样前: 正样本比例=0.250
+2025-10-07 11:06:03,408 - src.utils.label_generator - INFO - domain 重采样前: 正样本比例=0.061
+2025-10-07 11:06:03,408 - src.utils.label_generator - WARNING - 数据长度不匹配: df=22, features=33，调整df长度
+2025-10-07 11:06:03,427 - src.utils.label_generator - WARNING - Wazuh自适应采样失败: The target 'y' needs to have more than 1 class. Got 1 class instead，使用SMOTE
+2025-10-07 11:06:03,434 - src.utils.label_generator - INFO - domain Wazuh重采样后: 正样本比例=0.500
+2025-10-07 11:06:03,434 - src.utils.label_generator - INFO - port 重采样前: 正样本比例=0.250
+2025-10-07 11:06:03,435 - src.utils.label_generator - INFO - 计算类别权重...
+2025-10-07 11:06:03,435 - src.utils.label_generator - INFO - rule 类别权重: [1. 1.]
+2025-10-07 11:06:03,436 - src.utils.label_generator - INFO - file 类别权重: [0.6875     1.83333333]
+2025-10-07 11:06:03,437 - src.utils.label_generator - INFO - command 类别权重: [1. 1.]
+2025-10-07 11:06:03,437 - src.utils.label_generator - INFO - user 类别权重: [1. 1.]
+2025-10-07 11:06:03,437 - src.utils.label_generator - INFO - process 类别权重: [0.73076923 1.58333333]
+2025-10-07 11:06:03,437 - src.utils.label_generator - INFO - agent 类别权重: [0.58333333 3.5       ]
+2025-10-07 11:06:03,438 - src.utils.label_generator - INFO - mitre_tactic 类别权重: [0.55555556 5.        ]
+2025-10-07 11:06:03,438 - src.utils.label_generator - INFO - mitre_technique 类别权重: [0.62037037 2.57692308]
+2025-10-07 11:06:03,438 - src.utils.label_generator - INFO - timestamp 类别权重: [1. 1.]
+2025-10-07 11:06:03,439 - src.utils.label_generator - INFO - ip 类别权重: [0.66666667 2.        ]
+2025-10-07 11:06:03,439 - src.utils.label_generator - INFO - domain 类别权重: [1. 1.]
+2025-10-07 11:06:03,439 - src.utils.label_generator - INFO - port 类别权重: [0.66666667 2.        ]
+2025-10-07 11:06:03,461 - src.core.training.improved_trainer - INFO - 设置损失函数
+2025-10-07 11:06:03,462 - src.core.training.improved_trainer - INFO - 为 14 个节点类型创建了损失函数
+2025-10-07 11:06:03,462 - src.core.training.improved_trainer - INFO - 设置优化器
+2025-10-07 11:06:03,464 - src.core.training.improved_trainer - INFO - 优化器设置完成，学习率: 0.001
+2025-10-07 11:06:03,464 - src.core.training.improved_trainer - INFO - 设置学习率调度器
+2025-10-07 11:06:03,464 - src.core.training.improved_trainer - INFO - 学习率调度器: cosine
+2025-10-07 11:06:03,464 - src.core.training.improved_trainer - INFO - 开始模型训练
+2025-10-07 11:06:03,465 - src.core.training.real_data_loader - WARNING - 节点类型 alert 的标签长度(20000)与图数量(1)不匹配
+2025-10-07 11:06:03,465 - src.core.training.real_data_loader - WARNING - 节点类型 rule 的标签长度(284)与图数量(1)不匹配
+2025-10-07 11:06:03,466 - src.core.training.real_data_loader - WARNING - 节点类型 file 的标签长度(44)与图数量(1)不匹配
+2025-10-07 11:06:03,466 - src.core.training.real_data_loader - WARNING - 节点类型 command 的标签长度(11408)与图数量(1)不匹配
+2025-10-07 11:06:03,466 - src.core.training.real_data_loader - WARNING - 节点类型 user 的标签长度(166)与图数量(1)不匹配
+2025-10-07 11:06:03,466 - src.core.training.real_data_loader - WARNING - 节点类型 process 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:06:03,466 - src.core.training.real_data_loader - WARNING - 节点类型 host 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:06:03,466 - src.core.training.real_data_loader - WARNING - 节点类型 agent 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:06:03,466 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_tactic 的标签长度(10)与图数量(1)不匹配
+2025-10-07 11:06:03,466 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_technique 的标签长度(67)与图数量(1)不匹配
+2025-10-07 11:06:03,466 - src.core.training.real_data_loader - WARNING - 节点类型 timestamp 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:06:03,466 - src.core.training.real_data_loader - WARNING - 节点类型 ip 的标签长度(12)与图数量(1)不匹配
+2025-10-07 11:06:03,466 - src.core.training.real_data_loader - WARNING - 节点类型 domain 的标签长度(62)与图数量(1)不匹配
+2025-10-07 11:06:03,466 - src.core.training.real_data_loader - WARNING - 节点类型 port 的标签长度(4)与图数量(1)不匹配
+2025-10-07 11:06:03,466 - src.core.training.real_data_loader - INFO - 创建数据加载器: 批次大小=64, 样本数=1
+2025-10-07 11:06:17,538 - src.core.training.real_data_loader - WARNING - 节点类型 alert 的标签长度(20000)与图数量(1)不匹配
+2025-10-07 11:06:17,538 - src.core.training.real_data_loader - WARNING - 节点类型 rule 的标签长度(172)与图数量(1)不匹配
+2025-10-07 11:06:17,538 - src.core.training.real_data_loader - WARNING - 节点类型 file 的标签长度(44)与图数量(1)不匹配
+2025-10-07 11:06:17,538 - src.core.training.real_data_loader - WARNING - 节点类型 command 的标签长度(6699)与图数量(1)不匹配
+2025-10-07 11:06:17,538 - src.core.training.real_data_loader - WARNING - 节点类型 user 的标签长度(87)与图数量(1)不匹配
+2025-10-07 11:06:17,538 - src.core.training.real_data_loader - WARNING - 节点类型 process 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:06:17,538 - src.core.training.real_data_loader - WARNING - 节点类型 host 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:06:17,538 - src.core.training.real_data_loader - WARNING - 节点类型 agent 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:06:17,538 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_tactic 的标签长度(10)与图数量(1)不匹配
+2025-10-07 11:06:17,538 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_technique 的标签长度(67)与图数量(1)不匹配
+2025-10-07 11:06:17,538 - src.core.training.real_data_loader - WARNING - 节点类型 timestamp 的标签长度(22)与图数量(1)不匹配
+2025-10-07 11:06:17,538 - src.core.training.real_data_loader - WARNING - 节点类型 ip 的标签长度(12)与图数量(1)不匹配
+2025-10-07 11:06:17,538 - src.core.training.real_data_loader - WARNING - 节点类型 domain 的标签长度(33)与图数量(1)不匹配
+2025-10-07 11:06:17,538 - src.core.training.real_data_loader - WARNING - 节点类型 port 的标签长度(4)与图数量(1)不匹配
+2025-10-07 11:06:17,538 - src.core.training.real_data_loader - INFO - 创建数据加载器: 批次大小=64, 样本数=1
+2025-10-07 11:06:25,552 - src.core.training.improved_trainer - INFO - Epoch 1/100, Train Loss: 0.0002, Val Loss: 0.0148, Train Acc: 0.7857, Val Acc: 0.7857, LR: 0.001000
+2025-10-07 11:06:25,553 - src.core.training.real_data_loader - WARNING - 节点类型 alert 的标签长度(20000)与图数量(1)不匹配
+2025-10-07 11:06:25,553 - src.core.training.real_data_loader - WARNING - 节点类型 rule 的标签长度(284)与图数量(1)不匹配
+2025-10-07 11:06:25,553 - src.core.training.real_data_loader - WARNING - 节点类型 file 的标签长度(44)与图数量(1)不匹配
+2025-10-07 11:06:25,554 - src.core.training.real_data_loader - WARNING - 节点类型 command 的标签长度(11408)与图数量(1)不匹配
+2025-10-07 11:06:25,554 - src.core.training.real_data_loader - WARNING - 节点类型 user 的标签长度(166)与图数量(1)不匹配
+2025-10-07 11:06:25,554 - src.core.training.real_data_loader - WARNING - 节点类型 process 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:06:25,554 - src.core.training.real_data_loader - WARNING - 节点类型 host 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:06:25,554 - src.core.training.real_data_loader - WARNING - 节点类型 agent 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:06:25,554 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_tactic 的标签长度(10)与图数量(1)不匹配
+2025-10-07 11:06:25,554 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_technique 的标签长度(67)与图数量(1)不匹配
+2025-10-07 11:06:25,554 - src.core.training.real_data_loader - WARNING - 节点类型 timestamp 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:06:25,554 - src.core.training.real_data_loader - WARNING - 节点类型 ip 的标签长度(12)与图数量(1)不匹配
+2025-10-07 11:06:25,554 - src.core.training.real_data_loader - WARNING - 节点类型 domain 的标签长度(62)与图数量(1)不匹配
+2025-10-07 11:06:25,554 - src.core.training.real_data_loader - WARNING - 节点类型 port 的标签长度(4)与图数量(1)不匹配
+2025-10-07 11:06:25,554 - src.core.training.real_data_loader - INFO - 创建数据加载器: 批次大小=64, 样本数=1
+2025-10-07 11:06:34,012 - src.core.training.real_data_loader - WARNING - 节点类型 alert 的标签长度(20000)与图数量(1)不匹配
+2025-10-07 11:06:34,012 - src.core.training.real_data_loader - WARNING - 节点类型 rule 的标签长度(172)与图数量(1)不匹配
+2025-10-07 11:06:34,012 - src.core.training.real_data_loader - WARNING - 节点类型 file 的标签长度(44)与图数量(1)不匹配
+2025-10-07 11:06:34,012 - src.core.training.real_data_loader - WARNING - 节点类型 command 的标签长度(6699)与图数量(1)不匹配
+2025-10-07 11:06:34,012 - src.core.training.real_data_loader - WARNING - 节点类型 user 的标签长度(87)与图数量(1)不匹配
+2025-10-07 11:06:34,012 - src.core.training.real_data_loader - WARNING - 节点类型 process 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:06:34,012 - src.core.training.real_data_loader - WARNING - 节点类型 host 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:06:34,012 - src.core.training.real_data_loader - WARNING - 节点类型 agent 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:06:34,012 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_tactic 的标签长度(10)与图数量(1)不匹配
+2025-10-07 11:06:34,012 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_technique 的标签长度(67)与图数量(1)不匹配
+2025-10-07 11:06:34,012 - src.core.training.real_data_loader - WARNING - 节点类型 timestamp 的标签长度(22)与图数量(1)不匹配
+2025-10-07 11:06:34,012 - src.core.training.real_data_loader - WARNING - 节点类型 ip 的标签长度(12)与图数量(1)不匹配
+2025-10-07 11:06:34,012 - src.core.training.real_data_loader - WARNING - 节点类型 domain 的标签长度(33)与图数量(1)不匹配
+2025-10-07 11:06:34,012 - src.core.training.real_data_loader - WARNING - 节点类型 port 的标签长度(4)与图数量(1)不匹配
+2025-10-07 11:06:34,013 - src.core.training.real_data_loader - INFO - 创建数据加载器: 批次大小=64, 样本数=1
+2025-10-07 11:06:42,023 - src.core.training.improved_trainer - INFO - Epoch 2/100, Train Loss: 0.0055, Val Loss: 0.0019, Train Acc: 0.2857, Val Acc: 0.4286, LR: 0.000999
+2025-10-07 11:06:42,024 - src.core.training.real_data_loader - WARNING - 节点类型 alert 的标签长度(20000)与图数量(1)不匹配
+2025-10-07 11:06:42,024 - src.core.training.real_data_loader - WARNING - 节点类型 rule 的标签长度(284)与图数量(1)不匹配
+2025-10-07 11:06:42,024 - src.core.training.real_data_loader - WARNING - 节点类型 file 的标签长度(44)与图数量(1)不匹配
+2025-10-07 11:06:42,024 - src.core.training.real_data_loader - WARNING - 节点类型 command 的标签长度(11408)与图数量(1)不匹配
+2025-10-07 11:06:42,024 - src.core.training.real_data_loader - WARNING - 节点类型 user 的标签长度(166)与图数量(1)不匹配
+2025-10-07 11:06:42,024 - src.core.training.real_data_loader - WARNING - 节点类型 process 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:06:42,024 - src.core.training.real_data_loader - WARNING - 节点类型 host 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:06:42,024 - src.core.training.real_data_loader - WARNING - 节点类型 agent 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:06:42,025 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_tactic 的标签长度(10)与图数量(1)不匹配
+2025-10-07 11:06:42,025 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_technique 的标签长度(67)与图数量(1)不匹配
+2025-10-07 11:06:42,025 - src.core.training.real_data_loader - WARNING - 节点类型 timestamp 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:06:42,025 - src.core.training.real_data_loader - WARNING - 节点类型 ip 的标签长度(12)与图数量(1)不匹配
+2025-10-07 11:06:42,025 - src.core.training.real_data_loader - WARNING - 节点类型 domain 的标签长度(62)与图数量(1)不匹配
+2025-10-07 11:06:42,025 - src.core.training.real_data_loader - WARNING - 节点类型 port 的标签长度(4)与图数量(1)不匹配
+2025-10-07 11:06:42,025 - src.core.training.real_data_loader - INFO - 创建数据加载器: 批次大小=64, 样本数=1
+2025-10-07 11:06:50,485 - src.core.training.real_data_loader - WARNING - 节点类型 alert 的标签长度(20000)与图数量(1)不匹配
+2025-10-07 11:06:50,485 - src.core.training.real_data_loader - WARNING - 节点类型 rule 的标签长度(172)与图数量(1)不匹配
+2025-10-07 11:06:50,485 - src.core.training.real_data_loader - WARNING - 节点类型 file 的标签长度(44)与图数量(1)不匹配
+2025-10-07 11:06:50,485 - src.core.training.real_data_loader - WARNING - 节点类型 command 的标签长度(6699)与图数量(1)不匹配
+2025-10-07 11:06:50,485 - src.core.training.real_data_loader - WARNING - 节点类型 user 的标签长度(87)与图数量(1)不匹配
+2025-10-07 11:06:50,485 - src.core.training.real_data_loader - WARNING - 节点类型 process 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:06:50,485 - src.core.training.real_data_loader - WARNING - 节点类型 host 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:06:50,485 - src.core.training.real_data_loader - WARNING - 节点类型 agent 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:06:50,485 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_tactic 的标签长度(10)与图数量(1)不匹配
+2025-10-07 11:06:50,485 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_technique 的标签长度(67)与图数量(1)不匹配
+2025-10-07 11:06:50,485 - src.core.training.real_data_loader - WARNING - 节点类型 timestamp 的标签长度(22)与图数量(1)不匹配
+2025-10-07 11:06:50,485 - src.core.training.real_data_loader - WARNING - 节点类型 ip 的标签长度(12)与图数量(1)不匹配
+2025-10-07 11:06:50,485 - src.core.training.real_data_loader - WARNING - 节点类型 domain 的标签长度(33)与图数量(1)不匹配
+2025-10-07 11:06:50,485 - src.core.training.real_data_loader - WARNING - 节点类型 port 的标签长度(4)与图数量(1)不匹配
+2025-10-07 11:06:50,485 - src.core.training.real_data_loader - INFO - 创建数据加载器: 批次大小=64, 样本数=1
+2025-10-07 11:06:58,590 - src.core.training.improved_trainer - INFO - Epoch 3/100, Train Loss: 0.0031, Val Loss: 0.0004, Train Acc: 0.5000, Val Acc: 0.5714, LR: 0.000998
+2025-10-07 11:06:58,591 - src.core.training.real_data_loader - WARNING - 节点类型 alert 的标签长度(20000)与图数量(1)不匹配
+2025-10-07 11:06:58,591 - src.core.training.real_data_loader - WARNING - 节点类型 rule 的标签长度(284)与图数量(1)不匹配
+2025-10-07 11:06:58,591 - src.core.training.real_data_loader - WARNING - 节点类型 file 的标签长度(44)与图数量(1)不匹配
+2025-10-07 11:06:58,591 - src.core.training.real_data_loader - WARNING - 节点类型 command 的标签长度(11408)与图数量(1)不匹配
+2025-10-07 11:06:58,591 - src.core.training.real_data_loader - WARNING - 节点类型 user 的标签长度(166)与图数量(1)不匹配
+2025-10-07 11:06:58,591 - src.core.training.real_data_loader - WARNING - 节点类型 process 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:06:58,591 - src.core.training.real_data_loader - WARNING - 节点类型 host 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:06:58,591 - src.core.training.real_data_loader - WARNING - 节点类型 agent 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:06:58,591 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_tactic 的标签长度(10)与图数量(1)不匹配
+2025-10-07 11:06:58,591 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_technique 的标签长度(67)与图数量(1)不匹配
+2025-10-07 11:06:58,591 - src.core.training.real_data_loader - WARNING - 节点类型 timestamp 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:06:58,591 - src.core.training.real_data_loader - WARNING - 节点类型 ip 的标签长度(12)与图数量(1)不匹配
+2025-10-07 11:06:58,591 - src.core.training.real_data_loader - WARNING - 节点类型 domain 的标签长度(62)与图数量(1)不匹配
+2025-10-07 11:06:58,591 - src.core.training.real_data_loader - WARNING - 节点类型 port 的标签长度(4)与图数量(1)不匹配
+2025-10-07 11:06:58,592 - src.core.training.real_data_loader - INFO - 创建数据加载器: 批次大小=64, 样本数=1
+2025-10-07 11:07:07,001 - src.core.training.real_data_loader - WARNING - 节点类型 alert 的标签长度(20000)与图数量(1)不匹配
+2025-10-07 11:07:07,001 - src.core.training.real_data_loader - WARNING - 节点类型 rule 的标签长度(172)与图数量(1)不匹配
+2025-10-07 11:07:07,001 - src.core.training.real_data_loader - WARNING - 节点类型 file 的标签长度(44)与图数量(1)不匹配
+2025-10-07 11:07:07,001 - src.core.training.real_data_loader - WARNING - 节点类型 command 的标签长度(6699)与图数量(1)不匹配
+2025-10-07 11:07:07,001 - src.core.training.real_data_loader - WARNING - 节点类型 user 的标签长度(87)与图数量(1)不匹配
+2025-10-07 11:07:07,001 - src.core.training.real_data_loader - WARNING - 节点类型 process 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:07:07,001 - src.core.training.real_data_loader - WARNING - 节点类型 host 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:07:07,001 - src.core.training.real_data_loader - WARNING - 节点类型 agent 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:07:07,001 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_tactic 的标签长度(10)与图数量(1)不匹配
+2025-10-07 11:07:07,001 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_technique 的标签长度(67)与图数量(1)不匹配
+2025-10-07 11:07:07,001 - src.core.training.real_data_loader - WARNING - 节点类型 timestamp 的标签长度(22)与图数量(1)不匹配
+2025-10-07 11:07:07,001 - src.core.training.real_data_loader - WARNING - 节点类型 ip 的标签长度(12)与图数量(1)不匹配
+2025-10-07 11:07:07,001 - src.core.training.real_data_loader - WARNING - 节点类型 domain 的标签长度(33)与图数量(1)不匹配
+2025-10-07 11:07:07,001 - src.core.training.real_data_loader - WARNING - 节点类型 port 的标签长度(4)与图数量(1)不匹配
+2025-10-07 11:07:07,001 - src.core.training.real_data_loader - INFO - 创建数据加载器: 批次大小=64, 样本数=1
+2025-10-07 11:07:14,964 - src.core.training.improved_trainer - INFO - Epoch 4/100, Train Loss: 0.0019, Val Loss: 0.0002, Train Acc: 0.5714, Val Acc: 0.7143, LR: 0.000996
+2025-10-07 11:07:14,965 - src.core.training.real_data_loader - WARNING - 节点类型 alert 的标签长度(20000)与图数量(1)不匹配
+2025-10-07 11:07:14,966 - src.core.training.real_data_loader - WARNING - 节点类型 rule 的标签长度(284)与图数量(1)不匹配
+2025-10-07 11:07:14,966 - src.core.training.real_data_loader - WARNING - 节点类型 file 的标签长度(44)与图数量(1)不匹配
+2025-10-07 11:07:14,966 - src.core.training.real_data_loader - WARNING - 节点类型 command 的标签长度(11408)与图数量(1)不匹配
+2025-10-07 11:07:14,966 - src.core.training.real_data_loader - WARNING - 节点类型 user 的标签长度(166)与图数量(1)不匹配
+2025-10-07 11:07:14,966 - src.core.training.real_data_loader - WARNING - 节点类型 process 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:07:14,966 - src.core.training.real_data_loader - WARNING - 节点类型 host 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:07:14,966 - src.core.training.real_data_loader - WARNING - 节点类型 agent 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:07:14,966 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_tactic 的标签长度(10)与图数量(1)不匹配
+2025-10-07 11:07:14,966 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_technique 的标签长度(67)与图数量(1)不匹配
+2025-10-07 11:07:14,966 - src.core.training.real_data_loader - WARNING - 节点类型 timestamp 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:07:14,966 - src.core.training.real_data_loader - WARNING - 节点类型 ip 的标签长度(12)与图数量(1)不匹配
+2025-10-07 11:07:14,966 - src.core.training.real_data_loader - WARNING - 节点类型 domain 的标签长度(62)与图数量(1)不匹配
+2025-10-07 11:07:14,966 - src.core.training.real_data_loader - WARNING - 节点类型 port 的标签长度(4)与图数量(1)不匹配
+2025-10-07 11:07:14,966 - src.core.training.real_data_loader - INFO - 创建数据加载器: 批次大小=64, 样本数=1
+2025-10-07 11:07:23,366 - src.core.training.real_data_loader - WARNING - 节点类型 alert 的标签长度(20000)与图数量(1)不匹配
+2025-10-07 11:07:23,366 - src.core.training.real_data_loader - WARNING - 节点类型 rule 的标签长度(172)与图数量(1)不匹配
+2025-10-07 11:07:23,366 - src.core.training.real_data_loader - WARNING - 节点类型 file 的标签长度(44)与图数量(1)不匹配
+2025-10-07 11:07:23,366 - src.core.training.real_data_loader - WARNING - 节点类型 command 的标签长度(6699)与图数量(1)不匹配
+2025-10-07 11:07:23,366 - src.core.training.real_data_loader - WARNING - 节点类型 user 的标签长度(87)与图数量(1)不匹配
+2025-10-07 11:07:23,366 - src.core.training.real_data_loader - WARNING - 节点类型 process 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:07:23,366 - src.core.training.real_data_loader - WARNING - 节点类型 host 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:07:23,366 - src.core.training.real_data_loader - WARNING - 节点类型 agent 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:07:23,367 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_tactic 的标签长度(10)与图数量(1)不匹配
+2025-10-07 11:07:23,367 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_technique 的标签长度(67)与图数量(1)不匹配
+2025-10-07 11:07:23,367 - src.core.training.real_data_loader - WARNING - 节点类型 timestamp 的标签长度(22)与图数量(1)不匹配
+2025-10-07 11:07:23,367 - src.core.training.real_data_loader - WARNING - 节点类型 ip 的标签长度(12)与图数量(1)不匹配
+2025-10-07 11:07:23,367 - src.core.training.real_data_loader - WARNING - 节点类型 domain 的标签长度(33)与图数量(1)不匹配
+2025-10-07 11:07:23,367 - src.core.training.real_data_loader - WARNING - 节点类型 port 的标签长度(4)与图数量(1)不匹配
+2025-10-07 11:07:23,367 - src.core.training.real_data_loader - INFO - 创建数据加载器: 批次大小=64, 样本数=1
+2025-10-07 11:07:31,382 - src.core.training.improved_trainer - INFO - Epoch 5/100, Train Loss: 0.0048, Val Loss: 0.0005, Train Acc: 0.5714, Val Acc: 0.6429, LR: 0.000994
+2025-10-07 11:07:31,383 - src.core.training.real_data_loader - WARNING - 节点类型 alert 的标签长度(20000)与图数量(1)不匹配
+2025-10-07 11:07:31,383 - src.core.training.real_data_loader - WARNING - 节点类型 rule 的标签长度(284)与图数量(1)不匹配
+2025-10-07 11:07:31,383 - src.core.training.real_data_loader - WARNING - 节点类型 file 的标签长度(44)与图数量(1)不匹配
+2025-10-07 11:07:31,383 - src.core.training.real_data_loader - WARNING - 节点类型 command 的标签长度(11408)与图数量(1)不匹配
+2025-10-07 11:07:31,383 - src.core.training.real_data_loader - WARNING - 节点类型 user 的标签长度(166)与图数量(1)不匹配
+2025-10-07 11:07:31,383 - src.core.training.real_data_loader - WARNING - 节点类型 process 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:07:31,383 - src.core.training.real_data_loader - WARNING - 节点类型 host 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:07:31,383 - src.core.training.real_data_loader - WARNING - 节点类型 agent 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:07:31,383 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_tactic 的标签长度(10)与图数量(1)不匹配
+2025-10-07 11:07:31,383 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_technique 的标签长度(67)与图数量(1)不匹配
+2025-10-07 11:07:31,383 - src.core.training.real_data_loader - WARNING - 节点类型 timestamp 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:07:31,383 - src.core.training.real_data_loader - WARNING - 节点类型 ip 的标签长度(12)与图数量(1)不匹配
+2025-10-07 11:07:31,383 - src.core.training.real_data_loader - WARNING - 节点类型 domain 的标签长度(62)与图数量(1)不匹配
+2025-10-07 11:07:31,383 - src.core.training.real_data_loader - WARNING - 节点类型 port 的标签长度(4)与图数量(1)不匹配
+2025-10-07 11:07:31,384 - src.core.training.real_data_loader - INFO - 创建数据加载器: 批次大小=64, 样本数=1
+2025-10-07 11:07:39,862 - src.core.training.real_data_loader - WARNING - 节点类型 alert 的标签长度(20000)与图数量(1)不匹配
+2025-10-07 11:07:39,862 - src.core.training.real_data_loader - WARNING - 节点类型 rule 的标签长度(172)与图数量(1)不匹配
+2025-10-07 11:07:39,863 - src.core.training.real_data_loader - WARNING - 节点类型 file 的标签长度(44)与图数量(1)不匹配
+2025-10-07 11:07:39,863 - src.core.training.real_data_loader - WARNING - 节点类型 command 的标签长度(6699)与图数量(1)不匹配
+2025-10-07 11:07:39,863 - src.core.training.real_data_loader - WARNING - 节点类型 user 的标签长度(87)与图数量(1)不匹配
+2025-10-07 11:07:39,863 - src.core.training.real_data_loader - WARNING - 节点类型 process 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:07:39,863 - src.core.training.real_data_loader - WARNING - 节点类型 host 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:07:39,863 - src.core.training.real_data_loader - WARNING - 节点类型 agent 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:07:39,863 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_tactic 的标签长度(10)与图数量(1)不匹配
+2025-10-07 11:07:39,863 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_technique 的标签长度(67)与图数量(1)不匹配
+2025-10-07 11:07:39,863 - src.core.training.real_data_loader - WARNING - 节点类型 timestamp 的标签长度(22)与图数量(1)不匹配
+2025-10-07 11:07:39,863 - src.core.training.real_data_loader - WARNING - 节点类型 ip 的标签长度(12)与图数量(1)不匹配
+2025-10-07 11:07:39,863 - src.core.training.real_data_loader - WARNING - 节点类型 domain 的标签长度(33)与图数量(1)不匹配
+2025-10-07 11:07:39,863 - src.core.training.real_data_loader - WARNING - 节点类型 port 的标签长度(4)与图数量(1)不匹配
+2025-10-07 11:07:39,863 - src.core.training.real_data_loader - INFO - 创建数据加载器: 批次大小=64, 样本数=1
+2025-10-07 11:07:47,957 - src.core.training.improved_trainer - INFO - Epoch 6/100, Train Loss: 0.0030, Val Loss: 0.0014, Train Acc: 0.5714, Val Acc: 0.6429, LR: 0.000991
+2025-10-07 11:07:47,958 - src.core.training.real_data_loader - WARNING - 节点类型 alert 的标签长度(20000)与图数量(1)不匹配
+2025-10-07 11:07:47,958 - src.core.training.real_data_loader - WARNING - 节点类型 rule 的标签长度(284)与图数量(1)不匹配
+2025-10-07 11:07:47,958 - src.core.training.real_data_loader - WARNING - 节点类型 file 的标签长度(44)与图数量(1)不匹配
+2025-10-07 11:07:47,958 - src.core.training.real_data_loader - WARNING - 节点类型 command 的标签长度(11408)与图数量(1)不匹配
+2025-10-07 11:07:47,958 - src.core.training.real_data_loader - WARNING - 节点类型 user 的标签长度(166)与图数量(1)不匹配
+2025-10-07 11:07:47,958 - src.core.training.real_data_loader - WARNING - 节点类型 process 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:07:47,958 - src.core.training.real_data_loader - WARNING - 节点类型 host 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:07:47,958 - src.core.training.real_data_loader - WARNING - 节点类型 agent 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:07:47,958 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_tactic 的标签长度(10)与图数量(1)不匹配
+2025-10-07 11:07:47,959 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_technique 的标签长度(67)与图数量(1)不匹配
+2025-10-07 11:07:47,959 - src.core.training.real_data_loader - WARNING - 节点类型 timestamp 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:07:47,959 - src.core.training.real_data_loader - WARNING - 节点类型 ip 的标签长度(12)与图数量(1)不匹配
+2025-10-07 11:07:47,959 - src.core.training.real_data_loader - WARNING - 节点类型 domain 的标签长度(62)与图数量(1)不匹配
+2025-10-07 11:07:47,959 - src.core.training.real_data_loader - WARNING - 节点类型 port 的标签长度(4)与图数量(1)不匹配
+2025-10-07 11:07:47,959 - src.core.training.real_data_loader - INFO - 创建数据加载器: 批次大小=64, 样本数=1
+2025-10-07 11:07:56,485 - src.core.training.real_data_loader - WARNING - 节点类型 alert 的标签长度(20000)与图数量(1)不匹配
+2025-10-07 11:07:56,485 - src.core.training.real_data_loader - WARNING - 节点类型 rule 的标签长度(172)与图数量(1)不匹配
+2025-10-07 11:07:56,485 - src.core.training.real_data_loader - WARNING - 节点类型 file 的标签长度(44)与图数量(1)不匹配
+2025-10-07 11:07:56,485 - src.core.training.real_data_loader - WARNING - 节点类型 command 的标签长度(6699)与图数量(1)不匹配
+2025-10-07 11:07:56,485 - src.core.training.real_data_loader - WARNING - 节点类型 user 的标签长度(87)与图数量(1)不匹配
+2025-10-07 11:07:56,485 - src.core.training.real_data_loader - WARNING - 节点类型 process 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:07:56,485 - src.core.training.real_data_loader - WARNING - 节点类型 host 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:07:56,485 - src.core.training.real_data_loader - WARNING - 节点类型 agent 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:07:56,485 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_tactic 的标签长度(10)与图数量(1)不匹配
+2025-10-07 11:07:56,485 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_technique 的标签长度(67)与图数量(1)不匹配
+2025-10-07 11:07:56,485 - src.core.training.real_data_loader - WARNING - 节点类型 timestamp 的标签长度(22)与图数量(1)不匹配
+2025-10-07 11:07:56,485 - src.core.training.real_data_loader - WARNING - 节点类型 ip 的标签长度(12)与图数量(1)不匹配
+2025-10-07 11:07:56,485 - src.core.training.real_data_loader - WARNING - 节点类型 domain 的标签长度(33)与图数量(1)不匹配
+2025-10-07 11:07:56,485 - src.core.training.real_data_loader - WARNING - 节点类型 port 的标签长度(4)与图数量(1)不匹配
+2025-10-07 11:07:56,485 - src.core.training.real_data_loader - INFO - 创建数据加载器: 批次大小=64, 样本数=1
+2025-10-07 11:08:04,513 - src.core.training.improved_trainer - INFO - Epoch 7/100, Train Loss: 0.0061, Val Loss: 0.0129, Train Acc: 0.5000, Val Acc: 0.5000, LR: 0.000988
+2025-10-07 11:08:04,514 - src.core.training.real_data_loader - WARNING - 节点类型 alert 的标签长度(20000)与图数量(1)不匹配
+2025-10-07 11:08:04,514 - src.core.training.real_data_loader - WARNING - 节点类型 rule 的标签长度(284)与图数量(1)不匹配
+2025-10-07 11:08:04,514 - src.core.training.real_data_loader - WARNING - 节点类型 file 的标签长度(44)与图数量(1)不匹配
+2025-10-07 11:08:04,514 - src.core.training.real_data_loader - WARNING - 节点类型 command 的标签长度(11408)与图数量(1)不匹配
+2025-10-07 11:08:04,514 - src.core.training.real_data_loader - WARNING - 节点类型 user 的标签长度(166)与图数量(1)不匹配
+2025-10-07 11:08:04,515 - src.core.training.real_data_loader - WARNING - 节点类型 process 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:08:04,515 - src.core.training.real_data_loader - WARNING - 节点类型 host 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:08:04,515 - src.core.training.real_data_loader - WARNING - 节点类型 agent 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:08:04,515 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_tactic 的标签长度(10)与图数量(1)不匹配
+2025-10-07 11:08:04,515 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_technique 的标签长度(67)与图数量(1)不匹配
+2025-10-07 11:08:04,515 - src.core.training.real_data_loader - WARNING - 节点类型 timestamp 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:08:04,515 - src.core.training.real_data_loader - WARNING - 节点类型 ip 的标签长度(12)与图数量(1)不匹配
+2025-10-07 11:08:04,515 - src.core.training.real_data_loader - WARNING - 节点类型 domain 的标签长度(62)与图数量(1)不匹配
+2025-10-07 11:08:04,515 - src.core.training.real_data_loader - WARNING - 节点类型 port 的标签长度(4)与图数量(1)不匹配
+2025-10-07 11:08:04,515 - src.core.training.real_data_loader - INFO - 创建数据加载器: 批次大小=64, 样本数=1
+2025-10-07 11:08:12,923 - src.core.training.real_data_loader - WARNING - 节点类型 alert 的标签长度(20000)与图数量(1)不匹配
+2025-10-07 11:08:12,924 - src.core.training.real_data_loader - WARNING - 节点类型 rule 的标签长度(172)与图数量(1)不匹配
+2025-10-07 11:08:12,924 - src.core.training.real_data_loader - WARNING - 节点类型 file 的标签长度(44)与图数量(1)不匹配
+2025-10-07 11:08:12,924 - src.core.training.real_data_loader - WARNING - 节点类型 command 的标签长度(6699)与图数量(1)不匹配
+2025-10-07 11:08:12,924 - src.core.training.real_data_loader - WARNING - 节点类型 user 的标签长度(87)与图数量(1)不匹配
+2025-10-07 11:08:12,924 - src.core.training.real_data_loader - WARNING - 节点类型 process 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:08:12,924 - src.core.training.real_data_loader - WARNING - 节点类型 host 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:08:12,924 - src.core.training.real_data_loader - WARNING - 节点类型 agent 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:08:12,924 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_tactic 的标签长度(10)与图数量(1)不匹配
+2025-10-07 11:08:12,924 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_technique 的标签长度(67)与图数量(1)不匹配
+2025-10-07 11:08:12,924 - src.core.training.real_data_loader - WARNING - 节点类型 timestamp 的标签长度(22)与图数量(1)不匹配
+2025-10-07 11:08:12,924 - src.core.training.real_data_loader - WARNING - 节点类型 ip 的标签长度(12)与图数量(1)不匹配
+2025-10-07 11:08:12,924 - src.core.training.real_data_loader - WARNING - 节点类型 domain 的标签长度(33)与图数量(1)不匹配
+2025-10-07 11:08:12,924 - src.core.training.real_data_loader - WARNING - 节点类型 port 的标签长度(4)与图数量(1)不匹配
+2025-10-07 11:08:12,924 - src.core.training.real_data_loader - INFO - 创建数据加载器: 批次大小=64, 样本数=1
+2025-10-07 11:08:20,975 - src.core.training.improved_trainer - INFO - Epoch 8/100, Train Loss: 0.0041, Val Loss: 0.0005, Train Acc: 0.7143, Val Acc: 0.6429, LR: 0.000984
+2025-10-07 11:08:20,976 - src.core.training.real_data_loader - WARNING - 节点类型 alert 的标签长度(20000)与图数量(1)不匹配
+2025-10-07 11:08:20,976 - src.core.training.real_data_loader - WARNING - 节点类型 rule 的标签长度(284)与图数量(1)不匹配
+2025-10-07 11:08:20,976 - src.core.training.real_data_loader - WARNING - 节点类型 file 的标签长度(44)与图数量(1)不匹配
+2025-10-07 11:08:20,976 - src.core.training.real_data_loader - WARNING - 节点类型 command 的标签长度(11408)与图数量(1)不匹配
+2025-10-07 11:08:20,976 - src.core.training.real_data_loader - WARNING - 节点类型 user 的标签长度(166)与图数量(1)不匹配
+2025-10-07 11:08:20,976 - src.core.training.real_data_loader - WARNING - 节点类型 process 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:08:20,976 - src.core.training.real_data_loader - WARNING - 节点类型 host 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:08:20,976 - src.core.training.real_data_loader - WARNING - 节点类型 agent 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:08:20,976 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_tactic 的标签长度(10)与图数量(1)不匹配
+2025-10-07 11:08:20,976 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_technique 的标签长度(67)与图数量(1)不匹配
+2025-10-07 11:08:20,976 - src.core.training.real_data_loader - WARNING - 节点类型 timestamp 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:08:20,976 - src.core.training.real_data_loader - WARNING - 节点类型 ip 的标签长度(12)与图数量(1)不匹配
+2025-10-07 11:08:20,976 - src.core.training.real_data_loader - WARNING - 节点类型 domain 的标签长度(62)与图数量(1)不匹配
+2025-10-07 11:08:20,976 - src.core.training.real_data_loader - WARNING - 节点类型 port 的标签长度(4)与图数量(1)不匹配
+2025-10-07 11:08:20,976 - src.core.training.real_data_loader - INFO - 创建数据加载器: 批次大小=64, 样本数=1
+2025-10-07 11:08:29,391 - src.core.training.real_data_loader - WARNING - 节点类型 alert 的标签长度(20000)与图数量(1)不匹配
+2025-10-07 11:08:29,391 - src.core.training.real_data_loader - WARNING - 节点类型 rule 的标签长度(172)与图数量(1)不匹配
+2025-10-07 11:08:29,391 - src.core.training.real_data_loader - WARNING - 节点类型 file 的标签长度(44)与图数量(1)不匹配
+2025-10-07 11:08:29,391 - src.core.training.real_data_loader - WARNING - 节点类型 command 的标签长度(6699)与图数量(1)不匹配
+2025-10-07 11:08:29,391 - src.core.training.real_data_loader - WARNING - 节点类型 user 的标签长度(87)与图数量(1)不匹配
+2025-10-07 11:08:29,391 - src.core.training.real_data_loader - WARNING - 节点类型 process 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:08:29,391 - src.core.training.real_data_loader - WARNING - 节点类型 host 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:08:29,391 - src.core.training.real_data_loader - WARNING - 节点类型 agent 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:08:29,391 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_tactic 的标签长度(10)与图数量(1)不匹配
+2025-10-07 11:08:29,391 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_technique 的标签长度(67)与图数量(1)不匹配
+2025-10-07 11:08:29,391 - src.core.training.real_data_loader - WARNING - 节点类型 timestamp 的标签长度(22)与图数量(1)不匹配
+2025-10-07 11:08:29,391 - src.core.training.real_data_loader - WARNING - 节点类型 ip 的标签长度(12)与图数量(1)不匹配
+2025-10-07 11:08:29,391 - src.core.training.real_data_loader - WARNING - 节点类型 domain 的标签长度(33)与图数量(1)不匹配
+2025-10-07 11:08:29,391 - src.core.training.real_data_loader - WARNING - 节点类型 port 的标签长度(4)与图数量(1)不匹配
+2025-10-07 11:08:29,392 - src.core.training.real_data_loader - INFO - 创建数据加载器: 批次大小=64, 样本数=1
+2025-10-07 11:08:37,456 - src.core.training.improved_trainer - INFO - Epoch 9/100, Train Loss: 0.0051, Val Loss: 0.0006, Train Acc: 0.6429, Val Acc: 0.6429, LR: 0.000980
+2025-10-07 11:08:37,457 - src.core.training.real_data_loader - WARNING - 节点类型 alert 的标签长度(20000)与图数量(1)不匹配
+2025-10-07 11:08:37,457 - src.core.training.real_data_loader - WARNING - 节点类型 rule 的标签长度(284)与图数量(1)不匹配
+2025-10-07 11:08:37,457 - src.core.training.real_data_loader - WARNING - 节点类型 file 的标签长度(44)与图数量(1)不匹配
+2025-10-07 11:08:37,457 - src.core.training.real_data_loader - WARNING - 节点类型 command 的标签长度(11408)与图数量(1)不匹配
+2025-10-07 11:08:37,457 - src.core.training.real_data_loader - WARNING - 节点类型 user 的标签长度(166)与图数量(1)不匹配
+2025-10-07 11:08:37,457 - src.core.training.real_data_loader - WARNING - 节点类型 process 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:08:37,457 - src.core.training.real_data_loader - WARNING - 节点类型 host 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:08:37,457 - src.core.training.real_data_loader - WARNING - 节点类型 agent 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:08:37,457 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_tactic 的标签长度(10)与图数量(1)不匹配
+2025-10-07 11:08:37,457 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_technique 的标签长度(67)与图数量(1)不匹配
+2025-10-07 11:08:37,457 - src.core.training.real_data_loader - WARNING - 节点类型 timestamp 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:08:37,457 - src.core.training.real_data_loader - WARNING - 节点类型 ip 的标签长度(12)与图数量(1)不匹配
+2025-10-07 11:08:37,457 - src.core.training.real_data_loader - WARNING - 节点类型 domain 的标签长度(62)与图数量(1)不匹配
+2025-10-07 11:08:37,457 - src.core.training.real_data_loader - WARNING - 节点类型 port 的标签长度(4)与图数量(1)不匹配
+2025-10-07 11:08:37,458 - src.core.training.real_data_loader - INFO - 创建数据加载器: 批次大小=64, 样本数=1
+2025-10-07 11:08:45,946 - src.core.training.real_data_loader - WARNING - 节点类型 alert 的标签长度(20000)与图数量(1)不匹配
+2025-10-07 11:08:45,946 - src.core.training.real_data_loader - WARNING - 节点类型 rule 的标签长度(172)与图数量(1)不匹配
+2025-10-07 11:08:45,946 - src.core.training.real_data_loader - WARNING - 节点类型 file 的标签长度(44)与图数量(1)不匹配
+2025-10-07 11:08:45,946 - src.core.training.real_data_loader - WARNING - 节点类型 command 的标签长度(6699)与图数量(1)不匹配
+2025-10-07 11:08:45,946 - src.core.training.real_data_loader - WARNING - 节点类型 user 的标签长度(87)与图数量(1)不匹配
+2025-10-07 11:08:45,946 - src.core.training.real_data_loader - WARNING - 节点类型 process 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:08:45,946 - src.core.training.real_data_loader - WARNING - 节点类型 host 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:08:45,946 - src.core.training.real_data_loader - WARNING - 节点类型 agent 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:08:45,946 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_tactic 的标签长度(10)与图数量(1)不匹配
+2025-10-07 11:08:45,946 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_technique 的标签长度(67)与图数量(1)不匹配
+2025-10-07 11:08:45,946 - src.core.training.real_data_loader - WARNING - 节点类型 timestamp 的标签长度(22)与图数量(1)不匹配
+2025-10-07 11:08:45,946 - src.core.training.real_data_loader - WARNING - 节点类型 ip 的标签长度(12)与图数量(1)不匹配
+2025-10-07 11:08:45,946 - src.core.training.real_data_loader - WARNING - 节点类型 domain 的标签长度(33)与图数量(1)不匹配
+2025-10-07 11:08:45,947 - src.core.training.real_data_loader - WARNING - 节点类型 port 的标签长度(4)与图数量(1)不匹配
+2025-10-07 11:08:45,947 - src.core.training.real_data_loader - INFO - 创建数据加载器: 批次大小=64, 样本数=1
+2025-10-07 11:08:54,012 - src.core.training.improved_trainer - INFO - Epoch 10/100, Train Loss: 0.0016, Val Loss: 0.0041, Train Acc: 0.6429, Val Acc: 0.6429, LR: 0.000976
+2025-10-07 11:08:54,013 - src.core.training.real_data_loader - WARNING - 节点类型 alert 的标签长度(20000)与图数量(1)不匹配
+2025-10-07 11:08:54,013 - src.core.training.real_data_loader - WARNING - 节点类型 rule 的标签长度(284)与图数量(1)不匹配
+2025-10-07 11:08:54,013 - src.core.training.real_data_loader - WARNING - 节点类型 file 的标签长度(44)与图数量(1)不匹配
+2025-10-07 11:08:54,013 - src.core.training.real_data_loader - WARNING - 节点类型 command 的标签长度(11408)与图数量(1)不匹配
+2025-10-07 11:08:54,013 - src.core.training.real_data_loader - WARNING - 节点类型 user 的标签长度(166)与图数量(1)不匹配
+2025-10-07 11:08:54,013 - src.core.training.real_data_loader - WARNING - 节点类型 process 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:08:54,013 - src.core.training.real_data_loader - WARNING - 节点类型 host 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:08:54,013 - src.core.training.real_data_loader - WARNING - 节点类型 agent 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:08:54,013 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_tactic 的标签长度(10)与图数量(1)不匹配
+2025-10-07 11:08:54,013 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_technique 的标签长度(67)与图数量(1)不匹配
+2025-10-07 11:08:54,013 - src.core.training.real_data_loader - WARNING - 节点类型 timestamp 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:08:54,013 - src.core.training.real_data_loader - WARNING - 节点类型 ip 的标签长度(12)与图数量(1)不匹配
+2025-10-07 11:08:54,013 - src.core.training.real_data_loader - WARNING - 节点类型 domain 的标签长度(62)与图数量(1)不匹配
+2025-10-07 11:08:54,013 - src.core.training.real_data_loader - WARNING - 节点类型 port 的标签长度(4)与图数量(1)不匹配
+2025-10-07 11:08:54,013 - src.core.training.real_data_loader - INFO - 创建数据加载器: 批次大小=64, 样本数=1
+2025-10-07 11:09:02,468 - src.core.training.real_data_loader - WARNING - 节点类型 alert 的标签长度(20000)与图数量(1)不匹配
+2025-10-07 11:09:02,469 - src.core.training.real_data_loader - WARNING - 节点类型 rule 的标签长度(172)与图数量(1)不匹配
+2025-10-07 11:09:02,469 - src.core.training.real_data_loader - WARNING - 节点类型 file 的标签长度(44)与图数量(1)不匹配
+2025-10-07 11:09:02,469 - src.core.training.real_data_loader - WARNING - 节点类型 command 的标签长度(6699)与图数量(1)不匹配
+2025-10-07 11:09:02,469 - src.core.training.real_data_loader - WARNING - 节点类型 user 的标签长度(87)与图数量(1)不匹配
+2025-10-07 11:09:02,469 - src.core.training.real_data_loader - WARNING - 节点类型 process 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:09:02,469 - src.core.training.real_data_loader - WARNING - 节点类型 host 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:09:02,469 - src.core.training.real_data_loader - WARNING - 节点类型 agent 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:09:02,469 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_tactic 的标签长度(10)与图数量(1)不匹配
+2025-10-07 11:09:02,469 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_technique 的标签长度(67)与图数量(1)不匹配
+2025-10-07 11:09:02,469 - src.core.training.real_data_loader - WARNING - 节点类型 timestamp 的标签长度(22)与图数量(1)不匹配
+2025-10-07 11:09:02,469 - src.core.training.real_data_loader - WARNING - 节点类型 ip 的标签长度(12)与图数量(1)不匹配
+2025-10-07 11:09:02,469 - src.core.training.real_data_loader - WARNING - 节点类型 domain 的标签长度(33)与图数量(1)不匹配
+2025-10-07 11:09:02,469 - src.core.training.real_data_loader - WARNING - 节点类型 port 的标签长度(4)与图数量(1)不匹配
+2025-10-07 11:09:02,469 - src.core.training.real_data_loader - INFO - 创建数据加载器: 批次大小=64, 样本数=1
+2025-10-07 11:09:10,470 - src.core.training.improved_trainer - INFO - Epoch 11/100, Train Loss: 0.0022, Val Loss: 0.0002, Train Acc: 0.5714, Val Acc: 0.9286, LR: 0.000970
+2025-10-07 11:09:10,772 - src.core.training.improved_trainer - INFO - 保存最佳模型 (Epoch 10)
+2025-10-07 11:09:10,773 - src.core.training.real_data_loader - WARNING - 节点类型 alert 的标签长度(20000)与图数量(1)不匹配
+2025-10-07 11:09:10,773 - src.core.training.real_data_loader - WARNING - 节点类型 rule 的标签长度(284)与图数量(1)不匹配
+2025-10-07 11:09:10,773 - src.core.training.real_data_loader - WARNING - 节点类型 file 的标签长度(44)与图数量(1)不匹配
+2025-10-07 11:09:10,773 - src.core.training.real_data_loader - WARNING - 节点类型 command 的标签长度(11408)与图数量(1)不匹配
+2025-10-07 11:09:10,773 - src.core.training.real_data_loader - WARNING - 节点类型 user 的标签长度(166)与图数量(1)不匹配
+2025-10-07 11:09:10,773 - src.core.training.real_data_loader - WARNING - 节点类型 process 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:09:10,774 - src.core.training.real_data_loader - WARNING - 节点类型 host 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:09:10,774 - src.core.training.real_data_loader - WARNING - 节点类型 agent 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:09:10,774 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_tactic 的标签长度(10)与图数量(1)不匹配
+2025-10-07 11:09:10,774 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_technique 的标签长度(67)与图数量(1)不匹配
+2025-10-07 11:09:10,774 - src.core.training.real_data_loader - WARNING - 节点类型 timestamp 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:09:10,774 - src.core.training.real_data_loader - WARNING - 节点类型 ip 的标签长度(12)与图数量(1)不匹配
+2025-10-07 11:09:10,774 - src.core.training.real_data_loader - WARNING - 节点类型 domain 的标签长度(62)与图数量(1)不匹配
+2025-10-07 11:09:10,774 - src.core.training.real_data_loader - WARNING - 节点类型 port 的标签长度(4)与图数量(1)不匹配
+2025-10-07 11:09:10,774 - src.core.training.real_data_loader - INFO - 创建数据加载器: 批次大小=64, 样本数=1
+2025-10-07 11:09:19,424 - src.core.training.real_data_loader - WARNING - 节点类型 alert 的标签长度(20000)与图数量(1)不匹配
+2025-10-07 11:09:19,424 - src.core.training.real_data_loader - WARNING - 节点类型 rule 的标签长度(172)与图数量(1)不匹配
+2025-10-07 11:09:19,424 - src.core.training.real_data_loader - WARNING - 节点类型 file 的标签长度(44)与图数量(1)不匹配
+2025-10-07 11:09:19,424 - src.core.training.real_data_loader - WARNING - 节点类型 command 的标签长度(6699)与图数量(1)不匹配
+2025-10-07 11:09:19,424 - src.core.training.real_data_loader - WARNING - 节点类型 user 的标签长度(87)与图数量(1)不匹配
+2025-10-07 11:09:19,424 - src.core.training.real_data_loader - WARNING - 节点类型 process 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:09:19,424 - src.core.training.real_data_loader - WARNING - 节点类型 host 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:09:19,424 - src.core.training.real_data_loader - WARNING - 节点类型 agent 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:09:19,424 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_tactic 的标签长度(10)与图数量(1)不匹配
+2025-10-07 11:09:19,424 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_technique 的标签长度(67)与图数量(1)不匹配
+2025-10-07 11:09:19,424 - src.core.training.real_data_loader - WARNING - 节点类型 timestamp 的标签长度(22)与图数量(1)不匹配
+2025-10-07 11:09:19,424 - src.core.training.real_data_loader - WARNING - 节点类型 ip 的标签长度(12)与图数量(1)不匹配
+2025-10-07 11:09:19,425 - src.core.training.real_data_loader - WARNING - 节点类型 domain 的标签长度(33)与图数量(1)不匹配
+2025-10-07 11:09:19,425 - src.core.training.real_data_loader - WARNING - 节点类型 port 的标签长度(4)与图数量(1)不匹配
+2025-10-07 11:09:19,425 - src.core.training.real_data_loader - INFO - 创建数据加载器: 批次大小=64, 样本数=1
+2025-10-07 11:09:27,485 - src.core.training.improved_trainer - INFO - Epoch 12/100, Train Loss: 0.0030, Val Loss: 0.0234, Train Acc: 0.5714, Val Acc: 0.7143, LR: 0.000965
+2025-10-07 11:09:27,486 - src.core.training.real_data_loader - WARNING - 节点类型 alert 的标签长度(20000)与图数量(1)不匹配
+2025-10-07 11:09:27,486 - src.core.training.real_data_loader - WARNING - 节点类型 rule 的标签长度(284)与图数量(1)不匹配
+2025-10-07 11:09:27,486 - src.core.training.real_data_loader - WARNING - 节点类型 file 的标签长度(44)与图数量(1)不匹配
+2025-10-07 11:09:27,486 - src.core.training.real_data_loader - WARNING - 节点类型 command 的标签长度(11408)与图数量(1)不匹配
+2025-10-07 11:09:27,486 - src.core.training.real_data_loader - WARNING - 节点类型 user 的标签长度(166)与图数量(1)不匹配
+2025-10-07 11:09:27,486 - src.core.training.real_data_loader - WARNING - 节点类型 process 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:09:27,487 - src.core.training.real_data_loader - WARNING - 节点类型 host 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:09:27,487 - src.core.training.real_data_loader - WARNING - 节点类型 agent 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:09:27,487 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_tactic 的标签长度(10)与图数量(1)不匹配
+2025-10-07 11:09:27,487 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_technique 的标签长度(67)与图数量(1)不匹配
+2025-10-07 11:09:27,487 - src.core.training.real_data_loader - WARNING - 节点类型 timestamp 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:09:27,487 - src.core.training.real_data_loader - WARNING - 节点类型 ip 的标签长度(12)与图数量(1)不匹配
+2025-10-07 11:09:27,487 - src.core.training.real_data_loader - WARNING - 节点类型 domain 的标签长度(62)与图数量(1)不匹配
+2025-10-07 11:09:27,487 - src.core.training.real_data_loader - WARNING - 节点类型 port 的标签长度(4)与图数量(1)不匹配
+2025-10-07 11:09:27,487 - src.core.training.real_data_loader - INFO - 创建数据加载器: 批次大小=64, 样本数=1
+2025-10-07 11:09:35,914 - src.core.training.real_data_loader - WARNING - 节点类型 alert 的标签长度(20000)与图数量(1)不匹配
+2025-10-07 11:09:35,915 - src.core.training.real_data_loader - WARNING - 节点类型 rule 的标签长度(172)与图数量(1)不匹配
+2025-10-07 11:09:35,915 - src.core.training.real_data_loader - WARNING - 节点类型 file 的标签长度(44)与图数量(1)不匹配
+2025-10-07 11:09:35,915 - src.core.training.real_data_loader - WARNING - 节点类型 command 的标签长度(6699)与图数量(1)不匹配
+2025-10-07 11:09:35,915 - src.core.training.real_data_loader - WARNING - 节点类型 user 的标签长度(87)与图数量(1)不匹配
+2025-10-07 11:09:35,915 - src.core.training.real_data_loader - WARNING - 节点类型 process 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:09:35,915 - src.core.training.real_data_loader - WARNING - 节点类型 host 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:09:35,915 - src.core.training.real_data_loader - WARNING - 节点类型 agent 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:09:35,915 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_tactic 的标签长度(10)与图数量(1)不匹配
+2025-10-07 11:09:35,915 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_technique 的标签长度(67)与图数量(1)不匹配
+2025-10-07 11:09:35,915 - src.core.training.real_data_loader - WARNING - 节点类型 timestamp 的标签长度(22)与图数量(1)不匹配
+2025-10-07 11:09:35,915 - src.core.training.real_data_loader - WARNING - 节点类型 ip 的标签长度(12)与图数量(1)不匹配
+2025-10-07 11:09:35,915 - src.core.training.real_data_loader - WARNING - 节点类型 domain 的标签长度(33)与图数量(1)不匹配
+2025-10-07 11:09:35,915 - src.core.training.real_data_loader - WARNING - 节点类型 port 的标签长度(4)与图数量(1)不匹配
+2025-10-07 11:09:35,915 - src.core.training.real_data_loader - INFO - 创建数据加载器: 批次大小=64, 样本数=1
+2025-10-07 11:09:43,945 - src.core.training.improved_trainer - INFO - Epoch 13/100, Train Loss: 0.0008, Val Loss: 0.0137, Train Acc: 0.7143, Val Acc: 0.8571, LR: 0.000959
+2025-10-07 11:09:43,947 - src.core.training.real_data_loader - WARNING - 节点类型 alert 的标签长度(20000)与图数量(1)不匹配
+2025-10-07 11:09:43,947 - src.core.training.real_data_loader - WARNING - 节点类型 rule 的标签长度(284)与图数量(1)不匹配
+2025-10-07 11:09:43,947 - src.core.training.real_data_loader - WARNING - 节点类型 file 的标签长度(44)与图数量(1)不匹配
+2025-10-07 11:09:43,947 - src.core.training.real_data_loader - WARNING - 节点类型 command 的标签长度(11408)与图数量(1)不匹配
+2025-10-07 11:09:43,947 - src.core.training.real_data_loader - WARNING - 节点类型 user 的标签长度(166)与图数量(1)不匹配
+2025-10-07 11:09:43,947 - src.core.training.real_data_loader - WARNING - 节点类型 process 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:09:43,947 - src.core.training.real_data_loader - WARNING - 节点类型 host 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:09:43,947 - src.core.training.real_data_loader - WARNING - 节点类型 agent 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:09:43,947 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_tactic 的标签长度(10)与图数量(1)不匹配
+2025-10-07 11:09:43,947 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_technique 的标签长度(67)与图数量(1)不匹配
+2025-10-07 11:09:43,947 - src.core.training.real_data_loader - WARNING - 节点类型 timestamp 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:09:43,947 - src.core.training.real_data_loader - WARNING - 节点类型 ip 的标签长度(12)与图数量(1)不匹配
+2025-10-07 11:09:43,947 - src.core.training.real_data_loader - WARNING - 节点类型 domain 的标签长度(62)与图数量(1)不匹配
+2025-10-07 11:09:43,947 - src.core.training.real_data_loader - WARNING - 节点类型 port 的标签长度(4)与图数量(1)不匹配
+2025-10-07 11:09:43,947 - src.core.training.real_data_loader - INFO - 创建数据加载器: 批次大小=64, 样本数=1
+2025-10-07 11:09:52,367 - src.core.training.real_data_loader - WARNING - 节点类型 alert 的标签长度(20000)与图数量(1)不匹配
+2025-10-07 11:09:52,368 - src.core.training.real_data_loader - WARNING - 节点类型 rule 的标签长度(172)与图数量(1)不匹配
+2025-10-07 11:09:52,368 - src.core.training.real_data_loader - WARNING - 节点类型 file 的标签长度(44)与图数量(1)不匹配
+2025-10-07 11:09:52,368 - src.core.training.real_data_loader - WARNING - 节点类型 command 的标签长度(6699)与图数量(1)不匹配
+2025-10-07 11:09:52,368 - src.core.training.real_data_loader - WARNING - 节点类型 user 的标签长度(87)与图数量(1)不匹配
+2025-10-07 11:09:52,368 - src.core.training.real_data_loader - WARNING - 节点类型 process 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:09:52,368 - src.core.training.real_data_loader - WARNING - 节点类型 host 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:09:52,368 - src.core.training.real_data_loader - WARNING - 节点类型 agent 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:09:52,368 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_tactic 的标签长度(10)与图数量(1)不匹配
+2025-10-07 11:09:52,368 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_technique 的标签长度(67)与图数量(1)不匹配
+2025-10-07 11:09:52,368 - src.core.training.real_data_loader - WARNING - 节点类型 timestamp 的标签长度(22)与图数量(1)不匹配
+2025-10-07 11:09:52,368 - src.core.training.real_data_loader - WARNING - 节点类型 ip 的标签长度(12)与图数量(1)不匹配
+2025-10-07 11:09:52,368 - src.core.training.real_data_loader - WARNING - 节点类型 domain 的标签长度(33)与图数量(1)不匹配
+2025-10-07 11:09:52,368 - src.core.training.real_data_loader - WARNING - 节点类型 port 的标签长度(4)与图数量(1)不匹配
+2025-10-07 11:09:52,368 - src.core.training.real_data_loader - INFO - 创建数据加载器: 批次大小=64, 样本数=1
+2025-10-07 11:10:00,492 - src.core.training.improved_trainer - INFO - Epoch 14/100, Train Loss: 0.0020, Val Loss: 0.0003, Train Acc: 0.6429, Val Acc: 0.7143, LR: 0.000952
+2025-10-07 11:10:00,493 - src.core.training.real_data_loader - WARNING - 节点类型 alert 的标签长度(20000)与图数量(1)不匹配
+2025-10-07 11:10:00,493 - src.core.training.real_data_loader - WARNING - 节点类型 rule 的标签长度(284)与图数量(1)不匹配
+2025-10-07 11:10:00,493 - src.core.training.real_data_loader - WARNING - 节点类型 file 的标签长度(44)与图数量(1)不匹配
+2025-10-07 11:10:00,493 - src.core.training.real_data_loader - WARNING - 节点类型 command 的标签长度(11408)与图数量(1)不匹配
+2025-10-07 11:10:00,493 - src.core.training.real_data_loader - WARNING - 节点类型 user 的标签长度(166)与图数量(1)不匹配
+2025-10-07 11:10:00,493 - src.core.training.real_data_loader - WARNING - 节点类型 process 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:10:00,493 - src.core.training.real_data_loader - WARNING - 节点类型 host 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:10:00,493 - src.core.training.real_data_loader - WARNING - 节点类型 agent 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:10:00,493 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_tactic 的标签长度(10)与图数量(1)不匹配
+2025-10-07 11:10:00,493 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_technique 的标签长度(67)与图数量(1)不匹配
+2025-10-07 11:10:00,493 - src.core.training.real_data_loader - WARNING - 节点类型 timestamp 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:10:00,493 - src.core.training.real_data_loader - WARNING - 节点类型 ip 的标签长度(12)与图数量(1)不匹配
+2025-10-07 11:10:00,493 - src.core.training.real_data_loader - WARNING - 节点类型 domain 的标签长度(62)与图数量(1)不匹配
+2025-10-07 11:10:00,493 - src.core.training.real_data_loader - WARNING - 节点类型 port 的标签长度(4)与图数量(1)不匹配
+2025-10-07 11:10:00,493 - src.core.training.real_data_loader - INFO - 创建数据加载器: 批次大小=64, 样本数=1
+2025-10-07 11:10:08,970 - src.core.training.real_data_loader - WARNING - 节点类型 alert 的标签长度(20000)与图数量(1)不匹配
+2025-10-07 11:10:08,970 - src.core.training.real_data_loader - WARNING - 节点类型 rule 的标签长度(172)与图数量(1)不匹配
+2025-10-07 11:10:08,970 - src.core.training.real_data_loader - WARNING - 节点类型 file 的标签长度(44)与图数量(1)不匹配
+2025-10-07 11:10:08,970 - src.core.training.real_data_loader - WARNING - 节点类型 command 的标签长度(6699)与图数量(1)不匹配
+2025-10-07 11:10:08,970 - src.core.training.real_data_loader - WARNING - 节点类型 user 的标签长度(87)与图数量(1)不匹配
+2025-10-07 11:10:08,970 - src.core.training.real_data_loader - WARNING - 节点类型 process 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:10:08,971 - src.core.training.real_data_loader - WARNING - 节点类型 host 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:10:08,971 - src.core.training.real_data_loader - WARNING - 节点类型 agent 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:10:08,971 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_tactic 的标签长度(10)与图数量(1)不匹配
+2025-10-07 11:10:08,971 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_technique 的标签长度(67)与图数量(1)不匹配
+2025-10-07 11:10:08,971 - src.core.training.real_data_loader - WARNING - 节点类型 timestamp 的标签长度(22)与图数量(1)不匹配
+2025-10-07 11:10:08,971 - src.core.training.real_data_loader - WARNING - 节点类型 ip 的标签长度(12)与图数量(1)不匹配
+2025-10-07 11:10:08,971 - src.core.training.real_data_loader - WARNING - 节点类型 domain 的标签长度(33)与图数量(1)不匹配
+2025-10-07 11:10:08,971 - src.core.training.real_data_loader - WARNING - 节点类型 port 的标签长度(4)与图数量(1)不匹配
+2025-10-07 11:10:08,971 - src.core.training.real_data_loader - INFO - 创建数据加载器: 批次大小=64, 样本数=1
+2025-10-07 11:10:16,974 - src.core.training.improved_trainer - INFO - Epoch 15/100, Train Loss: 0.0023, Val Loss: 0.0006, Train Acc: 0.5714, Val Acc: 0.7143, LR: 0.000946
+2025-10-07 11:10:16,975 - src.core.training.real_data_loader - WARNING - 节点类型 alert 的标签长度(20000)与图数量(1)不匹配
+2025-10-07 11:10:16,975 - src.core.training.real_data_loader - WARNING - 节点类型 rule 的标签长度(284)与图数量(1)不匹配
+2025-10-07 11:10:16,975 - src.core.training.real_data_loader - WARNING - 节点类型 file 的标签长度(44)与图数量(1)不匹配
+2025-10-07 11:10:16,975 - src.core.training.real_data_loader - WARNING - 节点类型 command 的标签长度(11408)与图数量(1)不匹配
+2025-10-07 11:10:16,975 - src.core.training.real_data_loader - WARNING - 节点类型 user 的标签长度(166)与图数量(1)不匹配
+2025-10-07 11:10:16,975 - src.core.training.real_data_loader - WARNING - 节点类型 process 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:10:16,975 - src.core.training.real_data_loader - WARNING - 节点类型 host 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:10:16,975 - src.core.training.real_data_loader - WARNING - 节点类型 agent 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:10:16,975 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_tactic 的标签长度(10)与图数量(1)不匹配
+2025-10-07 11:10:16,975 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_technique 的标签长度(67)与图数量(1)不匹配
+2025-10-07 11:10:16,975 - src.core.training.real_data_loader - WARNING - 节点类型 timestamp 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:10:16,975 - src.core.training.real_data_loader - WARNING - 节点类型 ip 的标签长度(12)与图数量(1)不匹配
+2025-10-07 11:10:16,975 - src.core.training.real_data_loader - WARNING - 节点类型 domain 的标签长度(62)与图数量(1)不匹配
+2025-10-07 11:10:16,976 - src.core.training.real_data_loader - WARNING - 节点类型 port 的标签长度(4)与图数量(1)不匹配
+2025-10-07 11:10:16,976 - src.core.training.real_data_loader - INFO - 创建数据加载器: 批次大小=64, 样本数=1
+2025-10-07 11:10:25,392 - src.core.training.real_data_loader - WARNING - 节点类型 alert 的标签长度(20000)与图数量(1)不匹配
+2025-10-07 11:10:25,392 - src.core.training.real_data_loader - WARNING - 节点类型 rule 的标签长度(172)与图数量(1)不匹配
+2025-10-07 11:10:25,392 - src.core.training.real_data_loader - WARNING - 节点类型 file 的标签长度(44)与图数量(1)不匹配
+2025-10-07 11:10:25,392 - src.core.training.real_data_loader - WARNING - 节点类型 command 的标签长度(6699)与图数量(1)不匹配
+2025-10-07 11:10:25,392 - src.core.training.real_data_loader - WARNING - 节点类型 user 的标签长度(87)与图数量(1)不匹配
+2025-10-07 11:10:25,392 - src.core.training.real_data_loader - WARNING - 节点类型 process 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:10:25,392 - src.core.training.real_data_loader - WARNING - 节点类型 host 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:10:25,392 - src.core.training.real_data_loader - WARNING - 节点类型 agent 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:10:25,392 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_tactic 的标签长度(10)与图数量(1)不匹配
+2025-10-07 11:10:25,392 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_technique 的标签长度(67)与图数量(1)不匹配
+2025-10-07 11:10:25,392 - src.core.training.real_data_loader - WARNING - 节点类型 timestamp 的标签长度(22)与图数量(1)不匹配
+2025-10-07 11:10:25,393 - src.core.training.real_data_loader - WARNING - 节点类型 ip 的标签长度(12)与图数量(1)不匹配
+2025-10-07 11:10:25,393 - src.core.training.real_data_loader - WARNING - 节点类型 domain 的标签长度(33)与图数量(1)不匹配
+2025-10-07 11:10:25,393 - src.core.training.real_data_loader - WARNING - 节点类型 port 的标签长度(4)与图数量(1)不匹配
+2025-10-07 11:10:25,393 - src.core.training.real_data_loader - INFO - 创建数据加载器: 批次大小=64, 样本数=1
+2025-10-07 11:10:33,438 - src.core.training.improved_trainer - INFO - Epoch 16/100, Train Loss: 0.0042, Val Loss: 0.0002, Train Acc: 0.6429, Val Acc: 0.7857, LR: 0.000938
+2025-10-07 11:10:33,756 - src.core.training.improved_trainer - INFO - 保存最佳模型 (Epoch 15)
+2025-10-07 11:10:33,758 - src.core.training.real_data_loader - WARNING - 节点类型 alert 的标签长度(20000)与图数量(1)不匹配
+2025-10-07 11:10:33,758 - src.core.training.real_data_loader - WARNING - 节点类型 rule 的标签长度(284)与图数量(1)不匹配
+2025-10-07 11:10:33,758 - src.core.training.real_data_loader - WARNING - 节点类型 file 的标签长度(44)与图数量(1)不匹配
+2025-10-07 11:10:33,758 - src.core.training.real_data_loader - WARNING - 节点类型 command 的标签长度(11408)与图数量(1)不匹配
+2025-10-07 11:10:33,758 - src.core.training.real_data_loader - WARNING - 节点类型 user 的标签长度(166)与图数量(1)不匹配
+2025-10-07 11:10:33,758 - src.core.training.real_data_loader - WARNING - 节点类型 process 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:10:33,758 - src.core.training.real_data_loader - WARNING - 节点类型 host 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:10:33,758 - src.core.training.real_data_loader - WARNING - 节点类型 agent 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:10:33,758 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_tactic 的标签长度(10)与图数量(1)不匹配
+2025-10-07 11:10:33,758 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_technique 的标签长度(67)与图数量(1)不匹配
+2025-10-07 11:10:33,758 - src.core.training.real_data_loader - WARNING - 节点类型 timestamp 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:10:33,759 - src.core.training.real_data_loader - WARNING - 节点类型 ip 的标签长度(12)与图数量(1)不匹配
+2025-10-07 11:10:33,759 - src.core.training.real_data_loader - WARNING - 节点类型 domain 的标签长度(62)与图数量(1)不匹配
+2025-10-07 11:10:33,759 - src.core.training.real_data_loader - WARNING - 节点类型 port 的标签长度(4)与图数量(1)不匹配
+2025-10-07 11:10:33,759 - src.core.training.real_data_loader - INFO - 创建数据加载器: 批次大小=64, 样本数=1
+2025-10-07 11:10:42,260 - src.core.training.real_data_loader - WARNING - 节点类型 alert 的标签长度(20000)与图数量(1)不匹配
+2025-10-07 11:10:42,260 - src.core.training.real_data_loader - WARNING - 节点类型 rule 的标签长度(172)与图数量(1)不匹配
+2025-10-07 11:10:42,260 - src.core.training.real_data_loader - WARNING - 节点类型 file 的标签长度(44)与图数量(1)不匹配
+2025-10-07 11:10:42,260 - src.core.training.real_data_loader - WARNING - 节点类型 command 的标签长度(6699)与图数量(1)不匹配
+2025-10-07 11:10:42,260 - src.core.training.real_data_loader - WARNING - 节点类型 user 的标签长度(87)与图数量(1)不匹配
+2025-10-07 11:10:42,260 - src.core.training.real_data_loader - WARNING - 节点类型 process 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:10:42,260 - src.core.training.real_data_loader - WARNING - 节点类型 host 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:10:42,260 - src.core.training.real_data_loader - WARNING - 节点类型 agent 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:10:42,260 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_tactic 的标签长度(10)与图数量(1)不匹配
+2025-10-07 11:10:42,260 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_technique 的标签长度(67)与图数量(1)不匹配
+2025-10-07 11:10:42,260 - src.core.training.real_data_loader - WARNING - 节点类型 timestamp 的标签长度(22)与图数量(1)不匹配
+2025-10-07 11:10:42,260 - src.core.training.real_data_loader - WARNING - 节点类型 ip 的标签长度(12)与图数量(1)不匹配
+2025-10-07 11:10:42,260 - src.core.training.real_data_loader - WARNING - 节点类型 domain 的标签长度(33)与图数量(1)不匹配
+2025-10-07 11:10:42,260 - src.core.training.real_data_loader - WARNING - 节点类型 port 的标签长度(4)与图数量(1)不匹配
+2025-10-07 11:10:42,261 - src.core.training.real_data_loader - INFO - 创建数据加载器: 批次大小=64, 样本数=1
+2025-10-07 11:10:50,283 - src.core.training.improved_trainer - INFO - Epoch 17/100, Train Loss: 0.0017, Val Loss: 0.0012, Train Acc: 0.7143, Val Acc: 0.7143, LR: 0.000930
+2025-10-07 11:10:50,284 - src.core.training.real_data_loader - WARNING - 节点类型 alert 的标签长度(20000)与图数量(1)不匹配
+2025-10-07 11:10:50,284 - src.core.training.real_data_loader - WARNING - 节点类型 rule 的标签长度(284)与图数量(1)不匹配
+2025-10-07 11:10:50,284 - src.core.training.real_data_loader - WARNING - 节点类型 file 的标签长度(44)与图数量(1)不匹配
+2025-10-07 11:10:50,284 - src.core.training.real_data_loader - WARNING - 节点类型 command 的标签长度(11408)与图数量(1)不匹配
+2025-10-07 11:10:50,284 - src.core.training.real_data_loader - WARNING - 节点类型 user 的标签长度(166)与图数量(1)不匹配
+2025-10-07 11:10:50,284 - src.core.training.real_data_loader - WARNING - 节点类型 process 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:10:50,284 - src.core.training.real_data_loader - WARNING - 节点类型 host 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:10:50,284 - src.core.training.real_data_loader - WARNING - 节点类型 agent 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:10:50,284 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_tactic 的标签长度(10)与图数量(1)不匹配
+2025-10-07 11:10:50,284 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_technique 的标签长度(67)与图数量(1)不匹配
+2025-10-07 11:10:50,284 - src.core.training.real_data_loader - WARNING - 节点类型 timestamp 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:10:50,284 - src.core.training.real_data_loader - WARNING - 节点类型 ip 的标签长度(12)与图数量(1)不匹配
+2025-10-07 11:10:50,284 - src.core.training.real_data_loader - WARNING - 节点类型 domain 的标签长度(62)与图数量(1)不匹配
+2025-10-07 11:10:50,284 - src.core.training.real_data_loader - WARNING - 节点类型 port 的标签长度(4)与图数量(1)不匹配
+2025-10-07 11:10:50,284 - src.core.training.real_data_loader - INFO - 创建数据加载器: 批次大小=64, 样本数=1
+2025-10-07 11:10:58,882 - src.core.training.real_data_loader - WARNING - 节点类型 alert 的标签长度(20000)与图数量(1)不匹配
+2025-10-07 11:10:58,882 - src.core.training.real_data_loader - WARNING - 节点类型 rule 的标签长度(172)与图数量(1)不匹配
+2025-10-07 11:10:58,882 - src.core.training.real_data_loader - WARNING - 节点类型 file 的标签长度(44)与图数量(1)不匹配
+2025-10-07 11:10:58,882 - src.core.training.real_data_loader - WARNING - 节点类型 command 的标签长度(6699)与图数量(1)不匹配
+2025-10-07 11:10:58,883 - src.core.training.real_data_loader - WARNING - 节点类型 user 的标签长度(87)与图数量(1)不匹配
+2025-10-07 11:10:58,883 - src.core.training.real_data_loader - WARNING - 节点类型 process 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:10:58,883 - src.core.training.real_data_loader - WARNING - 节点类型 host 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:10:58,883 - src.core.training.real_data_loader - WARNING - 节点类型 agent 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:10:58,883 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_tactic 的标签长度(10)与图数量(1)不匹配
+2025-10-07 11:10:58,883 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_technique 的标签长度(67)与图数量(1)不匹配
+2025-10-07 11:10:58,883 - src.core.training.real_data_loader - WARNING - 节点类型 timestamp 的标签长度(22)与图数量(1)不匹配
+2025-10-07 11:10:58,883 - src.core.training.real_data_loader - WARNING - 节点类型 ip 的标签长度(12)与图数量(1)不匹配
+2025-10-07 11:10:58,883 - src.core.training.real_data_loader - WARNING - 节点类型 domain 的标签长度(33)与图数量(1)不匹配
+2025-10-07 11:10:58,883 - src.core.training.real_data_loader - WARNING - 节点类型 port 的标签长度(4)与图数量(1)不匹配
+2025-10-07 11:10:58,883 - src.core.training.real_data_loader - INFO - 创建数据加载器: 批次大小=64, 样本数=1
+2025-10-07 11:11:06,892 - src.core.training.improved_trainer - INFO - Epoch 18/100, Train Loss: 0.0017, Val Loss: 0.0132, Train Acc: 0.5714, Val Acc: 0.6429, LR: 0.000922
+2025-10-07 11:11:06,893 - src.core.training.real_data_loader - WARNING - 节点类型 alert 的标签长度(20000)与图数量(1)不匹配
+2025-10-07 11:11:06,893 - src.core.training.real_data_loader - WARNING - 节点类型 rule 的标签长度(284)与图数量(1)不匹配
+2025-10-07 11:11:06,893 - src.core.training.real_data_loader - WARNING - 节点类型 file 的标签长度(44)与图数量(1)不匹配
+2025-10-07 11:11:06,893 - src.core.training.real_data_loader - WARNING - 节点类型 command 的标签长度(11408)与图数量(1)不匹配
+2025-10-07 11:11:06,893 - src.core.training.real_data_loader - WARNING - 节点类型 user 的标签长度(166)与图数量(1)不匹配
+2025-10-07 11:11:06,893 - src.core.training.real_data_loader - WARNING - 节点类型 process 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:11:06,893 - src.core.training.real_data_loader - WARNING - 节点类型 host 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:11:06,893 - src.core.training.real_data_loader - WARNING - 节点类型 agent 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:11:06,893 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_tactic 的标签长度(10)与图数量(1)不匹配
+2025-10-07 11:11:06,893 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_technique 的标签长度(67)与图数量(1)不匹配
+2025-10-07 11:11:06,893 - src.core.training.real_data_loader - WARNING - 节点类型 timestamp 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:11:06,893 - src.core.training.real_data_loader - WARNING - 节点类型 ip 的标签长度(12)与图数量(1)不匹配
+2025-10-07 11:11:06,893 - src.core.training.real_data_loader - WARNING - 节点类型 domain 的标签长度(62)与图数量(1)不匹配
+2025-10-07 11:11:06,893 - src.core.training.real_data_loader - WARNING - 节点类型 port 的标签长度(4)与图数量(1)不匹配
+2025-10-07 11:11:06,894 - src.core.training.real_data_loader - INFO - 创建数据加载器: 批次大小=64, 样本数=1
+2025-10-07 11:11:15,314 - src.core.training.real_data_loader - WARNING - 节点类型 alert 的标签长度(20000)与图数量(1)不匹配
+2025-10-07 11:11:15,314 - src.core.training.real_data_loader - WARNING - 节点类型 rule 的标签长度(172)与图数量(1)不匹配
+2025-10-07 11:11:15,314 - src.core.training.real_data_loader - WARNING - 节点类型 file 的标签长度(44)与图数量(1)不匹配
+2025-10-07 11:11:15,314 - src.core.training.real_data_loader - WARNING - 节点类型 command 的标签长度(6699)与图数量(1)不匹配
+2025-10-07 11:11:15,315 - src.core.training.real_data_loader - WARNING - 节点类型 user 的标签长度(87)与图数量(1)不匹配
+2025-10-07 11:11:15,315 - src.core.training.real_data_loader - WARNING - 节点类型 process 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:11:15,315 - src.core.training.real_data_loader - WARNING - 节点类型 host 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:11:15,315 - src.core.training.real_data_loader - WARNING - 节点类型 agent 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:11:15,315 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_tactic 的标签长度(10)与图数量(1)不匹配
+2025-10-07 11:11:15,315 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_technique 的标签长度(67)与图数量(1)不匹配
+2025-10-07 11:11:15,315 - src.core.training.real_data_loader - WARNING - 节点类型 timestamp 的标签长度(22)与图数量(1)不匹配
+2025-10-07 11:11:15,315 - src.core.training.real_data_loader - WARNING - 节点类型 ip 的标签长度(12)与图数量(1)不匹配
+2025-10-07 11:11:15,315 - src.core.training.real_data_loader - WARNING - 节点类型 domain 的标签长度(33)与图数量(1)不匹配
+2025-10-07 11:11:15,315 - src.core.training.real_data_loader - WARNING - 节点类型 port 的标签长度(4)与图数量(1)不匹配
+2025-10-07 11:11:15,315 - src.core.training.real_data_loader - INFO - 创建数据加载器: 批次大小=64, 样本数=1
+2025-10-07 11:11:23,393 - src.core.training.improved_trainer - INFO - Epoch 19/100, Train Loss: 0.0005, Val Loss: 0.0001, Train Acc: 0.9286, Val Acc: 0.9286, LR: 0.000914
+2025-10-07 11:11:23,726 - src.core.training.improved_trainer - INFO - 保存最佳模型 (Epoch 18)
+2025-10-07 11:11:23,727 - src.core.training.real_data_loader - WARNING - 节点类型 alert 的标签长度(20000)与图数量(1)不匹配
+2025-10-07 11:11:23,727 - src.core.training.real_data_loader - WARNING - 节点类型 rule 的标签长度(284)与图数量(1)不匹配
+2025-10-07 11:11:23,727 - src.core.training.real_data_loader - WARNING - 节点类型 file 的标签长度(44)与图数量(1)不匹配
+2025-10-07 11:11:23,727 - src.core.training.real_data_loader - WARNING - 节点类型 command 的标签长度(11408)与图数量(1)不匹配
+2025-10-07 11:11:23,727 - src.core.training.real_data_loader - WARNING - 节点类型 user 的标签长度(166)与图数量(1)不匹配
+2025-10-07 11:11:23,727 - src.core.training.real_data_loader - WARNING - 节点类型 process 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:11:23,727 - src.core.training.real_data_loader - WARNING - 节点类型 host 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:11:23,727 - src.core.training.real_data_loader - WARNING - 节点类型 agent 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:11:23,727 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_tactic 的标签长度(10)与图数量(1)不匹配
+2025-10-07 11:11:23,727 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_technique 的标签长度(67)与图数量(1)不匹配
+2025-10-07 11:11:23,727 - src.core.training.real_data_loader - WARNING - 节点类型 timestamp 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:11:23,727 - src.core.training.real_data_loader - WARNING - 节点类型 ip 的标签长度(12)与图数量(1)不匹配
+2025-10-07 11:11:23,727 - src.core.training.real_data_loader - WARNING - 节点类型 domain 的标签长度(62)与图数量(1)不匹配
+2025-10-07 11:11:23,727 - src.core.training.real_data_loader - WARNING - 节点类型 port 的标签长度(4)与图数量(1)不匹配
+2025-10-07 11:11:23,728 - src.core.training.real_data_loader - INFO - 创建数据加载器: 批次大小=64, 样本数=1
+2025-10-07 11:11:32,189 - src.core.training.real_data_loader - WARNING - 节点类型 alert 的标签长度(20000)与图数量(1)不匹配
+2025-10-07 11:11:32,189 - src.core.training.real_data_loader - WARNING - 节点类型 rule 的标签长度(172)与图数量(1)不匹配
+2025-10-07 11:11:32,189 - src.core.training.real_data_loader - WARNING - 节点类型 file 的标签长度(44)与图数量(1)不匹配
+2025-10-07 11:11:32,189 - src.core.training.real_data_loader - WARNING - 节点类型 command 的标签长度(6699)与图数量(1)不匹配
+2025-10-07 11:11:32,189 - src.core.training.real_data_loader - WARNING - 节点类型 user 的标签长度(87)与图数量(1)不匹配
+2025-10-07 11:11:32,189 - src.core.training.real_data_loader - WARNING - 节点类型 process 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:11:32,189 - src.core.training.real_data_loader - WARNING - 节点类型 host 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:11:32,189 - src.core.training.real_data_loader - WARNING - 节点类型 agent 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:11:32,189 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_tactic 的标签长度(10)与图数量(1)不匹配
+2025-10-07 11:11:32,189 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_technique 的标签长度(67)与图数量(1)不匹配
+2025-10-07 11:11:32,189 - src.core.training.real_data_loader - WARNING - 节点类型 timestamp 的标签长度(22)与图数量(1)不匹配
+2025-10-07 11:11:32,189 - src.core.training.real_data_loader - WARNING - 节点类型 ip 的标签长度(12)与图数量(1)不匹配
+2025-10-07 11:11:32,189 - src.core.training.real_data_loader - WARNING - 节点类型 domain 的标签长度(33)与图数量(1)不匹配
+2025-10-07 11:11:32,189 - src.core.training.real_data_loader - WARNING - 节点类型 port 的标签长度(4)与图数量(1)不匹配
+2025-10-07 11:11:32,190 - src.core.training.real_data_loader - INFO - 创建数据加载器: 批次大小=64, 样本数=1
+2025-10-07 11:11:40,231 - src.core.training.improved_trainer - INFO - Epoch 20/100, Train Loss: 0.0045, Val Loss: 0.0013, Train Acc: 0.7143, Val Acc: 0.7857, LR: 0.000905
+2025-10-07 11:11:40,232 - src.core.training.real_data_loader - WARNING - 节点类型 alert 的标签长度(20000)与图数量(1)不匹配
+2025-10-07 11:11:40,232 - src.core.training.real_data_loader - WARNING - 节点类型 rule 的标签长度(284)与图数量(1)不匹配
+2025-10-07 11:11:40,232 - src.core.training.real_data_loader - WARNING - 节点类型 file 的标签长度(44)与图数量(1)不匹配
+2025-10-07 11:11:40,232 - src.core.training.real_data_loader - WARNING - 节点类型 command 的标签长度(11408)与图数量(1)不匹配
+2025-10-07 11:11:40,232 - src.core.training.real_data_loader - WARNING - 节点类型 user 的标签长度(166)与图数量(1)不匹配
+2025-10-07 11:11:40,232 - src.core.training.real_data_loader - WARNING - 节点类型 process 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:11:40,232 - src.core.training.real_data_loader - WARNING - 节点类型 host 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:11:40,232 - src.core.training.real_data_loader - WARNING - 节点类型 agent 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:11:40,232 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_tactic 的标签长度(10)与图数量(1)不匹配
+2025-10-07 11:11:40,232 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_technique 的标签长度(67)与图数量(1)不匹配
+2025-10-07 11:11:40,232 - src.core.training.real_data_loader - WARNING - 节点类型 timestamp 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:11:40,232 - src.core.training.real_data_loader - WARNING - 节点类型 ip 的标签长度(12)与图数量(1)不匹配
+2025-10-07 11:11:40,232 - src.core.training.real_data_loader - WARNING - 节点类型 domain 的标签长度(62)与图数量(1)不匹配
+2025-10-07 11:11:40,232 - src.core.training.real_data_loader - WARNING - 节点类型 port 的标签长度(4)与图数量(1)不匹配
+2025-10-07 11:11:40,232 - src.core.training.real_data_loader - INFO - 创建数据加载器: 批次大小=64, 样本数=1
+2025-10-07 11:11:48,730 - src.core.training.real_data_loader - WARNING - 节点类型 alert 的标签长度(20000)与图数量(1)不匹配
+2025-10-07 11:11:48,730 - src.core.training.real_data_loader - WARNING - 节点类型 rule 的标签长度(172)与图数量(1)不匹配
+2025-10-07 11:11:48,730 - src.core.training.real_data_loader - WARNING - 节点类型 file 的标签长度(44)与图数量(1)不匹配
+2025-10-07 11:11:48,730 - src.core.training.real_data_loader - WARNING - 节点类型 command 的标签长度(6699)与图数量(1)不匹配
+2025-10-07 11:11:48,730 - src.core.training.real_data_loader - WARNING - 节点类型 user 的标签长度(87)与图数量(1)不匹配
+2025-10-07 11:11:48,730 - src.core.training.real_data_loader - WARNING - 节点类型 process 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:11:48,730 - src.core.training.real_data_loader - WARNING - 节点类型 host 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:11:48,730 - src.core.training.real_data_loader - WARNING - 节点类型 agent 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:11:48,730 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_tactic 的标签长度(10)与图数量(1)不匹配
+2025-10-07 11:11:48,730 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_technique 的标签长度(67)与图数量(1)不匹配
+2025-10-07 11:11:48,731 - src.core.training.real_data_loader - WARNING - 节点类型 timestamp 的标签长度(22)与图数量(1)不匹配
+2025-10-07 11:11:48,731 - src.core.training.real_data_loader - WARNING - 节点类型 ip 的标签长度(12)与图数量(1)不匹配
+2025-10-07 11:11:48,731 - src.core.training.real_data_loader - WARNING - 节点类型 domain 的标签长度(33)与图数量(1)不匹配
+2025-10-07 11:11:48,731 - src.core.training.real_data_loader - WARNING - 节点类型 port 的标签长度(4)与图数量(1)不匹配
+2025-10-07 11:11:48,731 - src.core.training.real_data_loader - INFO - 创建数据加载器: 批次大小=64, 样本数=1
+2025-10-07 11:11:56,970 - src.core.training.improved_trainer - INFO - Epoch 21/100, Train Loss: 0.0023, Val Loss: 0.0134, Train Acc: 0.5714, Val Acc: 0.8571, LR: 0.000895
+2025-10-07 11:11:56,971 - src.core.training.real_data_loader - WARNING - 节点类型 alert 的标签长度(20000)与图数量(1)不匹配
+2025-10-07 11:11:56,971 - src.core.training.real_data_loader - WARNING - 节点类型 rule 的标签长度(284)与图数量(1)不匹配
+2025-10-07 11:11:56,971 - src.core.training.real_data_loader - WARNING - 节点类型 file 的标签长度(44)与图数量(1)不匹配
+2025-10-07 11:11:56,971 - src.core.training.real_data_loader - WARNING - 节点类型 command 的标签长度(11408)与图数量(1)不匹配
+2025-10-07 11:11:56,971 - src.core.training.real_data_loader - WARNING - 节点类型 user 的标签长度(166)与图数量(1)不匹配
+2025-10-07 11:11:56,971 - src.core.training.real_data_loader - WARNING - 节点类型 process 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:11:56,971 - src.core.training.real_data_loader - WARNING - 节点类型 host 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:11:56,971 - src.core.training.real_data_loader - WARNING - 节点类型 agent 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:11:56,971 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_tactic 的标签长度(10)与图数量(1)不匹配
+2025-10-07 11:11:56,971 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_technique 的标签长度(67)与图数量(1)不匹配
+2025-10-07 11:11:56,971 - src.core.training.real_data_loader - WARNING - 节点类型 timestamp 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:11:56,971 - src.core.training.real_data_loader - WARNING - 节点类型 ip 的标签长度(12)与图数量(1)不匹配
+2025-10-07 11:11:56,971 - src.core.training.real_data_loader - WARNING - 节点类型 domain 的标签长度(62)与图数量(1)不匹配
+2025-10-07 11:11:56,971 - src.core.training.real_data_loader - WARNING - 节点类型 port 的标签长度(4)与图数量(1)不匹配
+2025-10-07 11:11:56,971 - src.core.training.real_data_loader - INFO - 创建数据加载器: 批次大小=64, 样本数=1
+2025-10-07 11:12:05,428 - src.core.training.real_data_loader - WARNING - 节点类型 alert 的标签长度(20000)与图数量(1)不匹配
+2025-10-07 11:12:05,428 - src.core.training.real_data_loader - WARNING - 节点类型 rule 的标签长度(172)与图数量(1)不匹配
+2025-10-07 11:12:05,428 - src.core.training.real_data_loader - WARNING - 节点类型 file 的标签长度(44)与图数量(1)不匹配
+2025-10-07 11:12:05,428 - src.core.training.real_data_loader - WARNING - 节点类型 command 的标签长度(6699)与图数量(1)不匹配
+2025-10-07 11:12:05,428 - src.core.training.real_data_loader - WARNING - 节点类型 user 的标签长度(87)与图数量(1)不匹配
+2025-10-07 11:12:05,428 - src.core.training.real_data_loader - WARNING - 节点类型 process 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:12:05,428 - src.core.training.real_data_loader - WARNING - 节点类型 host 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:12:05,428 - src.core.training.real_data_loader - WARNING - 节点类型 agent 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:12:05,428 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_tactic 的标签长度(10)与图数量(1)不匹配
+2025-10-07 11:12:05,428 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_technique 的标签长度(67)与图数量(1)不匹配
+2025-10-07 11:12:05,428 - src.core.training.real_data_loader - WARNING - 节点类型 timestamp 的标签长度(22)与图数量(1)不匹配
+2025-10-07 11:12:05,428 - src.core.training.real_data_loader - WARNING - 节点类型 ip 的标签长度(12)与图数量(1)不匹配
+2025-10-07 11:12:05,428 - src.core.training.real_data_loader - WARNING - 节点类型 domain 的标签长度(33)与图数量(1)不匹配
+2025-10-07 11:12:05,428 - src.core.training.real_data_loader - WARNING - 节点类型 port 的标签长度(4)与图数量(1)不匹配
+2025-10-07 11:12:05,428 - src.core.training.real_data_loader - INFO - 创建数据加载器: 批次大小=64, 样本数=1
+2025-10-07 11:12:13,467 - src.core.training.improved_trainer - INFO - Epoch 22/100, Train Loss: 0.0025, Val Loss: 0.0287, Train Acc: 0.5714, Val Acc: 0.8571, LR: 0.000885
+2025-10-07 11:12:13,468 - src.core.training.real_data_loader - WARNING - 节点类型 alert 的标签长度(20000)与图数量(1)不匹配
+2025-10-07 11:12:13,468 - src.core.training.real_data_loader - WARNING - 节点类型 rule 的标签长度(284)与图数量(1)不匹配
+2025-10-07 11:12:13,468 - src.core.training.real_data_loader - WARNING - 节点类型 file 的标签长度(44)与图数量(1)不匹配
+2025-10-07 11:12:13,468 - src.core.training.real_data_loader - WARNING - 节点类型 command 的标签长度(11408)与图数量(1)不匹配
+2025-10-07 11:12:13,468 - src.core.training.real_data_loader - WARNING - 节点类型 user 的标签长度(166)与图数量(1)不匹配
+2025-10-07 11:12:13,468 - src.core.training.real_data_loader - WARNING - 节点类型 process 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:12:13,468 - src.core.training.real_data_loader - WARNING - 节点类型 host 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:12:13,468 - src.core.training.real_data_loader - WARNING - 节点类型 agent 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:12:13,468 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_tactic 的标签长度(10)与图数量(1)不匹配
+2025-10-07 11:12:13,468 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_technique 的标签长度(67)与图数量(1)不匹配
+2025-10-07 11:12:13,468 - src.core.training.real_data_loader - WARNING - 节点类型 timestamp 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:12:13,468 - src.core.training.real_data_loader - WARNING - 节点类型 ip 的标签长度(12)与图数量(1)不匹配
+2025-10-07 11:12:13,469 - src.core.training.real_data_loader - WARNING - 节点类型 domain 的标签长度(62)与图数量(1)不匹配
+2025-10-07 11:12:13,469 - src.core.training.real_data_loader - WARNING - 节点类型 port 的标签长度(4)与图数量(1)不匹配
+2025-10-07 11:12:13,469 - src.core.training.real_data_loader - INFO - 创建数据加载器: 批次大小=64, 样本数=1
+2025-10-07 11:12:21,977 - src.core.training.real_data_loader - WARNING - 节点类型 alert 的标签长度(20000)与图数量(1)不匹配
+2025-10-07 11:12:21,977 - src.core.training.real_data_loader - WARNING - 节点类型 rule 的标签长度(172)与图数量(1)不匹配
+2025-10-07 11:12:21,977 - src.core.training.real_data_loader - WARNING - 节点类型 file 的标签长度(44)与图数量(1)不匹配
+2025-10-07 11:12:21,977 - src.core.training.real_data_loader - WARNING - 节点类型 command 的标签长度(6699)与图数量(1)不匹配
+2025-10-07 11:12:21,977 - src.core.training.real_data_loader - WARNING - 节点类型 user 的标签长度(87)与图数量(1)不匹配
+2025-10-07 11:12:21,977 - src.core.training.real_data_loader - WARNING - 节点类型 process 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:12:21,977 - src.core.training.real_data_loader - WARNING - 节点类型 host 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:12:21,977 - src.core.training.real_data_loader - WARNING - 节点类型 agent 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:12:21,977 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_tactic 的标签长度(10)与图数量(1)不匹配
+2025-10-07 11:12:21,977 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_technique 的标签长度(67)与图数量(1)不匹配
+2025-10-07 11:12:21,977 - src.core.training.real_data_loader - WARNING - 节点类型 timestamp 的标签长度(22)与图数量(1)不匹配
+2025-10-07 11:12:21,977 - src.core.training.real_data_loader - WARNING - 节点类型 ip 的标签长度(12)与图数量(1)不匹配
+2025-10-07 11:12:21,977 - src.core.training.real_data_loader - WARNING - 节点类型 domain 的标签长度(33)与图数量(1)不匹配
+2025-10-07 11:12:21,977 - src.core.training.real_data_loader - WARNING - 节点类型 port 的标签长度(4)与图数量(1)不匹配
+2025-10-07 11:12:21,978 - src.core.training.real_data_loader - INFO - 创建数据加载器: 批次大小=64, 样本数=1
+2025-10-07 11:12:29,994 - src.core.training.improved_trainer - INFO - Epoch 23/100, Train Loss: 0.0078, Val Loss: 0.0103, Train Acc: 0.6429, Val Acc: 0.8571, LR: 0.000875
+2025-10-07 11:12:29,995 - src.core.training.real_data_loader - WARNING - 节点类型 alert 的标签长度(20000)与图数量(1)不匹配
+2025-10-07 11:12:29,996 - src.core.training.real_data_loader - WARNING - 节点类型 rule 的标签长度(284)与图数量(1)不匹配
+2025-10-07 11:12:29,996 - src.core.training.real_data_loader - WARNING - 节点类型 file 的标签长度(44)与图数量(1)不匹配
+2025-10-07 11:12:29,996 - src.core.training.real_data_loader - WARNING - 节点类型 command 的标签长度(11408)与图数量(1)不匹配
+2025-10-07 11:12:29,996 - src.core.training.real_data_loader - WARNING - 节点类型 user 的标签长度(166)与图数量(1)不匹配
+2025-10-07 11:12:29,996 - src.core.training.real_data_loader - WARNING - 节点类型 process 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:12:29,996 - src.core.training.real_data_loader - WARNING - 节点类型 host 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:12:29,996 - src.core.training.real_data_loader - WARNING - 节点类型 agent 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:12:29,996 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_tactic 的标签长度(10)与图数量(1)不匹配
+2025-10-07 11:12:29,996 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_technique 的标签长度(67)与图数量(1)不匹配
+2025-10-07 11:12:29,996 - src.core.training.real_data_loader - WARNING - 节点类型 timestamp 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:12:29,996 - src.core.training.real_data_loader - WARNING - 节点类型 ip 的标签长度(12)与图数量(1)不匹配
+2025-10-07 11:12:29,996 - src.core.training.real_data_loader - WARNING - 节点类型 domain 的标签长度(62)与图数量(1)不匹配
+2025-10-07 11:12:29,996 - src.core.training.real_data_loader - WARNING - 节点类型 port 的标签长度(4)与图数量(1)不匹配
+2025-10-07 11:12:29,996 - src.core.training.real_data_loader - INFO - 创建数据加载器: 批次大小=64, 样本数=1
+2025-10-07 11:12:38,427 - src.core.training.real_data_loader - WARNING - 节点类型 alert 的标签长度(20000)与图数量(1)不匹配
+2025-10-07 11:12:38,427 - src.core.training.real_data_loader - WARNING - 节点类型 rule 的标签长度(172)与图数量(1)不匹配
+2025-10-07 11:12:38,427 - src.core.training.real_data_loader - WARNING - 节点类型 file 的标签长度(44)与图数量(1)不匹配
+2025-10-07 11:12:38,427 - src.core.training.real_data_loader - WARNING - 节点类型 command 的标签长度(6699)与图数量(1)不匹配
+2025-10-07 11:12:38,427 - src.core.training.real_data_loader - WARNING - 节点类型 user 的标签长度(87)与图数量(1)不匹配
+2025-10-07 11:12:38,427 - src.core.training.real_data_loader - WARNING - 节点类型 process 的标签长度(38)与图数量(1)不匹配
+2025-10-07 11:12:38,427 - src.core.training.real_data_loader - WARNING - 节点类型 host 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:12:38,427 - src.core.training.real_data_loader - WARNING - 节点类型 agent 的标签长度(7)与图数量(1)不匹配
+2025-10-07 11:12:38,427 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_tactic 的标签长度(10)与图数量(1)不匹配
+2025-10-07 11:12:38,427 - src.core.training.real_data_loader - WARNING - 节点类型 mitre_technique 的标签长度(67)与图数量(1)不匹配
+2025-10-07 11:12:38,427 - src.core.training.real_data_loader - WARNING - 节点类型 timestamp 的标签长度(22)与图数量(1)不匹配
+2025-10-07 11:12:38,427 - src.core.training.real_data_loader - WARNING - 节点类型 ip 的标签长度(12)与图数量(1)不匹配
+2025-10-07 11:12:38,427 - src.core.training.real_data_loader - WARNING - 节点类型 domain 的标签长度(33)与图数量(1)不匹配
+2025-10-07 11:12:38,427 - src.core.training.real_data_loader - WARNING - 节点类型 port 的标签长度(4)与图数量(1)不匹配
+2025-10-07 11:12:38,427 - src.core.training.real_data_loader - INFO - 创建数据加载器: 批次大小=64, 样本数=1
+2025-10-07 11:12:46,464 - src.core.training.improved_trainer - INFO - Epoch 24/100, Train Loss: 0.0013, Val Loss: 0.0381, Train Acc: 0.7143, Val Acc: 0.7143, LR: 0.000865
+2025-10-07 11:12:46,464 - src.core.training.improved_trainer - INFO - 早停在第 24 轮
+2025-10-07 11:12:46,464 - src.core.training.improved_trainer - INFO - 模型训练完成
+2025-10-07 11:12:46,464 - __main__ - INFO - 训练完成，最佳验证损失: 0.0002
+2025-10-07 11:12:46,465 - src.utils.memory_monitor - INFO - 内存状态: 正常 | 使用率: 46.6% | 已用: 14.5GB | 可用: 16.7GB
+2025-10-07 11:12:46,465 - src.utils.memory_monitor - INFO - GPU内存: 已分配 0.5GB | 已缓存 5.5GB | 最大分配 4.9GB
+2025-10-07 11:12:46,465 - __main__ - INFO - ==================================================
+2025-10-07 11:12:46,465 - __main__ - INFO - 步骤5: 模型性能评估
+2025-10-07 11:12:46,465 - __main__ - INFO - ==================================================
+2025-10-07 11:12:46,465 - src.utils.label_generator - INFO - 开始生成真实标签...
+2025-10-07 11:12:48,564 - src.utils.label_generator - INFO - 标签分布统计:
+2025-10-07 11:12:48,565 - src.utils.label_generator - INFO -   alert: 正样本=20000, 负样本=0, 正样本比例=1.000
+2025-10-07 11:12:48,565 - src.utils.label_generator - INFO -   rule: 正样本=30, 负样本=142, 正样本比例=0.174
+2025-10-07 11:12:48,565 - src.utils.label_generator - INFO -   file: 正样本=12, 负样本=32, 正样本比例=0.273
+2025-10-07 11:12:48,565 - src.utils.label_generator - INFO -   command: 正样本=995, 负样本=5704, 正样本比例=0.149
+2025-10-07 11:12:48,565 - src.utils.label_generator - INFO -   user: 正样本=4, 负样本=83, 正样本比例=0.046
+2025-10-07 11:12:48,565 - src.utils.label_generator - INFO -   process: 正样本=12, 负样本=26, 正样本比例=0.316
+2025-10-07 11:12:48,565 - src.utils.label_generator - INFO -   host: 正样本=0, 负样本=7, 正样本比例=0.000
+2025-10-07 11:12:48,565 - src.utils.label_generator - INFO -   agent: 正样本=1, 负样本=6, 正样本比例=0.143
+2025-10-07 11:12:48,565 - src.utils.label_generator - INFO -   mitre_tactic: 正样本=1, 负样本=9, 正样本比例=0.100
+2025-10-07 11:12:48,565 - src.utils.label_generator - INFO -   mitre_technique: 正样本=13, 负样本=54, 正样本比例=0.194
+2025-10-07 11:12:48,565 - src.utils.label_generator - INFO -   timestamp: 正样本=3, 负样本=19, 正样本比例=0.136
+2025-10-07 11:12:48,566 - src.utils.label_generator - INFO -   ip: 正样本=3, 负样本=9, 正样本比例=0.250
+2025-10-07 11:12:48,566 - src.utils.label_generator - INFO -   domain: 正样本=2, 负样本=31, 正样本比例=0.061
+2025-10-07 11:12:48,566 - src.utils.label_generator - INFO -   port: 正样本=1, 负样本=3, 正样本比例=0.250
+2025-10-07 11:12:48,566 - src.utils.label_generator - INFO -   总计: 正样本=21077, 负样本=6125, 正样本比例=0.775
+2025-10-07 11:12:48,566 - src.core.training.improved_trainer - INFO - 开始模型性能评估
+2025-10-07 11:12:48,807 - src.core.training.improved_trainer - INFO - 已加载最佳模型
+2025-10-07 11:12:49,052 - __main__ - ERROR - 系统运行出错: Expected all tensors to be on the same device, but found at least two devices, cuda:0 and cpu! (when checking argument for argument mat1 in method wrapper_CUDA_addmm)
